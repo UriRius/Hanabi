@@ -52,9 +52,10 @@ def manageInput():
             try:
                 cardStr = command.split(" ")
                 cardOrder = int(cardStr[1])
-                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
+                position = int(cardStr[2])
+                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder, position).serialize())
             except:
-                print("Maybe you wanted to type 'play <num>'?")
+                print("Maybe you wanted to type 'play <num> <pile position>'?")
                 continue
         elif command.split(" ")[0] == "hint" and status == statuses[1]:
             try:
@@ -73,12 +74,9 @@ def manageInput():
                     if value not in ["green", "red", "blue", "yellow", "white"]:
                         print("Error: card color can only be green, red, blue, yellow or white")
                         continue
-                positions = []
-                for pos in command.split(" ")[4:]:
-                    positions.append(int(pos))
-                s.send(GameData.ClientHintData(playerName, destination, t, value, positions).serialize())
+                s.send(GameData.ClientHintData(playerName, destination, t, value).serialize())
             except:
-                print("Maybe you wanted to type 'hint <type> <destinatary> <value> <positions>'?")
+                print("Maybe you wanted to type 'hint <type> <destinatary> <value>'?")
                 continue
         elif command == "":
             print("[" + playerName + " - " + status + "]: ", end="")
@@ -120,8 +118,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             for p in data.players:
                 print(p.toString())
             print("Table cards: ")
-            for c in data.tableCards:
-                print("\t" + c.toString())
+            for pos in data.tableCards:
+                print("[ ")
+                for c in pos:
+                    print(c.toString() + " ")
+                print("]")
             print("Discard pile: ")
             for c in data.discardPile:
                 print("\t" + c.toString())            
@@ -149,6 +150,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print("Your cards with value " + str(data.value) + " are:")
                 for i in data.positions:
                     print("\t" + str(i))
+        if type(data) is GameData.ServerGameOver:
+            dataOk = True
+            print(data.message)
+            print(data.score)
+            print(data.scoreMessage)
+            stdout.flush()
+            run = False
         if not dataOk:
             print("Unknown or unimplemented data type: " +  str(type(data)))
         print("[" + playerName + " - " + status + "]: ", end="")

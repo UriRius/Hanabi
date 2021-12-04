@@ -192,25 +192,20 @@ class Game(object):
         p = self.__getCurrentPlayer()
         # it's the right turn to perform an action
         if p.name == data.sender:
-            self.__playCard(p.name, data.handCardOrdered)
+            self.__playCard(p.name, data.handCardOrdered, data.cardPoolIndex)
             ok = self.__checkTableCards()
+            self.__gameOver, self.__score = self.__checkGameEnded()
+            if self.__gameOver:
+                logging.info("Game over, people.")
+                logging.info("Please, close the server now")
+                logging.info("Score: " + str(self.__score) + "; message: " + self.__scoreMessages[self.__score])
+                return (None, GameData.ServerGameOver(self.__score, self.__scoreMessages[self.__score]))
             if not ok:
-                self.__strikeThunder()
-                self.__gameOver, self.__score = self.__checkGameEnded()
-                if self.__gameOver:
-                    logging.info("Game over, people. That's sad.")
-                    logging.info("Please, close the server now")
-                    return (None, GameData.ServerGameOver(self.__score, self.__scoreMessages[self.__score]))
                 return (None, GameData.ServerPlayerThunderStrike())
             else:
-                if self.__checkFinishedFirework():
-                    self.__manageFinishedFirework()
                 logging.info(self.__getCurrentPlayer().name + ": card played and correctly put on the table")
                 self.__nextTurn()
                 self.__gameOver, self.__score = self.__checkGameEnded()
-                if self.__gameOver:
-                    logging.info("Game over. Score: " + str(self.__score))
-                    return (None, GameData.ServerGameOver(self.__score, self.__scoreMessages[self.__score]))
                 return (None, GameData.ServerPlayerMoveOk(self.__getCurrentPlayer().name))
         else:
             return (GameData.ServerActionInvalid("It is not your turn yet"), None)
@@ -221,9 +216,26 @@ class Game(object):
             logging.warning("All the note tokens have been used. Impossible getting hints")
             return GameData.ServerActionInvalid("All the note tokens have been used"), None
         self.__noteTokens += 1
+        positions = []
+        destPlayer: Player = None
+        for p in self.__players:
+            if p.name == data.destination:
+                destPlayer = p
+                break
+        for i in range(len(destPlayer.hand)):
+            if data.type == "color" or data.type == "colour":
+                if data.value == destPlayer.hand[i].color:
+                    positions.append(i)
+            elif data.type == "value":
+                if data.value == destPlayer.hand[i].value:
+                    positions.append(i)
+            else:
+                # Backtrack on note token
+                self.__noteTokens -= 1
+                return GameData.ServerInvalidDataReceived(data=data.type), None
         self.__nextTurn()
-        logging.info("Player " + data.sender + " providing hint to " + data.destination + ": cards with " + data.type + " " + str(data.value) + " are in positions: " + str(data.positions))
-        return None, GameData.ServerHintData(data.sender, data.destination, data.type, data.value, data.positions)
+        logging.info("Player " + data.sender + " providing hint to " + data.destination + ": cards with " + data.type + " " + str(data.value) + " are in positions: " + str(positions))
+        return None, GameData.ServerHintData(data.sender, data.destination, data.type, data.value, positions)
 
     # Player functions
     # players list. Not the best, but there are literally max 5 players and the list should give us the order of connection = the order of the rounds
@@ -318,17 +330,13 @@ class Game(object):
         p.hand.append(self.__cardsToDraw.pop())
     
     def __checkTableCards(self) -> bool:
-        numberList = []
-        for card in self.__tableCards:
-            if len(self.__tableCards > 0):
-                canPlay = self.__tableCards[0].color == card.color
-            else:
-                canPlay = True
+        for cardPool in self.__tableCards:
+            for card in cardPool:
+                canPlay = cardPool[0].color == card.color and cardPool[len(cardPool) - 1].value == len(cardPool)
             if not canPlay:
-                return False
-            numberList.append(card.value)
-        for i in range(len(numberList)):
-            if numberList[i] != (i + 1):
+                cardPool.pop()
+                self.__discardPile.append(card)
+                self.__strikeThunder()
                 return False
         return True
 
@@ -336,17 +344,8 @@ class Game(object):
     def __checkFinishedFirework(self, pile) -> bool:
         return len(pile) == 5
 
-    def __manageFinishedFirework(self):
-        self.__completedFireworks += 1
-        if self.__noteTokens > 0:
-            self.__noteTokens =- 1
-        for card in self.__tableCards:
-            self.__discardPile.append(card)
-            self.__tableCards.remove(card)
-
     def __strikeThunder(self):
         self.__stormTokens += 1
-        self.__discardPile.append(self.__tableCards.pop())
         self.__drawCard(self.__players[self.__currentPlayer].name)
 
     def __checkGameEnded(self):
