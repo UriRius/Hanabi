@@ -52,7 +52,8 @@ def manageInput():
             try:
                 cardStr = command.split(" ")
                 cardOrder = int(cardStr[1])
-                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
+                position = int(cardStr[2])
+                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder, position).serialize())
             except:
                 print("Maybe you wanted to type 'play <num> <pile position>'?")
                 continue
@@ -118,8 +119,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(p.toString())
             print("Table cards: ")
             for pos in data.tableCards:
-                print(pos + ": [ ")
-                for c in data.tableCards[pos]:
+                print("[ ")
+                for c in pos:
                     print(c.toString() + " ")
                 print("]")
             print("Discard pile: ")
@@ -149,9 +150,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print("Your cards with value " + str(data.value) + " are:")
                 for i in data.positions:
                     print("\t" + str(i))
-        if type(data) is GameData.ServerInvalidDataReceived:
-            dataOk = True
-            print(data.data)
         if type(data) is GameData.ServerGameOver:
             dataOk = True
             print(data.message)
