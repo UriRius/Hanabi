@@ -30,22 +30,15 @@ class Player(object):
         self.hand = []
         self.score = 0
 
+    def takeCard(self, cards):
+        self.hand.append(cards.pop())
+    
     def toString(self):
         c = "[ \n\t"
         for card in self.hand:
             c += "\t" + card.toString() + " \n\t"
         c += " ]"
         return ("Player " + self.name + " { \n\tcards: " + c + "; \n\tscore: " + str(self.score) + "\n}")
-
-    def takeCard(self, cards):
-        self.hand.append(cards.pop())
-
-    def discardCard(self, pile, cardID):
-        for card in self.hand:
-            if card.id == cardID:
-                pile.append(card)
-                self.hand.pop(card)
-                break
 
 class Game(object):
 
@@ -173,17 +166,19 @@ class Game(object):
     # Draw request    
     def __satisfyDiscardRequest(self, data: GameData.ClientPlayerDiscardCardRequest):
         player = self.__getCurrentPlayer()
-        cardID = player.hand[data.handCardOrdered]
         # It's the right turn to perform an action
         if player.name == data.sender:
-            if not self.__discardCard(cardID, player.name):
+            if data.handCardOrdered > len(player.hand) or data.handCardOrdered < 0:
+                return (GameData.ServerActionInvalid("You don't have that many cards!"), None)
+            card: Card = player.hand[data.handCardOrdered]
+            if not self.__discardCard(card.id, player.name):
                 logging.warning("Impossible discarding a card: there is no used token available")
                 return (GameData.ServerActionInvalid("You have no used tokens"), None)
             else:
                 self.__drawCard(player.name)
-                logging.info("Player: " + self.__getCurrentPlayer().name + ": card " + str(cardID.id) + " discarded successfully")
+                logging.info("Player: " + self.__getCurrentPlayer().name + ": card " + str(card.id) + " discarded successfully")
                 self.__nextTurn()
-                return (None, GameData.ServerActionValid(self.__getCurrentPlayer().name))
+                return (None, GameData.ServerActionValid(self.__getCurrentPlayer().name, "discard", card))
         else:
             return (GameData.ServerActionInvalid("It is not your turn yet"), None)
 
@@ -198,6 +193,8 @@ class Game(object):
         p = self.__getCurrentPlayer()
         # it's the right turn to perform an action
         if p.name == data.sender:
+            if data.handCardOrdered > len(p.hand) or data.handCardOrdered < 0:
+                return (GameData.ServerActionInvalid("You don't have that many cards!"), None)
             card: Card = p.hand[data.handCardOrdered]
             self.__playCard(p.name, data.handCardOrdered)
             ok = self.__checkTableCards()
@@ -208,15 +205,18 @@ class Game(object):
                 logging.info("Score: " + str(self.__score) + "; message: " + self.__scoreMessages[self.__score])
                 return (None, GameData.ServerGameOver(self.__score, self.__scoreMessages[self.__score]))
             if not ok:
-                return (None, GameData.ServerPlayerThunderStrike())
+                self.__nextTurn()
+                return (None, GameData.ServerPlayerThunderStrike(self.__getCurrentPlayer().name, card))
             else:
                 logging.info(self.__getCurrentPlayer().name + ": card played and correctly put on the table")
-                if card.value == 5 and self.__noteTokens > 0:
+                if card.value == 5:
+                    logging.info(card.color + " pile has been filled.")
+                if self.__noteTokens > 0:
                     self.__noteTokens -= 1
-                logging.info(card.color + " pile has been filled. Giving 1 free note token!")
+                    logging.info("Giving 1 free note token.")
                 self.__nextTurn()
                 self.__gameOver, self.__score = self.__checkGameEnded()
-                return (None, GameData.ServerPlayerMoveOk(self.__getCurrentPlayer().name))
+                return (None, GameData.ServerPlayerMoveOk(self.__getCurrentPlayer().name, card))
         else:
             return (GameData.ServerActionInvalid("It is not your turn yet"), None)
 
@@ -327,7 +327,7 @@ class Game(object):
                         break
                     if card.id == cardID:
                         self.__discardPile.append(card) # discard
-                        p.hand.pop(card) # remove from hand
+                        p.hand.remove(card) # remove from hand
                         endLoop = True
         return True
     
@@ -347,7 +347,7 @@ class Game(object):
         for cardPool in self.__tableCards:
             for card in self.__tableCards[cardPool]:
                 if len(self.__tableCards[cardPool]) > 0 and self.__tableCards[cardPool][len(self.__tableCards[cardPool]) - 1].value != len(self.__tableCards[cardPool]):
-                    cardPool.pop()
+                    self.__tableCards[cardPool].pop()
                     self.__discardPile.append(card)
                     self.__strikeThunder()
                     return False
