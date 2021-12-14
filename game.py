@@ -12,6 +12,15 @@ class Card(object):
 
     def toString(self):
         return ("Card " + str(self.id) + "; value: " + str(self.value) + "; color: " + str(self.color))
+    
+    def __hash__(self):
+        return self.id
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)):
+            return NotImplemented
+        return self.id == other.id
+
 
 class Token(object):
     def __init__(self, type) -> None:
@@ -193,7 +202,7 @@ class Game(object):
         p = self.__getCurrentPlayer()
         # it's the right turn to perform an action
         if p.name == data.sender:
-            if data.handCardOrdered > len(p.hand) or data.handCardOrdered < 0:
+            if data.handCardOrdered >= len(p.hand) or data.handCardOrdered < 0:
                 return (GameData.ServerActionInvalid("You don't have that many cards!"), None)
             card: Card = p.hand[data.handCardOrdered]
             self.__playCard(p.name, data.handCardOrdered)
@@ -332,6 +341,8 @@ class Game(object):
         return True
     
     def __drawCard(self, playerName: str):
+        if len(self.__cardsToDraw) == 0:
+            return
         card = self.__cardsToDraw.pop()
         for p in self.__players:
             if p.name == playerName:
@@ -341,7 +352,8 @@ class Game(object):
         p = self.__getPlayer(playerName)
         self.__tableCards[p.hand[cardPosition].color].append(p.hand[cardPosition])
         p.hand.pop(cardPosition)
-        p.hand.append(self.__cardsToDraw.pop())
+        if len(self.__cardsToDraw) > 0:
+            p.hand.append(self.__cardsToDraw.pop())
     
     def __checkTableCards(self) -> bool:
         for cardPool in self.__tableCards:
@@ -359,7 +371,6 @@ class Game(object):
 
     def __strikeThunder(self):
         self.__stormTokens += 1
-        self.__drawCard(self.__players[self.__currentPlayer].name)
 
     def __checkGameEnded(self):
         ended = True
@@ -370,13 +381,15 @@ class Game(object):
             return True, score
         if self.__stormTokens == self.__MAX_STORM_TOKENS:
             return True, 0
+        ended = True
         for player in self.__players:
-            if len(player.hand) > 0:
-                return False, 0
-        score = 0
-        for pile in self.__tableCards:
-            score += len(pile)
-        return True, score
+            ended = ended and ((len(player.hand) < 5 and len(self.__players) <= 3) or len(player.hand) < 4)
+        if ended:
+            score = 0
+            for pile in self.__tableCards:
+                score += len(pile)
+            return True, score
+        return False, 0
     
     def getPlayers(self):
         return self.__players
