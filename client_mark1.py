@@ -27,61 +27,47 @@ status = statuses[0]
 
 hintState = ("", "")
 
+hintsRecieved = []
+
 def manageInput():
     global run
     global status
     while run:
+        #aqui es decideix el seguent moviment
         command = input()
-        # Choose data to send
         if command == "exit":
             run = False
             os._exit(0)
-        elif command == "ready" and status == statuses[0]:
-            s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
-        elif command == "show" and status == statuses[1]:
-            s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-        elif command.split(" ")[0] == "discard" and status == statuses[1]:
-            try:
-                cardStr = command.split(" ")
-                cardOrder = int(cardStr[1])
-                s.send(GameData.ClientPlayerDiscardCardRequest(playerName, cardOrder).serialize())
-            except:
-                print("Maybe you wanted to type 'discard <num>'?")
-                continue
-        elif command.split(" ")[0] == "play" and status == statuses[1]:
-            try:
-                cardStr = command.split(" ")
-                cardOrder = int(cardStr[1])
-                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
-            except:
-                print("Maybe you wanted to type 'play <num> <pile position>'?")
-                continue
-        elif command.split(" ")[0] == "hint" and status == statuses[1]:
-            try:
-                destination = command.split(" ")[2]
-                t = command.split(" ")[1].lower()
-                if t != "colour" and t != "color" and t != "value":
-                    print("Error: type can be 'color' or 'value'")
-                    continue
-                value = command.split(" ")[3].lower()
-                if t == "value":
-                    value = int(value)
-                    if int(value) > 5 or int(value) < 1:
-                        print("Error: card values can range from 1 to 5")
-                        continue
-                else:
-                    if value not in ["green", "red", "blue", "yellow", "white"]:
-                        print("Error: card color can only be green, red, blue, yellow or white")
-                        continue
-                s.send(GameData.ClientHintData(playerName, destination, t, value).serialize())
-            except:
-                print("Maybe you wanted to type 'hint <type> <destinatary> <value>'?")
-                continue
-        elif command == "":
-            print("[" + playerName + " - " + status + "]: ", end="")
         else:
-            print("Unknown command: " + command)
-            continue
+            # jugarem en funcio de la decisio
+            if status == statuses[0]:
+                #si status es Lobby provarem de començar el joc amb un ready
+                s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
+            else:
+                #if status != Lobby just play dumb
+                print("Info que tinc: ", hintsRecieved)
+                print("Potser tinc mes info: ")
+                #fem un show i rebem la info en global
+                s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
+                print("")
+                try:
+                    if not hintsRecieved:
+                        #no te pistes, fa el tonto
+                        print("jugo la carta 0")
+                        s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
+                    else: 
+                        #te pistes per jugar de numeros, juga
+                        hintsRecieved_First = hintsRecieved[0]
+                        position = hintsRecieved_First.split(" ")[0]
+                        value = hintsRecieved_First.split(" ")[1]
+                        print("el primer esta a la pos " + position + " i es " + value)
+                        cardOrder = int(position)
+                        s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
+                        print("hem jugat carta, anem a treure el 1r element de la llista")
+                        hintsRecieved.pop(0)
+                except:
+                    print("Ups problemita")
+                    continue
         stdout.flush()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -143,10 +129,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("OH NO! The Gods are unhappy with you!")
         if type(data) is GameData.ServerHintData:
+            #aqui es reben les pistes
             dataOk = True
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
             for i in data.positions:
+                hintsRecieved.append(str(i) + " " + str(data.value))
                 print("\t" + str(i))
         if type(data) is GameData.ServerInvalidDataReceived:
             dataOk = True
