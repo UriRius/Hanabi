@@ -29,9 +29,12 @@ hintState = ("", "")
 
 hintsRecieved = []
 
+players=[]
+
 def manageInput():
     global run
     global status
+    faltaInfo=True
     while run:
         #aqui es decideix el seguent moviment
         command = input()
@@ -45,11 +48,18 @@ def manageInput():
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
                 #if status != Lobby just play dumb
-                print("Info que tinc: ", hintsRecieved)
-                print("Potser tinc mes info: ")
+                print("Totes les pistes fins ara: ", hintsRecieved)
                 #fem un show i rebem la info en global
-                s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-                print("")
+                print("aqui estan els players")
+                for p in players:
+                    #funciona, aqui estan els noms dels jugadors
+                    print(p.name)
+                    print(p.hand)
+                    #un player te per atributs el nom, la ma, score i ready
+                if faltaInfo:
+                    print("envio el show")
+                    faltaInfo=False
+                    s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 try:
                     if not hintsRecieved:
                         #no te pistes, fa el tonto
@@ -100,6 +110,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
+            players= data.players
             for p in data.players:
                 print(p.toString())
             print("Table cards: ")
