@@ -34,49 +34,62 @@ players=[]
 def manageInput():
     global run
     global status
+    #boolea que controla si es fa o no un show
     faltaInfo=True
     while run:
-        #aqui es decideix el seguent moviment
+        #Utilitzem input per controlara la IA
         command = input()
         if command == "exit":
             run = False
             os._exit(0)
         else:
-            # jugarem en funcio de la decisio
             if status == statuses[0]:
-                #si status es Lobby provarem de començar el joc amb un ready
+                #si status es Lobby es fa un ready req.
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
-                #if status != Lobby just play dumb
+                #Status es Game/Gamehint
                 print("Totes les pistes fins ara: ", hintsRecieved)
-                #fem un show i rebem la info en global
-                print("aqui estan els players")
+                
                 for p in players:
-                    #funciona, aqui estan els noms dels jugadors
+                    #Accedim els atributs de cada jugador d'aquesta manera
                     print(p.name)
                     print(p.hand)
-                    #un player te per atributs el nom, la ma, score i ready
+                    #un player te per atributs el nom, la ma i ready
+                
                 if faltaInfo:
-                    print("envio el show")
+                    #fem un show cada vegada abans de jugar
                     faltaInfo=False
+                    #La info es rep en la funcio de sota
                     s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
+                
                 try:
                     if not hintsRecieved:
-                        #no te pistes, fa el tonto
+                        #La IA no ha rebut pistes
                         print("jugo la carta 0")
+                        
+                        #Es torna a posar el bolea a true pel proxim cop que es jugi
+                        faltaInfo=True
+                        
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR PISTA A DONAR!!!!!!!!!!!!
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A DESCARTAR!!!!!!!!
                         s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
                     else: 
-                        #te pistes per jugar de numeros, juga
+                        #La IA ha rebut pistes
+                        #cada pista te el seguent format: (posicio, valor)
+                        #posem aqui la primera pista rebuda
+
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A JUGAR!!!!!!!!!!!!
                         hintsRecieved_First = hintsRecieved[0]
+
                         position = hintsRecieved_First.split(" ")[0]
                         value = hintsRecieved_First.split(" ")[1]
                         print("el primer esta a la pos " + position + " i es " + value)
                         cardOrder = int(position)
+
                         s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
-                        print("hem jugat carta, anem a treure el 1r element de la llista")
                         hintsRecieved.pop(0)
                 except:
-                    print("Ups problemita")
+                    print("Ups problemita, hem fallat en algo OwO")
                     continue
         stdout.flush()
 
@@ -107,6 +120,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.send(GameData.ClientPlayerReadyData(playerName).serialize())
             status = statuses[1]
         if type(data) is GameData.ServerGameStateData:
+            #Aqui es rep el show
             dataOk = True
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
@@ -133,14 +147,16 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
+            #Hem jugat bé una carta
             dataOk = True
             print("Nice move!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerThunderStrike:
+            #Hem jugat malament una carta
             dataOk = True
             print("OH NO! The Gods are unhappy with you!")
         if type(data) is GameData.ServerHintData:
-            #aqui es reben les pistes
+            #Aqui es reben les pistes
             dataOk = True
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
