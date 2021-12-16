@@ -28,14 +28,17 @@ status = statuses[0]
 hintState = ("", "")
 
 hintsRecieved = []
+UsedTokens = ""
 
 players=[]
+p_names=[]
 
 def manageInput():
     global run
     global status
     #boolea que controla si es fa o no un show
     faltaInfo=True
+    first=True
     while run:
         #Utilitzem input per controlara la IA
         command = input()
@@ -50,29 +53,42 @@ def manageInput():
                 #Status es Game/Gamehint
                 print("Totes les pistes fins ara: ", hintsRecieved)
                 
-                for p in players:
-                    #Accedim els atributs de cada jugador d'aquesta manera
-                    print(p.name)
-                    print(p.hand)
-                    #un player te per atributs el nom, la ma i ready
-                
                 if faltaInfo:
-                    #fem un show cada vegada abans de jugar
+                    #fem un show cada vegada abans de jugar per recopilar info
                     faltaInfo=False
                     #La info es rep en la funcio de sota
                     s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 
                 try:
+                    #Es torna a posar el bolea a true pel proxim cop que es jugi
+                    faltaInfo=True
                     if not hintsRecieved:
                         #La IA no ha rebut pistes
-                        print("jugo la carta 0")
-                        
-                        #Es torna a posar el bolea a true pel proxim cop que es jugi
-                        faltaInfo=True
+                        te_uns = False
+                        for p in players:
+                            #Accedim els atributs de cada jugador d'aquesta manera
+                            if first:
+                                first=False
+                                p_names.append(p.name)
+                            print(p.name)
+                            for c in p.hand:
+                                valor = c.toString().split(" ")[3]
+                                print ("valor :", valor)
+                                if valor == "1;":
+                                    te_uns = True
+                                print(c.toString())
+                            #un player te per atributs el nom, la ma i ready
                         
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR PISTA A DONAR!!!!!!!!!!!!
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A DESCARTAR!!!!!!!!
-                        s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
+                        if te_uns:
+                            s.send(GameData.ClientHintData(playerName, p_names[0], "value", 1).serialize())
+                        else:
+                            if UsedTokens=="8":
+                                s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
+                            else:
+                                s.send(GameData.ClientPlayerDiscardCardRequest(playerName, 0).serialize())
+
                     else: 
                         #La IA ha rebut pistes
                         #cada pista te el seguent format: (posicio, valor)
@@ -124,6 +140,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
+            #Aqui inicialitzem la nostra variable de players
             players= data.players
             for p in data.players:
                 print(p.toString())
@@ -137,6 +154,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             for c in data.discardPile:
                 print("\t" + c.toString())            
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
+            UsedTokens=str(data.usedNoteTokens)
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
