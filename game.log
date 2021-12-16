@@ -105,3 +105,20 @@
 12/14/2021 06:40:40 PM INFO: Showing hand to: IA
 12/14/2021 06:40:51 PM INFO: Uri: card played and correctly put on the table
 12/14/2021 06:41:37 PM INFO: Closing the server...
+12/15/2021 11:27:46 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/15/2021 11:28:09 PM INFO: Connected by: ('127.0.0.1', 55044)
+12/15/2021 11:28:09 PM INFO: Player connected: Laia
+12/15/2021 11:28:11 PM INFO: Player ready: Laia
+12/15/2021 11:28:18 PM INFO: Connected by: ('127.0.0.1', 64506)
+12/15/2021 11:28:18 PM INFO: Player connected: IA
+12/15/2021 11:28:20 PM INFO: Player ready: IA
+12/15/2021 11:28:20 PM INFO: Game start! Between: ['Laia', 'IA']
+12/15/2021 11:28:20 PM INFO: Ok, let's start the game!
+12/15/2021 11:28:28 PM INFO: Showing hand to: Laia
+12/15/2021 11:28:45 PM INFO: Player Laia providing hint to IA: cards with value 1 are in positions: [4]
+12/15/2021 11:28:52 PM INFO: Showing hand to: IA
+12/15/2021 11:28:52 PM INFO: IA: card played and correctly put on the table
+12/15/2021 11:28:52 PM INFO: Giving 1 free note token.
+12/15/2021 11:29:09 PM INFO: Showing hand to: Laia
+12/15/2021 11:29:57 PM INFO: Laia: card played and correctly put on the table
+12/15/2021 11:30:21 PM INFO: Closing the server...
