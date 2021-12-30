@@ -53,11 +53,15 @@ def manageInput():
                 #Status es Game/Gamehint
                 print("Totes les pistes fins ara: ", hintsRecieved)
                 
+                #ALERTA BUGS!!!!!!!! LES PISTES REBUDES VALEN PER TOTS ELS USUARIS
+
                 if faltaInfo:
                     #fem un show cada vegada abans de jugar per recopilar info
                     faltaInfo=False
                     #La info es rep en la funcio de sota
                     s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
+                    
+                    #ALERTA BUGS!!!!!!!!!!!!!! EL SHOW ARRIBA MES TARD QUE LA RECOLECCIO DE INFO
                 
                 try:
                     #Es torna a posar el bolea a true pel proxim cop que es jugi
