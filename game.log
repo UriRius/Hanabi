@@ -465,3 +465,306 @@
 12/30/2021 08:19:53 PM INFO: Game over, people.
 12/30/2021 08:19:53 PM INFO: Please, close the server now
 12/30/2021 08:19:53 PM INFO: Score: 0; message: Booooooooooooring!
+12/31/2021 04:36:25 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 04:36:34 PM INFO: Connected by: ('127.0.0.1', 62021)
+12/31/2021 04:36:34 PM INFO: Player connected: IA
+12/31/2021 04:36:36 PM INFO: Player ready: IA
+12/31/2021 04:36:39 PM INFO: Connected by: ('127.0.0.1', 62024)
+12/31/2021 04:36:39 PM INFO: Player connected: Uri
+12/31/2021 04:36:44 PM INFO: Player ready: Uri
+12/31/2021 04:36:44 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 04:36:44 PM INFO: Ok, let's start the game!
+12/31/2021 04:36:46 PM INFO: Showing hand to: Uri
+12/31/2021 04:36:50 PM INFO: Showing hand to: IA
+12/31/2021 04:36:52 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2, 3]
+12/31/2021 04:40:08 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 04:40:08 PM INFO: Giving 1 free note token.
+12/31/2021 04:40:11 PM INFO: Showing hand to: Uri
+12/31/2021 04:40:16 PM INFO: Showing hand to: IA
+12/31/2021 04:40:42 PM INFO: Closing the server...
+12/31/2021 04:42:32 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 04:42:37 PM INFO: Connected by: ('127.0.0.1', 62099)
+12/31/2021 04:42:37 PM INFO: Player connected: IA
+12/31/2021 04:42:40 PM INFO: Connected by: ('127.0.0.1', 62104)
+12/31/2021 04:42:40 PM INFO: Player connected: Uri
+12/31/2021 04:42:44 PM INFO: Player ready: Uri
+12/31/2021 04:42:46 PM INFO: Player ready: IA
+12/31/2021 04:42:46 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 04:42:46 PM INFO: Ok, let's start the game!
+12/31/2021 04:42:49 PM INFO: Showing hand to: Uri
+12/31/2021 04:42:52 PM INFO: Showing hand to: IA
+12/31/2021 04:42:54 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0]
+12/31/2021 04:42:59 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 04:42:59 PM INFO: Giving 1 free note token.
+12/31/2021 04:43:01 PM INFO: Showing hand to: IA
+12/31/2021 04:51:13 PM INFO: Closing the server...
+12/31/2021 04:51:15 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 04:51:28 PM INFO: Connected by: ('127.0.0.1', 62190)
+12/31/2021 04:51:28 PM INFO: Player connected: Laia
+12/31/2021 04:51:33 PM INFO: Connected by: ('127.0.0.1', 62192)
+12/31/2021 04:51:33 PM INFO: Player connected: Uri
+12/31/2021 04:51:38 PM INFO: Connected by: ('127.0.0.1', 62194)
+12/31/2021 04:51:38 PM INFO: Player connected: IA
+12/31/2021 04:51:41 PM INFO: Player ready: IA
+12/31/2021 04:51:49 PM INFO: Closing the server...
+12/31/2021 04:51:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 04:51:56 PM INFO: Connected by: ('127.0.0.1', 62195)
+12/31/2021 04:51:56 PM INFO: Player connected: IA
+12/31/2021 04:51:56 PM INFO: Player ready: IA
+12/31/2021 04:51:59 PM INFO: Connected by: ('127.0.0.1', 62196)
+12/31/2021 04:51:59 PM INFO: Player connected: Uri
+12/31/2021 04:52:02 PM INFO: Player ready: Uri
+12/31/2021 04:52:02 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 04:52:02 PM INFO: Ok, let's start the game!
+12/31/2021 04:52:05 PM INFO: Showing hand to: Uri
+12/31/2021 04:52:10 PM INFO: Showing hand to: IA
+12/31/2021 04:52:29 PM INFO: Showing hand to: Uri
+12/31/2021 04:52:40 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0]
+12/31/2021 04:52:42 PM INFO: Showing hand to: IA
+12/31/2021 04:52:42 PM INFO: IA: card played and correctly put on the table
+12/31/2021 04:52:42 PM INFO: Giving 1 free note token.
+12/31/2021 04:54:08 PM INFO: Showing hand to: Uri
+12/31/2021 04:54:34 PM WARNING: Impossible discarding a card: there is no used token available
+12/31/2021 04:55:05 PM INFO: Player Uri providing hint to IA: cards with color white are in positions: [0]
+12/31/2021 05:00:39 PM INFO: Closing the server...
+12/31/2021 05:00:40 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:00:47 PM INFO: Connected by: ('127.0.0.1', 62521)
+12/31/2021 05:00:47 PM INFO: Player connected: IA
+12/31/2021 05:00:47 PM INFO: Player ready: IA
+12/31/2021 05:00:53 PM INFO: Connected by: ('127.0.0.1', 62527)
+12/31/2021 05:00:53 PM INFO: Player connected: Uri
+12/31/2021 05:00:55 PM INFO: Player ready: Uri
+12/31/2021 05:00:55 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:00:55 PM INFO: Ok, let's start the game!
+12/31/2021 05:00:58 PM INFO: Showing hand to: Uri
+12/31/2021 05:01:02 PM INFO: Showing hand to: IA
+12/31/2021 05:01:04 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 4]
+12/31/2021 05:01:07 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 05:01:07 PM INFO: Giving 1 free note token.
+12/31/2021 05:01:13 PM INFO: Showing hand to: IA
+12/31/2021 05:01:38 PM INFO: Closing the server...
+12/31/2021 05:02:09 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:02:16 PM INFO: Connected by: ('127.0.0.1', 62554)
+12/31/2021 05:02:16 PM INFO: Player connected: IA
+12/31/2021 05:02:18 PM INFO: Player ready: IA
+12/31/2021 05:02:22 PM INFO: Connected by: ('127.0.0.1', 62558)
+12/31/2021 05:02:22 PM INFO: Player connected: Uri
+12/31/2021 05:02:24 PM INFO: Player ready: Uri
+12/31/2021 05:02:24 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:02:24 PM INFO: Ok, let's start the game!
+12/31/2021 05:02:26 PM INFO: Showing hand to: Uri
+12/31/2021 05:02:28 PM INFO: Showing hand to: IA
+12/31/2021 05:02:30 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 2]
+12/31/2021 05:02:35 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 05:02:35 PM INFO: Giving 1 free note token.
+12/31/2021 05:02:37 PM INFO: Showing hand to: IA
+12/31/2021 05:03:54 PM INFO: Connected by: ('127.0.0.1', 62600)
+12/31/2021 05:03:59 PM INFO: Closing the server...
+12/31/2021 05:04:01 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:04:04 PM INFO: Connected by: ('127.0.0.1', 62606)
+12/31/2021 05:04:04 PM INFO: Player connected: IA
+12/31/2021 05:04:05 PM INFO: Player ready: IA
+12/31/2021 05:04:07 PM INFO: Connected by: ('127.0.0.1', 62611)
+12/31/2021 05:04:07 PM INFO: Player connected: Uri
+12/31/2021 05:04:10 PM INFO: Player ready: Uri
+12/31/2021 05:04:10 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:04:10 PM INFO: Ok, let's start the game!
+12/31/2021 05:04:16 PM INFO: Showing hand to: Uri
+12/31/2021 05:04:19 PM INFO: Showing hand to: IA
+12/31/2021 05:04:21 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 05:04:24 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 05:04:24 PM INFO: Giving 1 free note token.
+12/31/2021 05:04:27 PM INFO: Showing hand to: IA
+12/31/2021 05:06:10 PM INFO: Closing the server...
+12/31/2021 05:06:12 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:06:19 PM INFO: Connected by: ('127.0.0.1', 62674)
+12/31/2021 05:06:19 PM INFO: Player connected: IA
+12/31/2021 05:06:22 PM INFO: Player ready: IA
+12/31/2021 05:06:27 PM INFO: Connected by: ('127.0.0.1', 62675)
+12/31/2021 05:06:27 PM INFO: Player connected: Uri
+12/31/2021 05:06:30 PM INFO: Player ready: Uri
+12/31/2021 05:06:30 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:06:30 PM INFO: Ok, let's start the game!
+12/31/2021 05:06:32 PM INFO: Showing hand to: Uri
+12/31/2021 05:06:36 PM INFO: Showing hand to: IA
+12/31/2021 05:06:38 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 05:06:42 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 05:06:42 PM INFO: Giving 1 free note token.
+12/31/2021 05:06:44 PM INFO: Showing hand to: IA
+12/31/2021 05:07:58 PM INFO: Closing the server...
+12/31/2021 05:28:36 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:28:42 PM INFO: Connected by: ('127.0.0.1', 63531)
+12/31/2021 05:28:42 PM INFO: Player connected: IA
+12/31/2021 05:28:43 PM INFO: Player ready: IA
+12/31/2021 05:28:47 PM INFO: Connected by: ('127.0.0.1', 63534)
+12/31/2021 05:28:47 PM INFO: Player connected: Uri
+12/31/2021 05:28:48 PM INFO: Player ready: Uri
+12/31/2021 05:28:48 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:28:48 PM INFO: Ok, let's start the game!
+12/31/2021 05:28:50 PM INFO: Showing hand to: Uri
+12/31/2021 05:28:52 PM INFO: Showing hand to: IA
+12/31/2021 05:30:21 PM INFO: Closing the server...
+12/31/2021 05:31:29 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 05:31:36 PM INFO: Connected by: ('127.0.0.1', 62195)
+12/31/2021 05:31:36 PM INFO: Player connected: IA
+12/31/2021 05:31:36 PM INFO: Player ready: IA
+12/31/2021 05:31:42 PM INFO: Connected by: ('127.0.0.1', 62204)
+12/31/2021 05:31:42 PM INFO: Player connected: Uri
+12/31/2021 05:31:43 PM INFO: Player ready: Uri
+12/31/2021 05:31:43 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 05:31:43 PM INFO: Ok, let's start the game!
+12/31/2021 05:31:46 PM INFO: Showing hand to: Uri
+12/31/2021 05:31:50 PM INFO: Showing hand to: IA
+12/31/2021 05:31:52 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2, 4]
+12/31/2021 05:59:10 PM INFO: Showing hand to: Uri
+12/31/2021 05:59:17 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 05:59:17 PM INFO: Giving 1 free note token.
+12/31/2021 05:59:22 PM INFO: Showing hand to: Uri
+12/31/2021 05:59:24 PM INFO: Showing hand to: IA
+12/31/2021 06:02:39 PM INFO: Closing the server...
+12/31/2021 06:02:41 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:02:45 PM INFO: Connected by: ('127.0.0.1', 62449)
+12/31/2021 06:02:45 PM INFO: Player connected: IA
+12/31/2021 06:02:46 PM INFO: Player ready: IA
+12/31/2021 06:02:50 PM INFO: Connected by: ('127.0.0.1', 62458)
+12/31/2021 06:02:50 PM INFO: Player connected: Uri
+12/31/2021 06:02:52 PM INFO: Player ready: Uri
+12/31/2021 06:02:52 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:02:52 PM INFO: Ok, let's start the game!
+12/31/2021 06:02:55 PM INFO: Showing hand to: Uri
+12/31/2021 06:02:59 PM INFO: Showing hand to: IA
+12/31/2021 06:03:01 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [3]
+12/31/2021 06:03:13 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:03:13 PM INFO: Giving 1 free note token.
+12/31/2021 06:03:17 PM INFO: Showing hand to: IA
+12/31/2021 06:03:41 PM INFO: Closing the server...
+12/31/2021 06:05:27 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:05:34 PM INFO: Connected by: ('127.0.0.1', 62497)
+12/31/2021 06:05:34 PM INFO: Player connected: IA
+12/31/2021 06:05:35 PM INFO: Player ready: IA
+12/31/2021 06:05:40 PM INFO: Connected by: ('127.0.0.1', 62500)
+12/31/2021 06:05:40 PM INFO: Player connected: Uri
+12/31/2021 06:05:44 PM INFO: Player ready: Uri
+12/31/2021 06:05:44 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:05:44 PM INFO: Ok, let's start the game!
+12/31/2021 06:05:47 PM INFO: Showing hand to: Uri
+12/31/2021 06:05:50 PM INFO: Showing hand to: IA
+12/31/2021 06:05:52 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 06:05:56 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:05:56 PM INFO: Giving 1 free note token.
+12/31/2021 06:05:59 PM INFO: Showing hand to: IA
+12/31/2021 06:07:30 PM INFO: Closing the server...
+12/31/2021 06:07:31 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:07:35 PM INFO: Connected by: ('127.0.0.1', 62508)
+12/31/2021 06:07:35 PM INFO: Player connected: IA
+12/31/2021 06:07:36 PM INFO: Player ready: IA
+12/31/2021 06:07:39 PM INFO: Connected by: ('127.0.0.1', 62510)
+12/31/2021 06:07:39 PM INFO: Player connected: Uri
+12/31/2021 06:07:41 PM INFO: Player ready: Uri
+12/31/2021 06:07:41 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:07:41 PM INFO: Ok, let's start the game!
+12/31/2021 06:07:45 PM INFO: Showing hand to: Uri
+12/31/2021 06:07:47 PM INFO: Showing hand to: IA
+12/31/2021 06:07:49 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 2, 4]
+12/31/2021 06:07:51 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:07:51 PM INFO: Giving 1 free note token.
+12/31/2021 06:08:00 PM INFO: Showing hand to: IA
+12/31/2021 06:09:16 PM INFO: Closing the server...
+12/31/2021 06:09:17 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:09:23 PM INFO: Connected by: ('127.0.0.1', 62524)
+12/31/2021 06:09:23 PM INFO: Player connected: IA
+12/31/2021 06:09:24 PM INFO: Player ready: IA
+12/31/2021 06:09:27 PM INFO: Connected by: ('127.0.0.1', 62525)
+12/31/2021 06:09:27 PM INFO: Player connected: Uri
+12/31/2021 06:09:29 PM INFO: Player ready: Uri
+12/31/2021 06:09:29 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:09:29 PM INFO: Ok, let's start the game!
+12/31/2021 06:09:31 PM INFO: Showing hand to: Uri
+12/31/2021 06:09:35 PM INFO: Showing hand to: IA
+12/31/2021 06:09:37 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2]
+12/31/2021 06:09:39 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:09:39 PM INFO: Giving 1 free note token.
+12/31/2021 06:09:41 PM INFO: Showing hand to: IA
+12/31/2021 06:09:41 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 06:09:59 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:09:59 PM INFO: Giving 1 free note token.
+12/31/2021 06:10:01 PM INFO: Showing hand to: IA
+12/31/2021 06:10:08 PM INFO: Showing hand to: Uri
+12/31/2021 06:10:33 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 2]
+12/31/2021 06:10:35 PM INFO: Showing hand to: IA
+12/31/2021 06:10:35 PM INFO: Player: IA: card 4 discarded successfully
+12/31/2021 06:11:42 PM INFO: Closing the server...
+12/31/2021 06:11:43 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:11:48 PM INFO: Connected by: ('127.0.0.1', 62542)
+12/31/2021 06:11:48 PM INFO: Player connected: IA
+12/31/2021 06:11:51 PM INFO: Player ready: IA
+12/31/2021 06:11:56 PM INFO: Connected by: ('127.0.0.1', 62545)
+12/31/2021 06:11:56 PM INFO: Player connected: Uri
+12/31/2021 06:11:58 PM INFO: Player ready: Uri
+12/31/2021 06:11:58 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:11:58 PM INFO: Ok, let's start the game!
+12/31/2021 06:12:00 PM INFO: Showing hand to: Uri
+12/31/2021 06:12:04 PM INFO: Showing hand to: IA
+12/31/2021 06:12:06 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 06:12:08 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:12:08 PM INFO: Giving 1 free note token.
+12/31/2021 06:12:10 PM INFO: Showing hand to: IA
+12/31/2021 06:12:10 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 06:12:19 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:12:19 PM INFO: Giving 1 free note token.
+12/31/2021 06:12:21 PM INFO: Showing hand to: IA
+12/31/2021 06:12:31 PM INFO: Showing hand to: Uri
+12/31/2021 06:12:43 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 1]
+12/31/2021 06:12:45 PM INFO: Showing hand to: IA
+12/31/2021 06:12:45 PM INFO: Player: IA: card 14 discarded successfully
+12/31/2021 06:13:36 PM INFO: Closing the server...
+12/31/2021 06:13:37 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:13:42 PM INFO: Connected by: ('127.0.0.1', 62589)
+12/31/2021 06:13:42 PM INFO: Player connected: IA
+12/31/2021 06:13:42 PM INFO: Player ready: IA
+12/31/2021 06:13:45 PM INFO: Connected by: ('127.0.0.1', 62591)
+12/31/2021 06:13:45 PM INFO: Player connected: Uri
+12/31/2021 06:13:48 PM INFO: Player ready: Uri
+12/31/2021 06:13:48 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:13:48 PM INFO: Ok, let's start the game!
+12/31/2021 06:13:52 PM INFO: Showing hand to: Uri
+12/31/2021 06:13:53 PM INFO: Showing hand to: IA
+12/31/2021 06:13:55 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 3]
+12/31/2021 06:14:04 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:14:04 PM INFO: Giving 1 free note token.
+12/31/2021 06:14:13 PM INFO: Showing hand to: IA
+12/31/2021 06:14:13 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2]
+12/31/2021 06:15:06 PM INFO: Closing the server...
+12/31/2021 06:15:08 PM INFO: Hanabi server started on 127.0.0.1:1024
+12/31/2021 06:15:11 PM INFO: Connected by: ('127.0.0.1', 62609)
+12/31/2021 06:15:11 PM INFO: Player connected: IA
+12/31/2021 06:15:12 PM INFO: Player ready: IA
+12/31/2021 06:15:14 PM INFO: Connected by: ('127.0.0.1', 62610)
+12/31/2021 06:15:14 PM INFO: Player connected: Uri
+12/31/2021 06:15:16 PM INFO: Player ready: Uri
+12/31/2021 06:15:16 PM INFO: Game start! Between: ['IA', 'Uri']
+12/31/2021 06:15:16 PM INFO: Ok, let's start the game!
+12/31/2021 06:15:17 PM INFO: Showing hand to: Uri
+12/31/2021 06:15:19 PM INFO: Showing hand to: IA
+12/31/2021 06:15:21 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 2, 3]
+12/31/2021 06:15:29 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:15:29 PM INFO: Giving 1 free note token.
+12/31/2021 06:15:30 PM INFO: Showing hand to: IA
+12/31/2021 06:15:30 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 2]
+12/31/2021 06:15:45 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:15:45 PM INFO: Giving 1 free note token.
+12/31/2021 06:15:48 PM INFO: Showing hand to: IA
+12/31/2021 06:15:48 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1]
+12/31/2021 06:15:53 PM INFO: Uri: card played and correctly put on the table
+12/31/2021 06:15:53 PM INFO: Giving 1 free note token.
+12/31/2021 06:15:58 PM INFO: Showing hand to: Uri
+12/31/2021 06:16:02 PM INFO: Showing hand to: IA
+12/31/2021 06:16:02 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+12/31/2021 06:16:23 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 1, 2, 3, 4]
+12/31/2021 06:16:25 PM INFO: Showing hand to: IA
+12/31/2021 06:16:49 PM INFO: Showing hand to: Uri
+12/31/2021 06:17:11 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [4]
+12/31/2021 06:17:31 PM INFO: Showing hand to: Uri
+12/31/2021 06:18:02 PM INFO: Game over, people.
+12/31/2021 06:18:02 PM INFO: Please, close the server now
+12/31/2021 06:18:02 PM INFO: Score: 0; message: Booooooooooooring!

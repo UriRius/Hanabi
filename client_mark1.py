@@ -35,6 +35,42 @@ players=[]
 p_names=[]
 waitUntil=False
 
+#new functions
+
+#this method is used to remove the used hints 
+#ALERTA BUGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NOMES FA REMOVE DE LES SEVES PISTES I LA POT LIAR BORRANT LA D'ALTRES JUGADORS
+def updateHintsRecived(cardOrder):
+    for val in hintsRecieved:
+        if cardOrder < hintsRecieved[val].split(" ")[0]:
+            pos = hintsRecieved[val].split(" ")[0] - 1 
+        else:
+            pos = hintsRecieved[val].split(" ")[0]
+        valor = hintsRecieved[val].split(" ")[1]  
+        jugador = hintsRecieved[val].split(" ")[2]  
+        hintsRecieved.pop(val)
+        hintsRecieved.append(pos + " " + valor + " "+ jugador)
+
+#this method is used to know if the IA has some clues for it
+def pistesForIA():
+    hints=False
+    print("te pistes la IA?")
+    i = 0
+
+    for h in hintsRecieved:
+        print("iteracio num: ", h)
+        print("valor de la i:", i)
+        jugador = hintsRecieved[i].split(" ")[2]
+        print("jugador: ", jugador)
+        print("playerName: ", playerName)
+        if jugador == playerName:
+            hints = True
+        i=i+1
+    
+    print("PISTES: ",hints)
+    return hints
+
+
+
 def manageInput():
     global run
     global status
@@ -59,26 +95,28 @@ def manageInput():
                     #We request the show action everytime we play
                     showDone=False
                     s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-                    print("Vaig a dormir")
+                    #we have to sleep to get the response before doing anything
                     while waitUntil == False:
                         time.sleep(2)
-                    print("Ja he dormit prou")
                     
                 try:
-                    print("despres de dormir fem aixo")
-                    if not hintsRecieved:
+                    
+                    hintsForIA = pistesForIA()
+                    print("sortim de la funcio de pistes")
+                    if not hintsForIA:
+                        print("no te pistes no")
                         has_ones = False
                         for p in players:
-                            #We check the hand ofevery player
+                            #We check the hand of every player
                             if first:
                                 first=False
                                 p_names.append(p.name)
-                            print(p.name) 
+
                             for c in p.hand:
                                 valor = c.toString().split(" ")[3]
                                 if valor == "1;":
+                                    print("L'altre te uns")
                                     has_ones = True
-                                print(c.toString())
                         
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR PISTA A DONAR!!!!!!!!!!!!
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A DESCARTAR!!!!!!!!
@@ -86,12 +124,15 @@ def manageInput():
                         if has_ones:
                             s.send(GameData.ClientHintData(playerName, p_names[0], "value", 1).serialize())
                         else:
+                            print("no hi han uns")
                             if UsedTokens=="0":
-                                #play random
+                                print("jugem")
+                                #play first
                                 s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
 
                             else:
-                                #discar random
+                                print("descartem")
+                                #discard first
                                 s.send(GameData.ClientPlayerDiscardCardRequest(playerName, 0).serialize())
 
                     else: 
@@ -102,8 +143,9 @@ def manageInput():
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A JUGAR!!!!!!!!!!!!
                         acceptable = False
                         i = 0
-
-                        while not acceptable or i == len(hintsRecieved): 
+                        print("si tenim pistes")
+                        print("len de hints es :", len(hintsRecieved))
+                        while not acceptable and i < len(hintsRecieved): 
                             jugador = hintsRecieved[i].split(" ")[2]
                             if jugador == playerName:
                                 position = hintsRecieved[i].split(" ")[0]
@@ -115,11 +157,14 @@ def manageInput():
                                 updateHintsRecived(cardOrder)
                                 acceptable = True
                                 showDone=True
-                            else:
-                                ++i
+                                break
+                            i=i+1
+                        print("SALIIIIIMOOOOO")
+
+                        #ALERTA BUGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COM LLEGIM LES PISTES DE TOTS ELS JUGADORS ENTREM AQUI I NO HAURIEM
 
                 except:
-                    print("Ups problemita, hem fallat en algo OwO")
+                    print("Ups problemita, hem fallat en algo 0w0")
                     continue
         stdout.flush()
 
@@ -210,14 +255,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Unknown or unimplemented data type: " +  str(type(data)))
         print("[" + playerName + " - " + status + "]: ", end="")
         stdout.flush()
-
-def updateHintsRecived(cardOrder):
-    for val in hintsRecieved:
-        if cardOrder < hintsRecieved[val].split(" ")[0]:
-            pos = hintsRecieved[val].split(" ")[0] - 1 
-        else:
-            pos = hintsRecieved[val].split(" ")[0]
-        valor = hintsRecieved[val].split(" ")[1]  
-        jugador = hintsRecieved[val].split(" ")[2]  
-        hintsRecieved.pop(val)
-        hintsRecieved.append(pos + " " + valor + " "+ jugador)
