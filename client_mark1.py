@@ -9,6 +9,15 @@ import os
 import time
 
 
+"""TODO
+   - ARREGLAR ELS BUGS QUE HI HAGI
+   - ES BORRA DUES VEGADES LA CARTA DEL HINTSRECIEVED
+   - CANVIAR TOT EL QUE SON HINTSRECIEVE - HINSTFORIA
+   - BORRAR PISTES D'ALTRES JUGADORS QUE JA S'HAGIN JUGAT
+   - ALGORITME PER JUGAR
+   - ALGORITME PER DESCARTAR
+   - ALGORITME PER DONAR PISTA"""
+
 if len(argv) < 4:
     print("You need the player name to start the game.")
     #exit(-1)
@@ -30,6 +39,7 @@ hintState = ("", "")
 
 #new variables
 hintsRecieved = []
+hintsForIA = []
 UsedTokens = ""
 players=[]
 p_names=[]
@@ -40,36 +50,18 @@ waitUntil=False
 #this method is used to remove the used hints 
 #ALERTA BUGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NOMES FA REMOVE DE LES SEVES PISTES I LA POT LIAR BORRANT LA D'ALTRES JUGADORS
 def updateHintsRecived(cardOrder):
+    print("anem a liarla canviant coses")
     for val in hintsRecieved:
         if cardOrder < hintsRecieved[val].split(" ")[0]:
+            print("aqui cardOrder < hintRecived")
             pos = hintsRecieved[val].split(" ")[0] - 1 
         else:
+            print("aqui cardOrder >= hintRecived")
             pos = hintsRecieved[val].split(" ")[0]
         valor = hintsRecieved[val].split(" ")[1]  
         jugador = hintsRecieved[val].split(" ")[2]  
         hintsRecieved.pop(val)
         hintsRecieved.append(pos + " " + valor + " "+ jugador)
-
-#this method is used to know if the IA has some clues for it
-def pistesForIA():
-    hints=False
-    print("te pistes la IA?")
-    i = 0
-
-    for h in hintsRecieved:
-        print("iteracio num: ", h)
-        print("valor de la i:", i)
-        jugador = hintsRecieved[i].split(" ")[2]
-        print("jugador: ", jugador)
-        print("playerName: ", playerName)
-        if jugador == playerName:
-            hints = True
-        i=i+1
-    
-    print("PISTES: ",hints)
-    return hints
-
-
 
 def manageInput():
     global run
@@ -89,7 +81,8 @@ def manageInput():
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
                 
-                print("Totes les pistes fins ara: ", hintsRecieved)
+                print("Totes les pistes fins ara dels jugadors: ", hintsRecieved)
+                print("Totes les pistes fins ara per la IA: ", hintsForIA)
 
                 if showDone:
                     #We request the show action everytime we play
@@ -101,8 +94,6 @@ def manageInput():
                     
                 try:
                     
-                    hintsForIA = pistesForIA()
-                    print("sortim de la funcio de pistes")
                     if not hintsForIA:
                         print("no te pistes no")
                         has_ones = False
@@ -115,7 +106,6 @@ def manageInput():
                             for c in p.hand:
                                 valor = c.toString().split(" ")[3]
                                 if valor == "1;":
-                                    print("L'altre te uns")
                                     has_ones = True
                         
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR PISTA A DONAR!!!!!!!!!!!!
@@ -141,27 +131,17 @@ def manageInput():
                         #posem aqui la primera pista rebuda
 
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A JUGAR!!!!!!!!!!!!
-                        acceptable = False
-                        i = 0
+                     
                         print("si tenim pistes")
-                        print("len de hints es :", len(hintsRecieved))
-                        while not acceptable and i < len(hintsRecieved): 
-                            jugador = hintsRecieved[i].split(" ")[2]
-                            if jugador == playerName:
-                                position = hintsRecieved[i].split(" ")[0]
-                                value = hintsRecieved[i].split(" ")[1]
-                                print("el primer esta a la pos " + position + " i es " + value)
-                                cardOrder = int(position)
-                                s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
-                                hintsRecieved.pop(i)
-                                updateHintsRecived(cardOrder)
-                                acceptable = True
-                                showDone=True
-                                break
-                            i=i+1
-                        print("SALIIIIIMOOOOO")
-
-                        #ALERTA BUGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COM LLEGIM LES PISTES DE TOTS ELS JUGADORS ENTREM AQUI I NO HAURIEM
+                        print("len de hints es :", len(hintsForIA))
+                     
+                        position = hintsForIA[0].split(" ")[0]
+                        value = hintsForIA[0].split(" ")[1]
+                        print("el primer esta a la pos " + position + " i es " + value)
+                        cardOrder = int(position)
+                        s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
+                        hintsForIA.pop(0)
+                        showDone=True
 
                 except:
                     print("Ups problemita, hem fallat en algo 0w0")
@@ -227,6 +207,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         if type(data) is GameData.ServerPlayerMoveOk:
             #Hem jugat bé una carta
             dataOk = True
+            print("Card played: " +  str(data.card.value)+ " " + str(data.card.color))
+            print("Played by: " +  str(data.lastPlayer))
             print("Nice move!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerThunderStrike:
@@ -239,7 +221,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
             for i in data.positions:
-                hintsRecieved.append(str(i) + " " + str(data.value) + " "+ str(data.destination))
+                if str(data.destination) != playerName:
+                    hintsRecieved.append(str(i) + " " + str(data.value) + " "+ str(data.destination))
+                else:
+                    hintsForIA.append(str(i) + " " + str(data.value) + " "+ str(data.destination))
                 print("\t" + str(i))
         if type(data) is GameData.ServerInvalidDataReceived:
             dataOk = True
