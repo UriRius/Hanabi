@@ -10,6 +10,9 @@ import time
 
 
 """TODO
+   - TENIR CONTROLADES LES CARTES QUE SON PISTA, LES JUGADES I LES DESCARTADES
+   - FER BE EL UPDATE DE LES CARTES JUGADES PER ALTRES
+   - NO TORNAR A DONAR PISTES JA DONADES!!!!!!!
    - ARREGLAR ELS BUGS QUE HI HAGI
    - ES BORRA DUES VEGADES LA CARTA DEL HINTSRECIEVED
    - CANVIAR TOT EL QUE SON HINTSRECIEVE - HINSTFORIA
@@ -46,22 +49,43 @@ p_names=[]
 waitUntil=False
 
 #new functions
+"""This function is used to update the new hints that every player recives"""
+def updateHintsRecived(NewHint):
+    print("Fent update per tothom")
+    print("Totes les pistes fins ara dels jugadors: ", hintsRecieved)
 
-#this method is used to remove the used hints 
-#ALERTA BUGS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NOMES FA REMOVE DE LES SEVES PISTES I LA POT LIAR BORRANT LA D'ALTRES JUGADORS
-def updateHintsRecived(cardOrder):
-    print("anem a liarla canviant coses")
+    if NewHint in hintsRecieved:
+        print("Ja tenim aquesta pista")
+    else:
+        hintsRecieved.append(NewHint)
+
+"""This function is used to remove the hint a player played/discard"""
+def RemoveHint(RemHint):
+    print("Fent remove per tothom")
+    print("Totes les pistes fins ara dels jugadors: ", hintsRecieved)
+
+    cardIndex = RemHint.split(" ")[0]
+    jugador = RemHint.split(" ")[1]
+
     for val in hintsRecieved:
-        if cardOrder < hintsRecieved[val].split(" ")[0]:
-            print("aqui cardOrder < hintRecived")
-            pos = hintsRecieved[val].split(" ")[0] - 1 
-        else:
-            print("aqui cardOrder >= hintRecived")
-            pos = hintsRecieved[val].split(" ")[0]
-        valor = hintsRecieved[val].split(" ")[1]  
-        jugador = hintsRecieved[val].split(" ")[2]  
-        hintsRecieved.pop(val)
-        hintsRecieved.append(pos + " " + valor + " "+ jugador)
+        HRcardIndex = val.split(" ")[0]
+        HRjugador = val.split(" ")[2]
+        if HRcardIndex == cardIndex and HRjugador == jugador:
+            print("La pista es pot borrar")
+            valIndex = hintsRecieved.index(val)
+            hintsRecieved.pop(valIndex)
+            #Fer el update de indexos de tota la resta de la llista
+    print("Sortim de la borramenta")
+
+
+def updateHintsForIA(NewHint):
+    print("Fent update per la IA")
+    print("Totes les pistes fins ara per la IA: ", hintsForIA)
+
+    if NewHint in hintsForIA:
+        print("Ja tenim aquesta pista")
+    else:
+        hintsForIA.append(NewHint)
 
 def manageInput():
     global run
@@ -128,7 +152,6 @@ def manageInput():
                     else: 
                         #La IA ha rebut pistes
                         #cada pista te el seguent format: (posicio, valor, jugador)
-                        #posem aqui la primera pista rebuda
 
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A JUGAR!!!!!!!!!!!!
                      
@@ -202,6 +225,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print(data.message)
         if type(data) is GameData.ServerActionValid:
             dataOk = True
+            print("Card played Valid: " +  str(data.card.value)+ " " + str(data.card.color))
+            print("Played by Valid: " +  str(data.lastPlayer))
+            RemHint = (str(data.cardHandIndex) + " " + str(data.lastPlayer))
+            RemoveHint(RemHint)
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
@@ -209,11 +236,16 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("Card played: " +  str(data.card.value)+ " " + str(data.card.color))
             print("Played by: " +  str(data.lastPlayer))
+            RemHint = (str(data.cardHandIndex) + " " + str(data.lastPlayer))
+            RemoveHint(RemHint)
+            print("Action valid!")
             print("Nice move!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerThunderStrike:
             #Hem jugat malament una carta
             dataOk = True
+            print("Card played OH NO: " +  str(data.card.value)+ " " + str(data.card.color))
+            print("Played by OH NO: " +  str(data.lastPlayer))
             print("OH NO! The Gods are unhappy with you!")
         if type(data) is GameData.ServerHintData:
             #Aqui es reben les pistes
@@ -221,10 +253,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
             for i in data.positions:
+                NewHint = (str(i) + " " + str(data.value) + " "+ str(data.destination))
                 if str(data.destination) != playerName:
-                    hintsRecieved.append(str(i) + " " + str(data.value) + " "+ str(data.destination))
+                    updateHintsRecived(NewHint)
                 else:
-                    hintsForIA.append(str(i) + " " + str(data.value) + " "+ str(data.destination))
+                    updateHintsForIA(NewHint)
                 print("\t" + str(i))
         if type(data) is GameData.ServerInvalidDataReceived:
             dataOk = True
