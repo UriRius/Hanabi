@@ -2,6 +2,7 @@ import os
 import GameData
 import socket
 from game import Game
+from game import Player
 import threading
 from constants import *
 import logging
@@ -98,13 +99,14 @@ def manageConnection(conn: socket, addr):
                             playerConnections[id][0].send(multipleData.serialize())
                             if game.isGameOver():
                                 logging.info("Game over")
-                                logging.info("Game score: " + game.getScore())
+                                logging.info("Game score: " + str(game.getScore()))
                                 #os._exit(0)
                                 players = game.getPlayers()
                                 game = Game()
                                 for player in players:
                                     logging.info("Starting new game")
-                                    game.addPlayer(player)
+                                    game.addPlayer(player.name)
+                                game.start()
             mutex.release()
 
 

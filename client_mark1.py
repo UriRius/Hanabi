@@ -8,16 +8,6 @@ from constants import *
 import os
 import time
 
-
-"""TODO
-   - TENIR CONTROLADES LES CARTES QUE SON PISTA, LES JUGADES I LES DESCARTADES
-   - NO TORNAR A DONAR PISTES JA DONADES!!!!!!!
-   - ARREGLAR ELS BUGS QUE HI HAGI
-   - BORRAR PISTES BE LES PISTES JUGADES DELS PLAYERS
-   - ALGORITME PER JUGAR
-   - ALGORITME PER DESCARTAR
-   - ALGORITME PER DONAR PISTA"""
-
 if len(argv) < 4:
     print("You need the player name to start the game.")
     #exit(-1)
@@ -38,10 +28,19 @@ status = statuses[0]
 hintState = ("", "")
 
 #new variables
+
+#For each card in hand there is going to be 3 attributes, the value (default 0), the color (default None) and a Tagç
+#with values Res, jugable, descartable, perillosa, perillosajugable
+Hand = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+Color = [["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"],
+["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"]]
+Valors = [["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],]
 hintsRecieved = []
 hintsForIA = []
 UsedTokens = ""
 players=[]
+PlayedCards= []
+DiscartedCards= []
 p_names=[]
 waitUntil=False
 
@@ -122,32 +121,63 @@ def addHintsForIA(NewHint):
     else:
         hintsForIA.append(NewHint)
 
-def TagPlayersHands():
-    #for cada jugador
-        #descarregar ma
-        #for cada carta en la ma
-            #mirar si perillosa
-            #if perillosa
-                #marcar
-            #mirar si perillosa&jugable
-            #if perillosa&jugable
-                #marcar
-            #mirar si jugable
-            #if jugable
-                #marcar
-            #mirar si descartable
-            #if descartable
-                #marcar
-            #else
-                #marcar com RES
-    return True
+def isDangerous(value, color):
+    if value == "5":
+        return True
+    elif value == "1":
+        discard = "Card "+ value + " - " + color
+        if DiscartedCards.count(discard) > 1: return True
+        else: return False
+    else:
+        discard = "Card "+ value + " - " + color
+        if discard in DiscartedCards: return True
+        else: return False
 
-def TagIAHand():
-    #descarregar ma
-    #for cada carta en la ma
-        #mirar pistes
-        #marcar en consequencia
-    return True
+def isJugable(value, color):
+    carta = "Card "+ value + " - " + color
+    if carta in PlayedCards:
+        return False
+    for c in PlayedCards:
+        val = c.split(" ")[1]
+        col = c.split(" ")[3]
+        value = int(value) - 1
+        if val == str(value) and color == col:
+            return True
+
+def isJugaPerill(value, color):
+    return isJugable(value, color) and isDangerous(value,color)
+
+def isDescartable(value, color):
+    carta = "Card "+ value + " - " + color
+    if carta in PlayedCards:
+        return True
+    for c in DiscartedCards:
+        val = c.split(" ")[1]
+        col = c.split(" ")[3]
+        if val == "1" and col == color and DiscartedCards.count(c) == 3: return True
+        if int(val) < int(value) and col == color and DiscartedCards.count(c) == 2: return True
+    return False
+    
+def TagHand(ma):
+    i = 0
+    for card in ma:
+        value = card.split(" ")[0]
+        color = card.split(" ")[1]
+        
+        if isDangerous(value , color):
+            tag = "perillosa"
+        elif isJugaPerill(value, color):
+            tag = "perillosajugable"
+        elif isJugable(value, color):
+            tag = "jugable"
+        elif isDescartable(value, color):
+            tag = "descartable"
+        else:
+            tag = "Res"
+        
+        carta = value + " " + color + " " + tag
+        ma[i] = carta
+        i += 1
 
 def BestMove():
     solution = "discard 0"
@@ -239,7 +269,7 @@ def manageInput():
                         #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A DESCARTAR!!!!!!!!
                         showDone=True
                         if has_ones:
-                            s.send(GameData.ClientHintData(playerName, p_names[0], "value", 1).serialize())
+                            s.send(GameData.ClientHintData(playerName, p_names[1], "value", 1).serialize())
                         else:
                             print("no hi han uns")
                             if UsedTokens=="0":
@@ -314,10 +344,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             for pos in data.tableCards:
                 print(pos + ": [ ")
                 for c in data.tableCards[pos]:
+                    #AQUI ES PODEN AGAFAR LES CARTES JUGADES
+                    PlayedCards.append[c.toClientString()]
                     print(c.toClientString() + " ")
                 print("]")
             print("Discard pile: ")
             for c in data.discardPile:
+                DiscartedCards.append[c.toClientString()]
                 print("\t" + c.toClientString())           
             UsedTokens=str(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
