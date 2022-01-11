@@ -122,6 +122,73 @@ def addHintsForIA(NewHint):
     else:
         hintsForIA.append(NewHint)
 
+def TagPlayersHands():
+    #for cada jugador
+        #descarregar ma
+        #for cada carta en la ma
+            #mirar si perillosa
+            #if perillosa
+                #marcar
+            #mirar si perillosa&jugable
+            #if perillosa&jugable
+                #marcar
+            #mirar si jugable
+            #if jugable
+                #marcar
+            #mirar si descartable
+            #if descartable
+                #marcar
+            #else
+                #marcar com RES
+    return True
+
+def TagIAHand():
+    #descarregar ma
+    #for cada carta en la ma
+        #mirar pistes
+        #marcar en consequencia
+    return True
+
+def BestMove():
+    solution = "discard 0"
+    #if queden tokens blaus
+        #'descarregar' mans dels altres jugadors amb les seves hot cards
+        #if tenen perilloses
+            #return avisar de perilloses
+        #elif tenen perilloses&jugables 
+            #return avisar de perilloses&jugables
+        #elif puc jugar 100% segur
+            #return jugar 100%
+        #elif tenen jugables
+            #return avisar jugables
+        #elif puc jugar 50% segur
+            #return jugar 50%
+        #elif puc descartar 100%
+            #return descartar 100%
+        #elif tenen descartables
+            #return avisar descartables
+        #elif puc descartar 50%
+            #return descartar 50%
+        #elif tinc algunes etiquetes posades
+            #return descartar RES
+        #else
+            #return descartar random
+    #else
+        #if puc descartar 100%
+            #return descartar 100%
+        #elif puc jugar 100% segur
+            #return jugar 100%
+        #elif puc jugar 50% segur
+            #return jugar 50%
+        #elif puc descartar 50%
+            #return descartar 50%
+        #elif tinc algunes etiquetes posades
+            #return descartar RES
+        #else
+            #return descartar random
+
+    return solution            
+
 def manageInput():
     global run
     global status
@@ -306,7 +373,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print(data.score)
             print(data.scoreMessage)
             stdout.flush()
-            run = False
+            #run = False
+            print("Ready for a new game!")
         if not dataOk:
             print("Unknown or unimplemented data type: " +  str(type(data)))
         print("[" + playerName + " - " + status + "]: ", end="")
