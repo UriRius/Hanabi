@@ -29,79 +29,105 @@ hintState = ("", "")
 
 #new variables
 
-#For each card in hand there is going to be 3 attributes, the value (default 0), the color (default None) and a Tag
+#For each card in hand there is going to be 3 attributes, the value (default 0), the color (default None) and a Tagç
 #with values Res, jugable, descartable, perillosa, perillosajugable
 Hand = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+Color = [["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"],
+["red", "yellow", "green", "blue", "white"],["red", "yellow", "green", "blue", "white"]]
+Valors = [["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"],["1", "2", "3", "4", "5"]]
 hintsRecieved = []
 hintsForIA = []
 UsedTokens = ""
-Players=[]
+players=[]
 PlayedCards= []
 DiscartedCards= []
 p_names=[]
 waitUntil=False
 
 #new functions
-"""This function is used to remove the hint played/discard"""
-def RemoveHint(RemHint):
-    cardIndex = RemHint.split(" ")[0]
+"""This function is used to update the new hints that every player recives"""
+def addHintsRecived(NewHint):
+    if NewHint in hintsRecieved:
+        print("Ja tenim aquesta pista")
+    else:
+        print("aquesta pista l'agefim " + NewHint)
+        hintsRecieved.append(NewHint)
 
-    start= int(cardIndex)-1
-    for i in range(start, 0, -1):
-        Hand[i+1] = Hand[i]
-    Hand[0]=["0", "None", "Res"]
+"""This function is used to remove the hint a the IA or a player played/discard"""
+def RemoveHint(RemHint):
+    
+    print("Totes les pistes fins ara dels jugadors: ", hintsRecieved)
+    print("Totes les pistes fins ara per la IA: ", hintsForIA)
+
+    cardIndex = RemHint.split(" ")[0]
+    jugador = RemHint.split(" ")[1]
+    
+    #if the player is not the IA remove from the list hints Recived
+    if jugador != playerName:
+
+        for val in hintsRecieved:
+            HRcardIndex = val.split(" ")[0]
+            HRjugador = val.split(" ")[2]
+            if HRcardIndex == cardIndex and HRjugador == jugador:
+                print("La pista es pot borrar pel jugador , index:", cardIndex)
+                valIndex = hintsRecieved.index(val)
+                hintsRecieved.pop(valIndex)
+
+                tmp = hintsRecieved
+                for b in tmp:
+                    position = b.split(" ")[0]
+                    tipus = b.split(" ")[1]
+                    jg = b.split(" ")[2]
+
+                    hintsRecieved.pop(0)
+
+                    if HRcardIndex < position and jg == jugador:
+                        newPos = int(position) - 1 
+                        hintsRecieved.append(str(newPos) + " " + tipus + " "+ jg)
+                    else:
+                        hintsRecieved.append(position + " " + tipus + " "+ jg)
+    else:
+        for val in hintsForIA:
+            HRcardIndex = val.split(" ")[0]
+
+            if HRcardIndex == cardIndex:
+                print("La pista es pot borrar per la IA, index:", cardIndex)
+                valIndex = hintsForIA.index(val)
+                hintsForIA.pop(valIndex)
+
+                tmp = hintsForIA
+                for b in tmp:
+                    position = b.split(" ")[0]
+                    tipus = b.split(" ")[1]
+
+                    hintsForIA.pop(0)
+
+                    if HRcardIndex < position:
+                        newPos = int(position) - 1 
+                        hintsForIA.append(str(newPos) + " " + tipus)
+                    else:
+                        hintsForIA.append(position + " " + tipus)
+
+    
     print("Sortim de la borramenta")
 
 
 def addHintsForIA(NewHint):
-    card = Hand[0]
-    value = card[0]
-    color = card[1]
-    tag = card[2]
-
+    print("Fent update per la IA")
+    print("Totes les pistes fins ara per la IA: ", hintsForIA)
+    
     cardposition = NewHint.split(" ")[0]
     cardvalue = NewHint.split(" ")[1]
 
-    nums = ["1", "2", "3", "4", "5"]
-    if cardvalue in nums:
-        Hand[cardposition] = cardvalue + " " + color + " " + tag
+    if NewHint in hintsForIA:
+        print("Ja tenim aquesta pista")
     else:
-        Hand[cardposition] = value + " " + cardvalue + " " + tag
-    
-    TagHand(Hand)
-
-def most_frequent(List):
-    return max(set(List), key = List.count)
-
-def HotCards():
-    valors = []
-    colors = []
-    HotValue = "0"
-    HotColor = "black"
-    if DiscartedCards:
-        for c in DiscartedCards:
-            cardvalue = c.split(" ")[1]
-            valors.append(cardvalue)
-            cardcolor = c.split(" ")[3]
-            colors.append(cardcolor)
-
-        HotColor = most_frequent(colors)
-        HotValue = most_frequent(valors)
-    return HotValue + " " + HotColor
+        hintsForIA.append(NewHint)
 
 def isDangerous(value, color):
     #This function returns True if discarting the card is dangerous
-    Hots = HotCards()
-    HotValue = Hots.split(" ")[0]
-    HotColor = Hots.split(" ")[0]
-
-    #it's a 5
     if value == "5":
         return True
-    #it's the most frequent descarted color/value
-    elif value == HotValue or color == HotColor:
-        return True
-    #it's a between 1 and 4 and the other cards with same value & color had been discarted
     elif value == "1":
         discard = "Card "+ value + " - " + color
         if DiscartedCards.count(discard) > 1: return True
@@ -114,10 +140,8 @@ def isDangerous(value, color):
 def isJugable(value, color):
     #This function returns True if playing the card is save
     carta = "Card "+ value + " - " + color
-    #the card has been played
     if carta in PlayedCards:
         return False
-    #card below has been played
     for c in PlayedCards:
         val = c.split(" ")[1]
         col = c.split(" ")[3]
@@ -132,10 +156,8 @@ def isJugaPerill(value, color):
 def isDescartable(value, color):
     #This function returns True if discarting the card is save
     carta = "Card "+ value + " - " + color
-    #the card has been played
     if carta in PlayedCards:
         return True
-    #inferior card had been discarted
     for c in DiscartedCards:
         val = c.split(" ")[1]
         col = c.split(" ")[3]
@@ -143,20 +165,6 @@ def isDescartable(value, color):
         if int(val) < int(value) and col == color and DiscartedCards.count(c) == 2: return True
     return False
     
-def evaluaCarta(value, color):
-    if isJugaPerill(value, color):
-        tag = "perillosajugable"
-    elif isDescartable(value, color):
-        tag = "descartable"
-    elif isJugable(value, color):
-        tag = "jugable"
-    elif isDangerous(value , color):
-        tag = "perillosa"
-    else:
-        tag = "Res"
-    return tag
-        
-
 def TagHand(ma):
     #This function changes the tag for every card in a given hand
     i = 0
@@ -164,149 +172,68 @@ def TagHand(ma):
         value = card.split(" ")[0]
         color = card.split(" ")[1]
         
-        tag = evaluaCarta(value, color)
-
+        if isDangerous(value , color):
+            tag = "perillosa"
+        elif isJugaPerill(value, color):
+            tag = "perillosajugable"
+        elif isJugable(value, color):
+            tag = "jugable"
+        elif isDescartable(value, color):
+            tag = "descartable"
+        else:
+            tag = "Res"
+        
         carta = value + " " + color + " " + tag
         ma[i] = carta
         i += 1
 
-def downloadPlayersHandsTag():
-    PlayersHands = [[0 for i in range(len(Players)-1)]] * 6 #-> [[0],[0],[0],[0],[0],[0]]
-    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ALERTA BUGS
-    i = 0
-    for p in  Players:
-        if p.name != playerName:
-            PlayersHands[i][0] = str(p.name)
-            j = 1
-            for c in p.hand:
-                if not PlayersHands:
-                    print("esta buit")
-                print("i: " + str(i) + ", j: " + str(j))
-                value = c.toClientString().split(" ")[1]
-                color = c.toClientString().split(" ")[3]
-                tag = evaluaCarta(value, color)
-                PlayersHands[i][j] = tag
-                j += 1
-        i += 1
-    return PlayersHands
-
-def SearchPosition(player, position):
-    #which card has the player in the given position
-    for p in  Players:
-        if p.name != player:
-            c=p.hand[position]
-    return c
-    
-def getPlayerHand(player):
-    hand = []
-    for p in  Players:
-        if p.name != player:
-            for c in p.hand:
-                value = c.toClientString().split(" ")[1]
-                color = c.toClientString().split(" ")[3]
-                hand.append(value)
-                hand.append(color)
-    return hand
-
-def Value_Color(player, card):
-    pista = []
-    value = card.split(" ")[0]
-    color = card.split(" ")[1]
-    hand = getPlayerHand(player)
-    valueCounter = hand.count(value)
-    colorCounter = hand.count(color)
-    if colorCounter >= valueCounter:
-        pista.append("value")
-        pista.append(value)
-    else:
-        pista.append("color")
-        pista.append(color)
-    return pista
-
-
 def BestMove():
-    #final solution
-    solution = "10 play 0"
-    #solution for every player that will be evaluated later
-    semisolution = [11] * len(Players)
-    #we still can give hints
-    if UsedTokens != "8":
-        PlayersHands=downloadPlayersHandsTag() #format -> [[Player_name, tag, tag, tag, tag, tag], [....]]
-        L = len(PlayersHands)
-        for i in range(L):
-            player = PlayersHands[i][0]
-            for j in range(1, 6):
-                c = PlayersHands[i][j]
-                hand_tag = Hand[i][3]
-                card=SearchPosition(player, j-1)
-                q1 = semisolution[i].split(" ")[0]
-                if "perillosa" == c:
-                    if int(q1) > 0:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "0 " + "hint " + pista[0] + player + pista[1]
-                elif "perillosajugable" == c:
-                    if int(q1) > 1:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "1 "+"hint " + pista[0] + player + pista[1]
-                elif "jugable" == hand_tag:
-                    if int(q1) > 2:
-                        semisolution[i] = "2 "+"play " + str(i)
-                elif "jugable" == c:
-                    if int(q1) > 3:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "3 "+"hint " + pista[0] + player + pista[1]
-                if "descartable" == hand_tag and UsedTokens != "0":
-                    if int(q1) > 4:
-                        semisolution[i] = "4 "+"discard " + str(i)
-                elif "descartables" == c:
-                    if int(q1) > 5:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "5 "+"hint " + pista[0] + player + pista[1]
-                elif "Res" == hand_tag and UsedTokens != "0":
-                    if int(q1) > 6:
-                        semisolution[i] = "6 "+"discard " + str(i)
-                else:
-                    if int(q1) > 7:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "7 "+"hint " + pista[0] + player + pista[1]
-                
-    else:
-        L = len(Hand)
-        for i in range(L):
-            c = Hand[i][3]
-            q1 = semisolution[i].split(" ")[0]
-            if "descartable" == c and UsedTokens != "0":
-                if int(q1) > 0:
-                    semisolution[i] = "0 "+"discard " + str(i)
-            elif "jugable" == c:
-                if int(q1) > 1:
-                    semisolution[i] = "1 "+ "play " + str(i)
-            elif "Res" == c and UsedTokens != "0":
-                if int(q1) > 2:
-                    semisolution[i] = "2 "+"discard " + str(i)
-            elif UsedTokens != "0":
-                if int(q1) > 3:
-                    semisolution[i] = "3 "+"discard " + str(i)
-            else:
-                if int(q1) > 4:
-                    semisolution[i] = "4 "+"play " + str(i)
-        
+    solution = "discard 0"
+    #if queden tokens blaus
+        #'descarregar' mans dels altres jugadors amb les seves hot cards
+        #if tenen perilloses
+            #return avisar de perilloses
+        #elif tenen perilloses&jugables 
+            #return avisar de perilloses&jugables
+        #elif puc jugar 100% segur
+            #return jugar 100%
+        #elif tenen jugables
+            #return avisar jugables
+        #elif puc jugar 50% segur
+            #return jugar 50%
+        #elif puc descartar 100%
+            #return descartar 100%
+        #elif tenen descartables
+            #return avisar descartables
+        #elif puc descartar 50%
+            #return descartar 50%
+        #elif tinc algunes etiquetes posades
+            #return descartar RES
+        #else
+            #return descartar random
+    #else
+        #if puc descartar 100%
+            #return descartar 100%
+        #elif puc jugar 100% segur
+            #return jugar 100%
+        #elif puc jugar 50% segur
+            #return jugar 50%
+        #elif puc descartar 50%
+            #return descartar 50%
+        #elif tinc algunes etiquetes posades
+            #return descartar RES
+        #else
+            #return descartar random
 
-    for sol in semisolution:
-        q1 = solution.split(" ")[0]
-        q2 = sol.split(" ")[0]
-        if int(q1) > int(q2):
-            solution = sol
-
-    solution = solution[1:]
     return solution            
 
 def manageInput():
     global run
     global status
     #Boolean that controls if a show has been done
-    DoShow=True
+    showDone=True
     #True if it's the first time we acces to the players attrb.
+    first=True
     while run:
         command = input()
         if command == "exit":
@@ -318,33 +245,71 @@ def manageInput():
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
                 
-                if DoShow:
+                print("Totes les pistes fins ara dels jugadors: ", hintsRecieved)
+                print("Totes les pistes fins ara per la IA: ", hintsForIA)
+
+                if showDone:
                     #We request the show action everytime we play
-                    DoShow=False
+                    showDone=False
                     s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                     #we have to sleep to get the response before doing anything
                     while waitUntil == False:
                         time.sleep(2)
                     
-                #try:
-                #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
-                BstMv=BestMove()
+                try:
+                    
+                    if not hintsForIA:
+                        print("no te pistes no")
+                        has_ones = False
+                        for p in players:
+                            #We check the hand of every player
+                            if first:
+                                first=False
+                                p_names.append(p.name)
 
-                move = BstMv.split(" ")[0]
-                num = BstMv.split(" ")[1]
-                
-                if move == "play":
-                    s.send(GameData.ClientPlayerPlayCardRequest(playerName, num).serialize())
-                elif move == "discard":
-                    s.send(GameData.ClientPlayerDiscardCardRequest(playerName, num).serialize())
-                else:
-                    player = BstMv.split(" ")[2]
-                    value = BstMv.split(" ")[3]
-                    s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
-                
-                #except:
-                    #print("Ups problemita, hem fallat en algo 0w0")
-                    #continue
+                            for c in p.hand:
+                                valor = c.toString().split(" ")[3]
+                                if valor == "1;":
+                                    print("Diu que te uns")
+                                    has_ones = True
+                        
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR PISTA A DONAR!!!!!!!!!!!!
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A DESCARTAR!!!!!!!!
+                        showDone=True
+                        if has_ones:
+                            s.send(GameData.ClientHintData(playerName, p_names[1], "value", 1).serialize())
+                        else:
+                            print("no hi han uns")
+                            if UsedTokens=="0":
+                                print("jugem")
+                                #play first
+                                s.send(GameData.ClientPlayerPlayCardRequest(playerName, 0).serialize())
+
+                            else:
+                                print("descartem")
+                                #discard first
+                                s.send(GameData.ClientPlayerDiscardCardRequest(playerName, 0).serialize())
+
+                    else: 
+                        #La IA ha rebut pistes
+                        #cada pista te el seguent format: (posicio, valor, jugador)
+
+                        #EN UN FUTUR ES POT INTENTAR FER UN ALGORITME PER SABER QUINA ES LA MILLOR CARTA A JUGAR!!!!!!!!!!!!
+                     
+                        print("si tenim pistes")
+                        print("len de hints es :", len(hintsForIA))
+                     
+                        position = hintsForIA[0].split(" ")[0]
+                        value = hintsForIA[0].split(" ")[1]
+                        print("el primer esta a la pos " + position + " i es " + value)
+                        cardOrder = int(position)
+                        s.send(GameData.ClientPlayerPlayCardRequest(playerName, cardOrder).serialize())
+                        #hintsForIA.pop(0)
+                        showDone=True
+
+                except:
+                    print("Ups problemita, hem fallat en algo 0w0")
+                    continue
         stdout.flush()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -380,7 +345,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
             #Aqui actualitzem la nostra variable de players per tenir la seva ma en tot moment
-            Players= data.players
+            players= data.players
             for p in data.players:
                 print(p.toClientString())
             print("Table cards: ")
@@ -406,9 +371,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("Card played Valid: " +  str(data.card.value)+ " " + str(data.card.color))
             print("Played by Valid: " +  str(data.lastPlayer))
-            RemHint = (str(data.cardHandIndex))
-            if str(data.lastPlayer) == playerName:
-                RemoveHint(RemHint)
+            RemHint = (str(data.cardHandIndex) + " " + str(data.lastPlayer))
+            RemoveHint(RemHint)
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
@@ -416,9 +380,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             dataOk = True
             print("Card played: " +  str(data.card.value)+ " " + str(data.card.color))
             print("Played by: " +  str(data.lastPlayer))
-            RemHint = (str(data.cardHandIndex))
-            if str(data.lastPlayer) == playerName:
-                RemoveHint(RemHint)
+            RemHint = (str(data.cardHandIndex) + " " + str(data.lastPlayer))
+            RemoveHint(RemHint)
             print("Action valid!")
             print("Nice move!")
             print("Current player: " + data.player)
@@ -434,7 +397,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
             for i in data.positions:
-                if str(data.destination) == playerName:
+                
+                if str(data.destination) != playerName:
+                    NewHint = (str(i) + " " + str(data.value) + " "+ str(data.destination))
+                    addHintsRecived(NewHint)
+                else:
                     NewHint = (str(i) + " " + str(data.value))
                     addHintsForIA(NewHint)
                 print("\t" + str(i))
