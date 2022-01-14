@@ -1485,3 +1485,346 @@
 01/14/2022 01:11:12 PM INFO: Game start! Between: ['IA', 'Uri']
 01/14/2022 01:11:12 PM INFO: Ok, let's start the game!
 01/14/2022 01:11:14 PM INFO: Showing hand to: IA
+01/14/2022 01:27:24 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:27:29 PM INFO: Connected by: ('127.0.0.1', 58490)
+01/14/2022 01:27:29 PM INFO: Player connected: IA
+01/14/2022 01:27:29 PM INFO: Player ready: IA
+01/14/2022 01:27:34 PM INFO: Connected by: ('127.0.0.1', 58492)
+01/14/2022 01:27:34 PM INFO: Player connected: Uri
+01/14/2022 01:27:36 PM INFO: Player ready: Uri
+01/14/2022 01:27:36 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:27:36 PM INFO: Ok, let's start the game!
+01/14/2022 01:27:38 PM INFO: Showing hand to: IA
+01/14/2022 01:28:39 PM INFO: Closing the server...
+01/14/2022 01:29:57 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:30:02 PM INFO: Connected by: ('127.0.0.1', 58511)
+01/14/2022 01:30:02 PM INFO: Player connected: IA
+01/14/2022 01:30:02 PM INFO: Player ready: IA
+01/14/2022 01:30:06 PM INFO: Connected by: ('127.0.0.1', 58513)
+01/14/2022 01:30:06 PM INFO: Player connected: Uri
+01/14/2022 01:30:08 PM INFO: Player ready: Uri
+01/14/2022 01:30:08 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:30:08 PM INFO: Ok, let's start the game!
+01/14/2022 01:30:10 PM INFO: Showing hand to: IA
+01/14/2022 01:36:19 PM INFO: Closing the server...
+01/14/2022 01:36:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:36:54 PM INFO: Connected by: ('127.0.0.1', 58610)
+01/14/2022 01:36:54 PM INFO: Player connected: IA
+01/14/2022 01:36:56 PM INFO: Player ready: IA
+01/14/2022 01:37:02 PM INFO: Connected by: ('127.0.0.1', 58611)
+01/14/2022 01:37:02 PM INFO: Player connected: Uri
+01/14/2022 01:37:04 PM INFO: Player ready: Uri
+01/14/2022 01:37:04 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:37:04 PM INFO: Ok, let's start the game!
+01/14/2022 01:37:06 PM INFO: Showing hand to: IA
+01/14/2022 01:39:41 PM INFO: Closing the server...
+01/14/2022 01:39:42 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:39:51 PM INFO: Connected by: ('127.0.0.1', 58644)
+01/14/2022 01:39:51 PM INFO: Player connected: IA
+01/14/2022 01:39:51 PM INFO: Player ready: IA
+01/14/2022 01:39:56 PM INFO: Connected by: ('127.0.0.1', 58645)
+01/14/2022 01:39:56 PM INFO: Player connected: Uri
+01/14/2022 01:39:58 PM INFO: Player ready: Uri
+01/14/2022 01:39:58 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:39:58 PM INFO: Ok, let's start the game!
+01/14/2022 01:40:01 PM INFO: Showing hand to: IA
+01/14/2022 01:40:01 PM WARNING: Player disconnected: IA
+01/14/2022 01:40:53 PM INFO: Closing the server...
+01/14/2022 01:40:53 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:40:57 PM INFO: Connected by: ('127.0.0.1', 58651)
+01/14/2022 01:40:57 PM INFO: Player connected: IA
+01/14/2022 01:40:58 PM INFO: Player ready: IA
+01/14/2022 01:41:04 PM INFO: Connected by: ('127.0.0.1', 58653)
+01/14/2022 01:41:04 PM INFO: Player connected: Uri
+01/14/2022 01:41:06 PM INFO: Player ready: Uri
+01/14/2022 01:41:06 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:41:06 PM INFO: Ok, let's start the game!
+01/14/2022 01:41:07 PM INFO: Showing hand to: IA
+01/14/2022 01:43:16 PM INFO: Closing the server...
+01/14/2022 01:43:18 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:43:23 PM INFO: Connected by: ('127.0.0.1', 58712)
+01/14/2022 01:43:23 PM INFO: Player connected: IA
+01/14/2022 01:43:23 PM INFO: Player ready: IA
+01/14/2022 01:43:28 PM INFO: Connected by: ('127.0.0.1', 58714)
+01/14/2022 01:43:28 PM INFO: Player connected: Uri
+01/14/2022 01:43:29 PM INFO: Player ready: Uri
+01/14/2022 01:43:29 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:43:29 PM INFO: Ok, let's start the game!
+01/14/2022 01:43:31 PM INFO: Showing hand to: IA
+01/14/2022 01:45:27 PM INFO: Closing the server...
+01/14/2022 01:45:28 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:45:34 PM INFO: Connected by: ('127.0.0.1', 58739)
+01/14/2022 01:45:34 PM INFO: Player connected: IA
+01/14/2022 01:45:39 PM INFO: Connected by: ('127.0.0.1', 58740)
+01/14/2022 01:45:39 PM INFO: Player connected: Uri
+01/14/2022 01:45:41 PM INFO: Player ready: Uri
+01/14/2022 01:45:42 PM INFO: Player ready: IA
+01/14/2022 01:45:42 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:45:42 PM INFO: Ok, let's start the game!
+01/14/2022 01:45:44 PM INFO: Showing hand to: IA
+01/14/2022 01:48:20 PM INFO: Closing the server...
+01/14/2022 01:48:21 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 01:48:25 PM INFO: Connected by: ('127.0.0.1', 61145)
+01/14/2022 01:48:25 PM INFO: Player connected: IA
+01/14/2022 01:48:25 PM INFO: Player ready: IA
+01/14/2022 01:48:32 PM INFO: Connected by: ('127.0.0.1', 61147)
+01/14/2022 01:48:32 PM INFO: Player connected: Uri
+01/14/2022 01:48:34 PM INFO: Player ready: Uri
+01/14/2022 01:48:34 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 01:48:34 PM INFO: Ok, let's start the game!
+01/14/2022 01:48:36 PM INFO: Showing hand to: IA
+01/14/2022 04:16:16 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:16:27 PM INFO: Connected by: ('127.0.0.1', 56674)
+01/14/2022 04:16:27 PM INFO: Player connected: IA
+01/14/2022 04:16:27 PM INFO: Player ready: IA
+01/14/2022 04:16:31 PM INFO: Connected by: ('127.0.0.1', 56677)
+01/14/2022 04:16:31 PM INFO: Player connected: Uri
+01/14/2022 04:16:33 PM INFO: Player ready: Uri
+01/14/2022 04:16:33 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:16:33 PM INFO: Ok, let's start the game!
+01/14/2022 04:16:34 PM INFO: Showing hand to: IA
+01/14/2022 04:19:34 PM INFO: Closing the server...
+01/14/2022 04:19:35 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:19:41 PM INFO: Connected by: ('127.0.0.1', 56715)
+01/14/2022 04:19:41 PM INFO: Player connected: IA
+01/14/2022 04:19:42 PM INFO: Player ready: IA
+01/14/2022 04:19:47 PM INFO: Connected by: ('127.0.0.1', 56717)
+01/14/2022 04:19:47 PM INFO: Player connected: Uri
+01/14/2022 04:19:48 PM INFO: Player ready: Uri
+01/14/2022 04:19:48 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:19:48 PM INFO: Ok, let's start the game!
+01/14/2022 04:19:50 PM INFO: Showing hand to: IA
+01/14/2022 04:25:24 PM INFO: Closing the server...
+01/14/2022 04:25:26 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:25:34 PM INFO: Connected by: ('127.0.0.1', 56806)
+01/14/2022 04:25:34 PM INFO: Player connected: IA
+01/14/2022 04:25:34 PM INFO: Player ready: IA
+01/14/2022 04:25:42 PM INFO: Connected by: ('127.0.0.1', 56807)
+01/14/2022 04:25:42 PM INFO: Player connected: Uri
+01/14/2022 04:25:43 PM INFO: Player ready: Uri
+01/14/2022 04:25:43 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:25:43 PM INFO: Ok, let's start the game!
+01/14/2022 04:25:45 PM INFO: Showing hand to: IA
+01/14/2022 04:30:23 PM INFO: Closing the server...
+01/14/2022 04:30:24 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:30:29 PM INFO: Connected by: ('127.0.0.1', 56855)
+01/14/2022 04:30:29 PM INFO: Player connected: IA
+01/14/2022 04:30:35 PM INFO: Connected by: ('127.0.0.1', 56862)
+01/14/2022 04:30:35 PM INFO: Player connected: Uri
+01/14/2022 04:30:36 PM INFO: Player ready: Uri
+01/14/2022 04:30:38 PM INFO: Player ready: IA
+01/14/2022 04:30:38 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:30:38 PM INFO: Ok, let's start the game!
+01/14/2022 04:30:38 PM INFO: Showing hand to: IA
+01/14/2022 04:32:11 PM INFO: Closing the server...
+01/14/2022 04:35:18 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:35:22 PM INFO: Connected by: ('127.0.0.1', 56928)
+01/14/2022 04:35:22 PM INFO: Player connected: IA
+01/14/2022 04:35:22 PM INFO: Player ready: IA
+01/14/2022 04:35:29 PM INFO: Closing the server...
+01/14/2022 04:35:30 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:35:35 PM INFO: Connected by: ('127.0.0.1', 56933)
+01/14/2022 04:35:35 PM INFO: Player connected: IA
+01/14/2022 04:35:36 PM INFO: Player ready: IA
+01/14/2022 04:35:44 PM INFO: Connected by: ('127.0.0.1', 56935)
+01/14/2022 04:35:44 PM INFO: Player connected: Uri
+01/14/2022 04:35:46 PM INFO: Player ready: Uri
+01/14/2022 04:35:46 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:35:46 PM INFO: Ok, let's start the game!
+01/14/2022 04:35:47 PM INFO: Showing hand to: IA
+01/14/2022 04:36:33 PM INFO: Closing the server...
+01/14/2022 04:36:33 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:36:39 PM INFO: Connected by: ('127.0.0.1', 56942)
+01/14/2022 04:36:39 PM INFO: Player connected: IA
+01/14/2022 04:36:39 PM INFO: Player ready: IA
+01/14/2022 04:36:45 PM INFO: Connected by: ('127.0.0.1', 56944)
+01/14/2022 04:36:45 PM INFO: Player connected: Uri
+01/14/2022 04:36:47 PM INFO: Player ready: Uri
+01/14/2022 04:36:47 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:36:47 PM INFO: Ok, let's start the game!
+01/14/2022 04:36:49 PM INFO: Showing hand to: IA
+01/14/2022 04:39:12 PM INFO: Closing the server...
+01/14/2022 04:39:12 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:39:16 PM INFO: Connected by: ('127.0.0.1', 56964)
+01/14/2022 04:39:16 PM INFO: Player connected: IA
+01/14/2022 04:39:16 PM INFO: Player ready: IA
+01/14/2022 04:39:21 PM INFO: Connected by: ('127.0.0.1', 56966)
+01/14/2022 04:39:21 PM INFO: Player connected: Uri
+01/14/2022 04:39:23 PM INFO: Player ready: Uri
+01/14/2022 04:39:23 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:39:23 PM INFO: Ok, let's start the game!
+01/14/2022 04:39:24 PM INFO: Showing hand to: IA
+01/14/2022 04:41:30 PM INFO: Closing the server...
+01/14/2022 04:41:31 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:41:36 PM INFO: Connected by: ('127.0.0.1', 57044)
+01/14/2022 04:41:36 PM INFO: Player connected: IA
+01/14/2022 04:41:38 PM INFO: Player ready: IA
+01/14/2022 04:41:43 PM INFO: Connected by: ('127.0.0.1', 57046)
+01/14/2022 04:41:43 PM INFO: Player connected: Uri
+01/14/2022 04:41:46 PM INFO: Player ready: Uri
+01/14/2022 04:41:46 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:41:46 PM INFO: Ok, let's start the game!
+01/14/2022 04:41:48 PM INFO: Showing hand to: IA
+01/14/2022 04:42:58 PM INFO: Closing the server...
+01/14/2022 04:42:58 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:43:03 PM INFO: Connected by: ('127.0.0.1', 57056)
+01/14/2022 04:43:03 PM INFO: Player connected: IA
+01/14/2022 04:43:03 PM INFO: Player ready: IA
+01/14/2022 04:43:08 PM INFO: Connected by: ('127.0.0.1', 57062)
+01/14/2022 04:43:08 PM INFO: Player connected: Uri
+01/14/2022 04:43:09 PM INFO: Player ready: Uri
+01/14/2022 04:43:09 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:43:09 PM INFO: Ok, let's start the game!
+01/14/2022 04:43:10 PM INFO: Showing hand to: IA
+01/14/2022 04:44:10 PM INFO: Closing the server...
+01/14/2022 04:44:10 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:44:16 PM INFO: Connected by: ('127.0.0.1', 57070)
+01/14/2022 04:44:16 PM INFO: Player connected: IA
+01/14/2022 04:44:16 PM INFO: Player ready: IA
+01/14/2022 04:44:21 PM INFO: Connected by: ('127.0.0.1', 57072)
+01/14/2022 04:44:21 PM INFO: Player connected: Uri
+01/14/2022 04:44:22 PM INFO: Player ready: Uri
+01/14/2022 04:44:22 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:44:22 PM INFO: Ok, let's start the game!
+01/14/2022 04:44:24 PM INFO: Showing hand to: IA
+01/14/2022 04:46:54 PM INFO: Closing the server...
+01/14/2022 04:46:54 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:46:58 PM INFO: Connected by: ('127.0.0.1', 57094)
+01/14/2022 04:46:58 PM INFO: Player connected: IA
+01/14/2022 04:46:58 PM INFO: Player ready: IA
+01/14/2022 04:46:58 PM INFO: Player ready: IA
+01/14/2022 04:47:05 PM INFO: Connected by: ('127.0.0.1', 57097)
+01/14/2022 04:47:05 PM INFO: Player connected: Uri
+01/14/2022 04:47:09 PM INFO: Player ready: Uri
+01/14/2022 04:47:09 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:47:09 PM INFO: Ok, let's start the game!
+01/14/2022 04:47:11 PM INFO: Showing hand to: IA
+01/14/2022 04:48:31 PM INFO: Closing the server...
+01/14/2022 04:48:31 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:48:35 PM INFO: Connected by: ('127.0.0.1', 57107)
+01/14/2022 04:48:35 PM INFO: Player connected: IA
+01/14/2022 04:48:36 PM INFO: Player ready: IA
+01/14/2022 04:48:40 PM INFO: Connected by: ('127.0.0.1', 57109)
+01/14/2022 04:48:40 PM INFO: Player connected: Uri
+01/14/2022 04:48:41 PM INFO: Player ready: Uri
+01/14/2022 04:48:41 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:48:41 PM INFO: Ok, let's start the game!
+01/14/2022 04:48:43 PM INFO: Showing hand to: IA
+01/14/2022 04:53:02 PM INFO: Closing the server...
+01/14/2022 04:53:08 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:53:12 PM INFO: Connected by: ('127.0.0.1', 57190)
+01/14/2022 04:53:12 PM INFO: Player connected: IA
+01/14/2022 04:53:13 PM INFO: Player ready: IA
+01/14/2022 04:53:17 PM INFO: Connected by: ('127.0.0.1', 57192)
+01/14/2022 04:53:17 PM INFO: Player connected: Uri
+01/14/2022 04:53:18 PM INFO: Player ready: Uri
+01/14/2022 04:53:18 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:53:18 PM INFO: Ok, let's start the game!
+01/14/2022 04:53:20 PM INFO: Showing hand to: IA
+01/14/2022 04:55:09 PM INFO: Closing the server...
+01/14/2022 04:55:11 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:55:15 PM INFO: Connected by: ('127.0.0.1', 57205)
+01/14/2022 04:55:15 PM INFO: Player connected: IA
+01/14/2022 04:55:17 PM INFO: Player ready: IA
+01/14/2022 04:55:21 PM INFO: Connected by: ('127.0.0.1', 57208)
+01/14/2022 04:55:21 PM INFO: Player connected: Uri
+01/14/2022 04:55:22 PM INFO: Player ready: Uri
+01/14/2022 04:55:22 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:55:22 PM INFO: Ok, let's start the game!
+01/14/2022 04:55:24 PM INFO: Showing hand to: IA
+01/14/2022 04:56:57 PM INFO: Closing the server...
+01/14/2022 04:56:58 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 04:57:03 PM INFO: Connected by: ('127.0.0.1', 57226)
+01/14/2022 04:57:03 PM INFO: Player connected: IA
+01/14/2022 04:57:03 PM INFO: Player ready: IA
+01/14/2022 04:57:09 PM INFO: Connected by: ('127.0.0.1', 57227)
+01/14/2022 04:57:09 PM INFO: Player connected: Uri
+01/14/2022 04:57:10 PM INFO: Player ready: Uri
+01/14/2022 04:57:10 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 04:57:10 PM INFO: Ok, let's start the game!
+01/14/2022 04:57:12 PM INFO: Showing hand to: IA
+01/14/2022 05:00:10 PM INFO: Closing the server...
+01/14/2022 05:00:12 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 05:00:17 PM INFO: Connected by: ('127.0.0.1', 51868)
+01/14/2022 05:00:17 PM INFO: Player connected: IA
+01/14/2022 05:00:17 PM INFO: Player ready: IA
+01/14/2022 05:00:22 PM INFO: Connected by: ('127.0.0.1', 51871)
+01/14/2022 05:00:22 PM INFO: Player connected: Uri
+01/14/2022 05:00:24 PM INFO: Player ready: Uri
+01/14/2022 05:00:24 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 05:00:24 PM INFO: Ok, let's start the game!
+01/14/2022 05:00:25 PM INFO: Showing hand to: IA
+01/14/2022 05:01:26 PM INFO: Closing the server...
+01/14/2022 05:01:31 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 05:01:37 PM INFO: Connected by: ('127.0.0.1', 51886)
+01/14/2022 05:01:37 PM INFO: Player connected: IA
+01/14/2022 05:01:37 PM INFO: Player ready: IA
+01/14/2022 05:01:41 PM INFO: Connected by: ('127.0.0.1', 51887)
+01/14/2022 05:01:41 PM INFO: Player connected: Uri
+01/14/2022 05:01:44 PM INFO: Player ready: Uri
+01/14/2022 05:01:44 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 05:01:44 PM INFO: Ok, let's start the game!
+01/14/2022 05:01:46 PM INFO: Showing hand to: IA
+01/14/2022 05:06:23 PM INFO: Closing the server...
+01/14/2022 05:06:24 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 05:06:28 PM INFO: Connected by: ('127.0.0.1', 51969)
+01/14/2022 05:06:28 PM INFO: Player connected: IA
+01/14/2022 05:06:28 PM INFO: Player ready: IA
+01/14/2022 05:06:33 PM INFO: Connected by: ('127.0.0.1', 51973)
+01/14/2022 05:06:33 PM INFO: Player connected: Uri
+01/14/2022 05:06:34 PM INFO: Player ready: Uri
+01/14/2022 05:06:34 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 05:06:34 PM INFO: Ok, let's start the game!
+01/14/2022 05:06:36 PM INFO: Showing hand to: IA
+01/14/2022 06:01:24 PM INFO: Closing the server...
+01/14/2022 06:01:25 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 06:01:30 PM INFO: Connected by: ('127.0.0.1', 57768)
+01/14/2022 06:01:30 PM INFO: Player connected: IA
+01/14/2022 06:01:30 PM INFO: Player ready: IA
+01/14/2022 06:01:35 PM INFO: Connected by: ('127.0.0.1', 57770)
+01/14/2022 06:01:35 PM INFO: Player connected: Uri
+01/14/2022 06:01:38 PM INFO: Player ready: Uri
+01/14/2022 06:01:38 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 06:01:38 PM INFO: Ok, let's start the game!
+01/14/2022 06:01:39 PM INFO: Showing hand to: IA
+01/14/2022 06:02:05 PM INFO: Connected by: ('127.0.0.1', 57781)
+01/14/2022 06:02:14 PM INFO: Closing the server...
+01/14/2022 06:02:28 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 06:02:31 PM INFO: Connected by: ('127.0.0.1', 57785)
+01/14/2022 06:02:31 PM INFO: Player connected: Uri2
+01/14/2022 06:02:33 PM INFO: Connected by: ('127.0.0.1', 57786)
+01/14/2022 06:02:33 PM INFO: Player connected: Uri
+01/14/2022 06:02:35 PM INFO: Player ready: Uri
+01/14/2022 06:02:38 PM INFO: Player ready: Uri2
+01/14/2022 06:02:38 PM INFO: Game start! Between: ['Uri2', 'Uri']
+01/14/2022 06:02:38 PM INFO: Ok, let's start the game!
+01/14/2022 06:02:39 PM INFO: Showing hand to: Uri2
+01/14/2022 06:02:42 PM INFO: Showing hand to: Uri
+01/14/2022 06:02:56 PM INFO: Player Uri2 providing hint to Uri: cards with value 2 are in positions: [0]
+01/14/2022 06:03:17 PM INFO: Closing the server...
+01/14/2022 06:04:12 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 06:04:16 PM INFO: Connected by: ('127.0.0.1', 57793)
+01/14/2022 06:04:16 PM INFO: Player connected: Uri
+01/14/2022 06:04:18 PM INFO: Player ready: Uri
+01/14/2022 06:04:23 PM INFO: Connected by: ('127.0.0.1', 57810)
+01/14/2022 06:04:23 PM INFO: Player connected: Uri2
+01/14/2022 06:04:25 PM INFO: Player ready: Uri2
+01/14/2022 06:04:25 PM INFO: Game start! Between: ['Uri', 'Uri2']
+01/14/2022 06:04:25 PM INFO: Ok, let's start the game!
+01/14/2022 06:04:28 PM INFO: Showing hand to: Uri2
+01/14/2022 06:04:32 PM INFO: Showing hand to: Uri
+01/14/2022 06:04:45 PM INFO: Player Uri providing hint to Uri2: cards with value 1 are in positions: [1, 2, 3]
+01/14/2022 06:05:28 PM INFO: Showing hand to: Uri2
+01/14/2022 06:05:40 PM INFO: Player Uri2 providing hint to Uri: cards with value 1 are in positions: [0, 1]
+01/14/2022 06:05:53 PM INFO: Closing the server...
+01/14/2022 06:08:39 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/14/2022 06:08:44 PM INFO: Connected by: ('127.0.0.1', 57874)
+01/14/2022 06:08:44 PM INFO: Player connected: IA
+01/14/2022 06:08:45 PM INFO: Player ready: IA
+01/14/2022 06:08:50 PM INFO: Connected by: ('127.0.0.1', 57877)
+01/14/2022 06:08:50 PM INFO: Player connected: Uri
+01/14/2022 06:08:55 PM INFO: Player ready: Uri
+01/14/2022 06:08:55 PM INFO: Game start! Between: ['IA', 'Uri']
+01/14/2022 06:08:55 PM INFO: Ok, let's start the game!
+01/14/2022 06:08:57 PM INFO: Showing hand to: IA
+01/14/2022 06:13:55 PM INFO: Closing the server...

@@ -117,6 +117,9 @@ def isJugable(value, color):
     #the card has been played
     if carta in PlayedCards:
         return False
+    #it's a 1 and there are no cards in table
+    if value == "1" and carta not in PlayedCards:
+        return True
     #card below has been played
     for c in PlayedCards:
         val = c.split(" ")[1]
@@ -189,10 +192,14 @@ def downloadPlayersHandsTag():
 def SearchPosition(player, position):
     #which card has the player in the given position
     for p in  Players:
-        if p.name != player:
-            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ALERTA BUG LA MA ESTA BUIDA
-            c=p.hand[position]
-    return c
+        if p.name == player:
+            stop = 0
+            for c in p.hand:
+                if stop == position:
+                    card=c.toClientString()
+                    break
+                stop += 1
+    return card
     
 def getPlayerHand(player):
     hand = []
@@ -207,8 +214,8 @@ def getPlayerHand(player):
 
 def Value_Color(player, card):
     pista = []
-    value = card.split(" ")[0]
-    color = card.split(" ")[1]
+    value = card.split(" ")[1]
+    color = card.split(" ")[3]
     hand = getPlayerHand(player)
     valueCounter = hand.count(value)
     colorCounter = hand.count(color)
@@ -225,7 +232,7 @@ def BestMove():
     #final solution
     solution = "10 play 0"
     #solution for every player that will be evaluated later
-    semisolution = [11] * len(Players)
+    semisolution = ["11 play 0"] * len(Players)
     #we still can give hints
     if UsedTokens != "8":
         PlayersHands=downloadPlayersHandsTag() #format -> [[Player_name, tag, tag, tag, tag, tag], [....]]
@@ -240,32 +247,32 @@ def BestMove():
                 if "perillosa" == c:
                     if int(q1) > 0:
                         pista = Value_Color(player, card)
-                        semisolution[i] = "0 " + "hint " + pista[0] + player + pista[1]
+                        semisolution[i] = "0 " + "hint " + pista[0] + " " + player + " " + pista[1]
                 elif "perillosajugable" == c:
                     if int(q1) > 1:
                         pista = Value_Color(player, card)
-                        semisolution[i] = "1 "+"hint " + pista[0] + player + pista[1]
+                        semisolution[i] = "1 "+"hint " + pista[0] + " " + player + " " + pista[1]
                 elif "jugable" == hand_tag:
                     if int(q1) > 2:
                         semisolution[i] = "2 "+"play " + str(i)
                 elif "jugable" == c:
                     if int(q1) > 3:
                         pista = Value_Color(player, card)
-                        semisolution[i] = "3 "+"hint " + pista[0] + player + pista[1]
+                        semisolution[i] = "3 "+"hint " + pista[0] + " " + player + " " + pista[1]
                 if "descartable" == hand_tag and UsedTokens != "0":
                     if int(q1) > 4:
                         semisolution[i] = "4 "+"discard " + str(i)
                 elif "descartables" == c:
                     if int(q1) > 5:
                         pista = Value_Color(player, card)
-                        semisolution[i] = "5 "+"hint " + pista[0] + player + pista[1]
+                        semisolution[i] = "5 "+"hint " + pista[0] + " " + player + " " + pista[1]
                 elif "Res" == hand_tag and UsedTokens != "0":
                     if int(q1) > 6:
                         semisolution[i] = "6 "+"discard " + str(i)
                 else:
                     if int(q1) > 7:
                         pista = Value_Color(player, card)
-                        semisolution[i] = "7 "+"hint " + pista[0] + player + pista[1]
+                        semisolution[i] = "7 "+"hint " + pista[0] + " " + player + " " + pista[1]
                 
     else:
         L = len(Hand)
@@ -295,7 +302,7 @@ def BestMove():
         if int(q1) > int(q2):
             solution = sol
 
-    solution = solution[1:]
+    solution = solution[2:]
     return solution            
 
 def manageInput():
@@ -326,6 +333,8 @@ def manageInput():
                 #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
                 BstMv=BestMove()
 
+                print(BstMv)
+
                 move = BstMv.split(" ")[0]
                 num = BstMv.split(" ")[1]
                 
@@ -336,7 +345,7 @@ def manageInput():
                 else:
                     player = BstMv.split(" ")[2]
                     value = BstMv.split(" ")[3]
-                    s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
+                    s.send(GameData.ClientHintData(playerName, player, num, "1").serialize())
                 
                 #except:
                     #print("Ups problemita, hem fallat en algo 0w0")
@@ -372,7 +381,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         if type(data) is GameData.ServerGameStateData:
             #Aqui es rep el show
             dataOk = True
-            waitUntil = True
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
             #Aqui actualitzem la nostra variable de players per tenir la seva ma en tot moment
@@ -394,6 +402,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             UsedTokens=str(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
+            waitUntil = True
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
             print("Invalid action performed. Reason:")
