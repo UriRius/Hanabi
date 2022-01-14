@@ -171,17 +171,13 @@ def TagHand(ma):
         i += 1
 
 def downloadPlayersHandsTag():
-    PlayersHands = [[0 for i in range(len(Players)-1)]] * 6 #-> [[0],[0],[0],[0],[0],[0]]
-    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ALERTA BUGS
-    i = 0
+    PlayersHands = [[0 for i in range(6)]] * (len(Players)-1)
+    i = -1
     for p in  Players:
         if p.name != playerName:
             PlayersHands[i][0] = str(p.name)
             j = 1
             for c in p.hand:
-                if not PlayersHands:
-                    print("esta buit")
-                print("i: " + str(i) + ", j: " + str(j))
                 value = c.toClientString().split(" ")[1]
                 color = c.toClientString().split(" ")[3]
                 tag = evaluaCarta(value, color)
@@ -194,6 +190,7 @@ def SearchPosition(player, position):
     #which card has the player in the given position
     for p in  Players:
         if p.name != player:
+            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ALERTA BUG LA MA ESTA BUIDA
             c=p.hand[position]
     return c
     
@@ -237,7 +234,7 @@ def BestMove():
             player = PlayersHands[i][0]
             for j in range(1, 6):
                 c = PlayersHands[i][j]
-                hand_tag = Hand[i][3]
+                hand_tag = Hand[i][2]
                 card=SearchPosition(player, j-1)
                 q1 = semisolution[i].split(" ")[0]
                 if "perillosa" == c:
@@ -317,7 +314,6 @@ def manageInput():
                 #If status==Lobby we send start request
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
-                
                 if DoShow:
                     #We request the show action everytime we play
                     DoShow=False
