@@ -308,9 +308,6 @@ def BestMove():
 def manageInput():
     global run
     global status
-    #Boolean that controls if a show has been done
-    DoShow=True
-    #True if it's the first time we acces to the players attrb.
     while run:
         command = input()
         if command == "exit":
@@ -321,13 +318,11 @@ def manageInput():
                 #If status==Lobby we send start request
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
-                if DoShow:
-                    #We request the show action everytime we play
-                    DoShow=False
-                    s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-                    #we have to sleep to get the response before doing anything
-                    while waitUntil == False:
-                        time.sleep(2)
+                #We request the show action everytime we play
+                s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
+                #we have to sleep to get the response before doing anything
+                while waitUntil == False:
+                    time.sleep(2)
                     
                 #try:
                 #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
