@@ -344,8 +344,8 @@ def manageInput():
                     s.send(GameData.ClientPlayerDiscardCardRequest(playerName, num).serialize())
                 else:
                     player = BstMv.split(" ")[2]
-                    value = BstMv.split(" ")[3]
-                    s.send(GameData.ClientHintData(playerName, player, num, "1").serialize())
+                    value = int(BstMv.split(" ")[3])
+                    s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
                 
                 #except:
                     #print("Ups problemita, hem fallat en algo 0w0")
