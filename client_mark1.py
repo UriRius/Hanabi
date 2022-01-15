@@ -32,14 +32,11 @@ hintState = ("", "")
 #For each card in hand there is going to be 3 attributes, the value (default 0), the color (default None) and a Tag
 #with values Res, jugable, descartable, perillosa, perillosajugable
 Hand = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
-hintsRecieved = []
-hintsForIA = []
 UsedTokens = ""
 Players=[]
 PlayedCards= []
 DiscartedCards= []
 p_names=[]
-waitUntil=False
 
 #new functions
 """This function is used to remove the hint played/discard"""
@@ -50,23 +47,23 @@ def RemoveHint(RemHint):
     for i in range(start, 0, -1):
         Hand[i+1] = Hand[i]
     Hand[0]=["0", "None", "Res"]
-    print("Sortim de la borramenta")
 
 
 def addHintsForIA(NewHint):
-    card = Hand[0]
+    
+    cardposition = NewHint.split(" ")[0]
+    cardvalue = NewHint.split(" ")[1]
+    
+    card = Hand[int(cardposition)]
     value = card[0]
     color = card[1]
     tag = card[2]
 
-    cardposition = NewHint.split(" ")[0]
-    cardvalue = NewHint.split(" ")[1]
-
     nums = ["1", "2", "3", "4", "5"]
     if cardvalue in nums:
-        Hand[cardposition] = cardvalue + " " + color + " " + tag
+        Hand[int(cardposition)] = cardvalue + " " + color + " " + tag
     else:
-        Hand[cardposition] = value + " " + cardvalue + " " + tag
+        Hand[int(cardposition)] = value + " " + cardvalue + " " + tag
     
     TagHand(Hand)
 
@@ -93,8 +90,8 @@ def isDangerous(value, color):
     #This function returns True if discarting the card is dangerous
     Hots = HotCards()
     HotValue = Hots.split(" ")[0]
-    HotColor = Hots.split(" ")[0]
-
+    HotColor = Hots.split(" ")[1]
+    
     #it's a 5
     if value == "5":
         return True
@@ -164,8 +161,8 @@ def TagHand(ma):
     #This function changes the tag for every card in a given hand
     i = 0
     for card in ma:
-        value = card.split(" ")[0]
-        color = card.split(" ")[1]
+        value = card[0]
+        color = card[1]
         
         tag = evaluaCarta(value, color)
 
@@ -202,15 +199,16 @@ def SearchPosition(player, position):
     return card
     
 def getPlayerHand(player):
-    hand = []
+    result = []
     for p in  Players:
-        if p.name != player:
+        if p.name == player:
             for c in p.hand:
                 value = c.toClientString().split(" ")[1]
                 color = c.toClientString().split(" ")[3]
-                hand.append(value)
-                hand.append(color)
-    return hand
+                result.append(value)
+                result.append(color)
+    return result
+
 
 def Value_Color(player, card):
     pista = []
@@ -231,7 +229,7 @@ def Value_Color(player, card):
 def BestMove():
     #final solution
     solution = "10 play 0"
-    #solution for every player that will be evaluated later
+    #semisolution for every player that will be evaluated later
     semisolution = ["11 play 0"] * len(Players)
     #we still can give hints
     if UsedTokens != "8":
@@ -242,6 +240,7 @@ def BestMove():
             for j in range(1, 6):
                 c = PlayersHands[i][j]
                 hand_tag = Hand[i][2]
+                print("hand tag: "+ hand_tag)
                 card=SearchPosition(player, j-1)
                 q1 = semisolution[i].split(" ")[0]
                 if "perillosa" == c:
@@ -321,9 +320,7 @@ def manageInput():
                 #We request the show action everytime we play
                 s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 #we have to sleep to get the response before doing anything
-                while waitUntil == False:
-                    time.sleep(2)
-                    
+                time.sleep(2)
                 #try:
                 #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
                 BstMv=BestMove()
@@ -339,7 +336,9 @@ def manageInput():
                     s.send(GameData.ClientPlayerDiscardCardRequest(playerName, num).serialize())
                 else:
                     player = BstMv.split(" ")[2]
-                    value = int(BstMv.split(" ")[3])
+                    value = BstMv.split(" ")[3]
+                    if num == "value":
+                        value = int(value)
                     s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
                 
                 #except:
@@ -387,7 +386,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(pos + ": [ ")
                 for c in data.tableCards[pos]:
                     #AQUI ES PODEN AGAFAR LES CARTES JUGADES
-                    PlayedCards.append[c.toClientString()]
+                    PlayedCards.append(c.toClientString())
                     print(c.toClientString() + " ")
                 print("]")
             print("Discard pile: ")
@@ -397,7 +396,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             UsedTokens=str(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
-            waitUntil = True
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
             print("Invalid action performed. Reason:")

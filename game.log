@@ -2029,3 +2029,355 @@
 01/15/2022 07:11:45 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3]
 01/15/2022 07:12:07 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3]
 01/15/2022 07:12:07 PM WARNING: Player disconnected: IA
+01/15/2022 07:25:21 PM INFO: Closing the server...
+01/15/2022 07:25:23 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:25:27 PM INFO: Connected by: ('127.0.0.1', 60542)
+01/15/2022 07:25:27 PM INFO: Player connected: IA
+01/15/2022 07:25:28 PM INFO: Player ready: IA
+01/15/2022 07:25:33 PM INFO: Connected by: ('127.0.0.1', 60549)
+01/15/2022 07:25:33 PM INFO: Player connected: Uri
+01/15/2022 07:25:34 PM INFO: Player ready: Uri
+01/15/2022 07:25:34 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:25:34 PM INFO: Ok, let's start the game!
+01/15/2022 07:25:35 PM INFO: Showing hand to: Uri
+01/15/2022 07:25:38 PM INFO: Showing hand to: IA
+01/15/2022 07:25:40 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2]
+01/15/2022 07:26:26 PM INFO: Showing hand to: IA
+01/15/2022 07:31:20 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1, 3, 4]
+01/15/2022 07:31:20 PM WARNING: Player disconnected: IA
+01/15/2022 07:40:35 PM INFO: Closing the server...
+01/15/2022 07:40:36 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:40:41 PM INFO: Connected by: ('127.0.0.1', 60720)
+01/15/2022 07:40:41 PM INFO: Player connected: IA
+01/15/2022 07:40:42 PM INFO: Player ready: IA
+01/15/2022 07:40:46 PM INFO: Connected by: ('127.0.0.1', 60721)
+01/15/2022 07:40:46 PM INFO: Player connected: Uri
+01/15/2022 07:40:47 PM INFO: Player ready: Uri
+01/15/2022 07:40:47 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:40:47 PM INFO: Ok, let's start the game!
+01/15/2022 07:40:50 PM INFO: Showing hand to: Uri
+01/15/2022 07:40:54 PM INFO: Showing hand to: IA
+01/15/2022 07:40:56 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 2]
+01/15/2022 07:42:45 PM INFO: Closing the server...
+01/15/2022 07:44:15 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:44:17 PM INFO: Connected by: ('127.0.0.1', 60747)
+01/15/2022 07:44:17 PM INFO: Player connected: IA
+01/15/2022 07:44:21 PM INFO: Connected by: ('127.0.0.1', 60748)
+01/15/2022 07:44:21 PM INFO: Player connected: Uri
+01/15/2022 07:44:22 PM INFO: Player ready: Uri
+01/15/2022 07:44:24 PM INFO: Player ready: IA
+01/15/2022 07:44:24 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:44:24 PM INFO: Ok, let's start the game!
+01/15/2022 07:44:28 PM INFO: Showing hand to: Uri
+01/15/2022 07:44:32 PM INFO: Showing hand to: IA
+01/15/2022 07:44:34 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [0]
+01/15/2022 07:47:45 PM INFO: Closing the server...
+01/15/2022 07:47:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:47:55 PM INFO: Connected by: ('127.0.0.1', 60812)
+01/15/2022 07:47:55 PM INFO: Player connected: IA
+01/15/2022 07:47:57 PM INFO: Player ready: IA
+01/15/2022 07:48:01 PM INFO: Connected by: ('127.0.0.1', 60813)
+01/15/2022 07:48:01 PM INFO: Player connected: Uri
+01/15/2022 07:48:02 PM INFO: Player ready: Uri
+01/15/2022 07:48:02 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:48:02 PM INFO: Ok, let's start the game!
+01/15/2022 07:48:04 PM INFO: Showing hand to: IA
+01/15/2022 07:48:06 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1, 3]
+01/15/2022 07:50:18 PM INFO: Closing the server...
+01/15/2022 07:50:19 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:50:23 PM INFO: Connected by: ('127.0.0.1', 60845)
+01/15/2022 07:50:23 PM INFO: Player connected: IA
+01/15/2022 07:50:23 PM INFO: Player ready: IA
+01/15/2022 07:50:26 PM INFO: Connected by: ('127.0.0.1', 60846)
+01/15/2022 07:50:26 PM INFO: Player connected: Uri
+01/15/2022 07:50:27 PM INFO: Player ready: Uri
+01/15/2022 07:50:27 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:50:27 PM INFO: Ok, let's start the game!
+01/15/2022 07:50:29 PM INFO: Showing hand to: IA
+01/15/2022 07:50:31 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [3, 4]
+01/15/2022 07:54:27 PM INFO: Closing the server...
+01/15/2022 07:54:27 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 07:54:32 PM INFO: Connected by: ('127.0.0.1', 60876)
+01/15/2022 07:54:32 PM INFO: Player connected: IA
+01/15/2022 07:54:33 PM INFO: Player ready: IA
+01/15/2022 07:54:38 PM INFO: Connected by: ('127.0.0.1', 60878)
+01/15/2022 07:54:38 PM INFO: Player connected: Uri
+01/15/2022 07:54:39 PM INFO: Player ready: Uri
+01/15/2022 07:54:39 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 07:54:39 PM INFO: Ok, let's start the game!
+01/15/2022 07:54:41 PM INFO: Showing hand to: IA
+01/15/2022 07:54:44 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2, 3, 4]
+01/15/2022 08:21:15 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:21:21 PM INFO: Connected by: ('127.0.0.1', 53068)
+01/15/2022 08:21:21 PM INFO: Player connected: IA
+01/15/2022 08:21:22 PM INFO: Player ready: IA
+01/15/2022 08:21:29 PM INFO: Connected by: ('127.0.0.1', 53071)
+01/15/2022 08:21:29 PM INFO: Player connected: Uri
+01/15/2022 08:21:31 PM INFO: Player ready: Uri
+01/15/2022 08:21:31 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:21:31 PM INFO: Ok, let's start the game!
+01/15/2022 08:21:33 PM INFO: Showing hand to: IA
+01/15/2022 08:21:35 PM INFO: Player IA providing hint to Uri: cards with value 4 are in positions: [0, 1, 2, 3]
+01/15/2022 08:24:47 PM INFO: Closing the server...
+01/15/2022 08:24:47 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:24:52 PM INFO: Connected by: ('127.0.0.1', 53087)
+01/15/2022 08:24:52 PM INFO: Player connected: IA
+01/15/2022 08:24:52 PM INFO: Player ready: IA
+01/15/2022 08:24:56 PM INFO: Connected by: ('127.0.0.1', 53088)
+01/15/2022 08:24:56 PM INFO: Player connected: Uri
+01/15/2022 08:25:00 PM INFO: Player ready: Uri
+01/15/2022 08:25:00 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:25:00 PM INFO: Ok, let's start the game!
+01/15/2022 08:25:02 PM INFO: Showing hand to: IA
+01/15/2022 08:25:04 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [1, 3]
+01/15/2022 08:27:42 PM INFO: Closing the server...
+01/15/2022 08:27:43 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:27:47 PM INFO: Connected by: ('127.0.0.1', 53113)
+01/15/2022 08:27:47 PM INFO: Player connected: IA
+01/15/2022 08:27:53 PM INFO: Connected by: ('127.0.0.1', 53114)
+01/15/2022 08:27:53 PM INFO: Player connected: Uri
+01/15/2022 08:27:55 PM INFO: Player ready: Uri
+01/15/2022 08:27:56 PM INFO: Player ready: IA
+01/15/2022 08:27:56 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:27:56 PM INFO: Ok, let's start the game!
+01/15/2022 08:27:57 PM INFO: Showing hand to: IA
+01/15/2022 08:27:59 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0]
+01/15/2022 08:28:03 PM INFO: Showing hand to: Uri
+01/15/2022 08:28:15 PM INFO: Uri: card played and correctly put on the table
+01/15/2022 08:28:17 PM INFO: Showing hand to: Uri
+01/15/2022 08:28:18 PM INFO: Showing hand to: IA
+01/15/2022 08:28:19 PM WARNING: Player disconnected: IA
+01/15/2022 08:29:22 PM INFO: Closing the server...
+01/15/2022 08:29:23 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:29:31 PM INFO: Connected by: ('127.0.0.1', 53164)
+01/15/2022 08:29:31 PM INFO: Player connected: IA
+01/15/2022 08:29:31 PM INFO: Player ready: IA
+01/15/2022 08:29:34 PM INFO: Connected by: ('127.0.0.1', 53165)
+01/15/2022 08:29:34 PM INFO: Player connected: Uri
+01/15/2022 08:29:36 PM INFO: Player ready: Uri
+01/15/2022 08:29:36 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:29:36 PM INFO: Ok, let's start the game!
+01/15/2022 08:29:42 PM INFO: Showing hand to: Uri
+01/15/2022 08:29:49 PM INFO: Showing hand to: IA
+01/15/2022 08:32:09 PM INFO: Closing the server...
+01/15/2022 08:32:09 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:32:13 PM INFO: Connected by: ('127.0.0.1', 53179)
+01/15/2022 08:32:13 PM INFO: Player connected: IA
+01/15/2022 08:32:14 PM INFO: Player ready: IA
+01/15/2022 08:32:18 PM INFO: Connected by: ('127.0.0.1', 53182)
+01/15/2022 08:32:18 PM INFO: Player connected: Uri
+01/15/2022 08:32:20 PM INFO: Player ready: Uri
+01/15/2022 08:32:20 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:32:20 PM INFO: Ok, let's start the game!
+01/15/2022 08:32:21 PM INFO: Showing hand to: IA
+01/15/2022 08:32:23 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3]
+01/15/2022 08:32:24 PM INFO: Showing hand to: Uri
+01/15/2022 08:32:36 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1, 4]
+01/15/2022 08:32:36 PM WARNING: Player disconnected: IA
+01/15/2022 08:39:08 PM INFO: Connected by: ('127.0.0.1', 53287)
+01/15/2022 08:39:19 PM INFO: Closing the server...
+01/15/2022 08:39:20 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:39:25 PM INFO: Connected by: ('127.0.0.1', 53291)
+01/15/2022 08:39:25 PM INFO: Player connected: IA
+01/15/2022 08:39:26 PM INFO: Player ready: IA
+01/15/2022 08:39:28 PM INFO: Connected by: ('127.0.0.1', 53292)
+01/15/2022 08:39:28 PM INFO: Player connected: Uri
+01/15/2022 08:39:30 PM INFO: Player ready: Uri
+01/15/2022 08:39:30 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:39:30 PM INFO: Ok, let's start the game!
+01/15/2022 08:39:32 PM INFO: Showing hand to: Uri
+01/15/2022 08:39:35 PM INFO: Showing hand to: IA
+01/15/2022 08:39:37 PM INFO: Player IA providing hint to Uri: cards with value 2 are in positions: [0, 1]
+01/15/2022 08:40:00 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3]
+01/15/2022 08:40:00 PM WARNING: Player disconnected: IA
+01/15/2022 08:41:06 PM INFO: Closing the server...
+01/15/2022 08:41:07 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:41:11 PM INFO: Connected by: ('127.0.0.1', 53301)
+01/15/2022 08:41:11 PM INFO: Player connected: IA
+01/15/2022 08:41:11 PM INFO: Player ready: IA
+01/15/2022 08:41:12 PM INFO: Connected by: ('127.0.0.1', 53302)
+01/15/2022 08:41:12 PM INFO: Player connected: Uri
+01/15/2022 08:41:13 PM INFO: Player ready: Uri
+01/15/2022 08:41:13 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:41:13 PM INFO: Ok, let's start the game!
+01/15/2022 08:41:15 PM INFO: Showing hand to: Uri
+01/15/2022 08:41:17 PM INFO: Showing hand to: IA
+01/15/2022 08:41:19 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [1]
+01/15/2022 08:41:28 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [4]
+01/15/2022 08:41:28 PM WARNING: Player disconnected: IA
+01/15/2022 08:42:05 PM INFO: Closing the server...
+01/15/2022 08:42:06 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:42:14 PM INFO: Connected by: ('127.0.0.1', 53312)
+01/15/2022 08:42:14 PM INFO: Player connected: Uri
+01/15/2022 08:42:15 PM INFO: Player ready: Uri
+01/15/2022 08:42:17 PM INFO: Connected by: ('127.0.0.1', 53314)
+01/15/2022 08:42:17 PM INFO: Player connected: IA
+01/15/2022 08:42:18 PM INFO: Player ready: IA
+01/15/2022 08:42:18 PM INFO: Game start! Between: ['Uri', 'IA']
+01/15/2022 08:42:18 PM INFO: Ok, let's start the game!
+01/15/2022 08:42:21 PM INFO: Showing hand to: Uri
+01/15/2022 08:42:31 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 4]
+01/15/2022 08:43:27 PM INFO: Showing hand to: Uri
+01/15/2022 08:43:33 PM INFO: Showing hand to: IA
+01/15/2022 08:43:35 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [2, 3]
+01/15/2022 08:50:35 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:50:40 PM INFO: Connected by: ('127.0.0.1', 53416)
+01/15/2022 08:50:40 PM INFO: Player connected: IA
+01/15/2022 08:50:40 PM INFO: Player ready: IA
+01/15/2022 08:50:51 PM INFO: Connected by: ('127.0.0.1', 53419)
+01/15/2022 08:50:51 PM INFO: Player connected: Uri
+01/15/2022 08:50:53 PM INFO: Player ready: Uri
+01/15/2022 08:50:53 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:50:53 PM INFO: Ok, let's start the game!
+01/15/2022 08:50:54 PM INFO: Showing hand to: IA
+01/15/2022 08:50:56 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+01/15/2022 08:51:02 PM INFO: Showing hand to: Uri
+01/15/2022 08:51:19 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3]
+01/15/2022 08:55:48 PM INFO: Showing hand to: IA
+01/15/2022 08:55:48 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+01/15/2022 08:56:27 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 08:56:31 PM INFO: Connected by: ('127.0.0.1', 50891)
+01/15/2022 08:56:31 PM INFO: Player connected: IA
+01/15/2022 08:56:32 PM INFO: Player ready: IA
+01/15/2022 08:56:37 PM INFO: Connected by: ('127.0.0.1', 50892)
+01/15/2022 08:56:37 PM INFO: Player connected: Uri
+01/15/2022 08:56:38 PM INFO: Player ready: Uri
+01/15/2022 08:56:38 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 08:56:38 PM INFO: Ok, let's start the game!
+01/15/2022 08:56:40 PM INFO: Showing hand to: IA
+01/15/2022 08:56:42 PM INFO: Player IA providing hint to Uri: cards with value 3 are in positions: [0, 4]
+01/15/2022 08:56:48 PM INFO: Showing hand to: Uri
+01/15/2022 08:59:53 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0]
+01/15/2022 08:59:57 PM INFO: Showing hand to: IA
+01/15/2022 08:59:57 PM INFO: Player IA providing hint to Uri: cards with value 3 are in positions: [0, 4]
+01/15/2022 09:02:29 PM INFO: Closing the server...
+01/15/2022 09:02:30 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:02:35 PM INFO: Connected by: ('127.0.0.1', 55346)
+01/15/2022 09:02:35 PM INFO: Player connected: IA
+01/15/2022 09:02:35 PM INFO: Player ready: IA
+01/15/2022 09:02:41 PM INFO: Connected by: ('127.0.0.1', 55349)
+01/15/2022 09:02:41 PM INFO: Player connected: Uri
+01/15/2022 09:02:42 PM INFO: Player ready: Uri
+01/15/2022 09:02:42 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:02:42 PM INFO: Ok, let's start the game!
+01/15/2022 09:02:44 PM INFO: Showing hand to: Uri
+01/15/2022 09:02:47 PM INFO: Showing hand to: IA
+01/15/2022 09:02:49 PM INFO: Player IA providing hint to Uri: cards with color white are in positions: [1]
+01/15/2022 09:03:02 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3, 4]
+01/15/2022 09:03:05 PM INFO: Showing hand to: IA
+01/15/2022 09:03:05 PM INFO: Player IA providing hint to Uri: cards with color white are in positions: [1]
+01/15/2022 09:03:09 PM INFO: Uri: card played and correctly put on the table
+01/15/2022 09:03:12 PM INFO: Showing hand to: IA
+01/15/2022 09:04:50 PM INFO: Closing the server...
+01/15/2022 09:04:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:04:53 PM INFO: Connected by: ('127.0.0.1', 55404)
+01/15/2022 09:04:53 PM INFO: Player connected: IA
+01/15/2022 09:04:53 PM INFO: Player ready: IA
+01/15/2022 09:04:55 PM INFO: Connected by: ('127.0.0.1', 55405)
+01/15/2022 09:04:55 PM INFO: Player connected: Uri
+01/15/2022 09:04:56 PM INFO: Player ready: Uri
+01/15/2022 09:04:56 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:04:56 PM INFO: Ok, let's start the game!
+01/15/2022 09:04:58 PM INFO: Showing hand to: Uri
+01/15/2022 09:05:05 PM INFO: Showing hand to: IA
+01/15/2022 09:05:07 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1]
+01/15/2022 09:05:21 PM INFO: Uri: card played and correctly put on the table
+01/15/2022 09:05:25 PM INFO: Showing hand to: Uri
+01/15/2022 09:05:32 PM INFO: Showing hand to: IA
+01/15/2022 09:08:07 PM INFO: Closing the server...
+01/15/2022 09:08:07 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:08:11 PM INFO: Connected by: ('127.0.0.1', 55428)
+01/15/2022 09:08:11 PM INFO: Player connected: IA
+01/15/2022 09:08:11 PM INFO: Player ready: IA
+01/15/2022 09:08:14 PM INFO: Connected by: ('127.0.0.1', 55429)
+01/15/2022 09:08:14 PM INFO: Player connected: Uri
+01/15/2022 09:08:16 PM INFO: Player ready: Uri
+01/15/2022 09:08:16 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:08:16 PM INFO: Ok, let's start the game!
+01/15/2022 09:08:18 PM INFO: Showing hand to: Uri
+01/15/2022 09:08:20 PM INFO: Showing hand to: IA
+01/15/2022 09:10:29 PM INFO: Closing the server...
+01/15/2022 09:10:29 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:10:34 PM INFO: Connected by: ('127.0.0.1', 55491)
+01/15/2022 09:10:34 PM INFO: Player connected: IA
+01/15/2022 09:10:36 PM INFO: Player ready: IA
+01/15/2022 09:10:40 PM INFO: Connected by: ('127.0.0.1', 55492)
+01/15/2022 09:10:40 PM INFO: Player connected: Uri
+01/15/2022 09:10:42 PM INFO: Player ready: Uri
+01/15/2022 09:10:42 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:10:42 PM INFO: Ok, let's start the game!
+01/15/2022 09:10:44 PM INFO: Showing hand to: Uri
+01/15/2022 09:10:46 PM INFO: Showing hand to: IA
+01/15/2022 09:11:12 PM INFO: Closing the server...
+01/15/2022 09:12:47 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:12:51 PM INFO: Connected by: ('127.0.0.1', 55693)
+01/15/2022 09:12:51 PM INFO: Player connected: IA
+01/15/2022 09:12:58 PM INFO: Connected by: ('127.0.0.1', 55694)
+01/15/2022 09:12:58 PM INFO: Player connected: Uri
+01/15/2022 09:13:00 PM INFO: Player ready: Uri
+01/15/2022 09:13:02 PM INFO: Player ready: IA
+01/15/2022 09:13:02 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:13:02 PM INFO: Ok, let's start the game!
+01/15/2022 09:13:02 PM INFO: Showing hand to: IA
+01/15/2022 09:20:21 PM INFO: Closing the server...
+01/15/2022 09:20:21 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:20:29 PM INFO: Connected by: ('127.0.0.1', 60698)
+01/15/2022 09:20:29 PM INFO: Player connected: IA
+01/15/2022 09:20:29 PM INFO: Player ready: IA
+01/15/2022 09:20:35 PM INFO: Connected by: ('127.0.0.1', 60713)
+01/15/2022 09:20:35 PM INFO: Player connected: Uri
+01/15/2022 09:20:36 PM INFO: Player ready: Uri
+01/15/2022 09:20:36 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:20:36 PM INFO: Ok, let's start the game!
+01/15/2022 09:20:37 PM INFO: Showing hand to: Uri
+01/15/2022 09:20:39 PM INFO: Showing hand to: IA
+01/15/2022 09:53:06 PM INFO: Closing the server...
+01/15/2022 09:53:07 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:53:20 PM INFO: Connected by: ('127.0.0.1', 61248)
+01/15/2022 09:53:20 PM INFO: Player connected: IA
+01/15/2022 09:53:20 PM INFO: Player ready: IA
+01/15/2022 09:53:23 PM INFO: Connected by: ('127.0.0.1', 61249)
+01/15/2022 09:53:23 PM INFO: Player connected: Uri
+01/15/2022 09:53:25 PM INFO: Player ready: Uri
+01/15/2022 09:53:25 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:53:25 PM INFO: Ok, let's start the game!
+01/15/2022 09:53:26 PM INFO: Showing hand to: IA
+01/15/2022 09:54:06 PM INFO: Closing the server...
+01/15/2022 09:54:07 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:54:10 PM INFO: Connected by: ('127.0.0.1', 61253)
+01/15/2022 09:54:10 PM INFO: Player connected: IA
+01/15/2022 09:54:13 PM INFO: Player ready: IA
+01/15/2022 09:54:15 PM INFO: Connected by: ('127.0.0.1', 61255)
+01/15/2022 09:54:15 PM INFO: Player connected: Uri
+01/15/2022 09:54:18 PM INFO: Player ready: Uri
+01/15/2022 09:54:18 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:54:18 PM INFO: Ok, let's start the game!
+01/15/2022 09:54:19 PM INFO: Showing hand to: IA
+01/15/2022 09:54:50 PM INFO: Closing the server...
+01/15/2022 09:54:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:54:56 PM INFO: Connected by: ('127.0.0.1', 61262)
+01/15/2022 09:54:56 PM INFO: Player connected: IA
+01/15/2022 09:54:57 PM INFO: Player ready: IA
+01/15/2022 09:55:01 PM INFO: Connected by: ('127.0.0.1', 61264)
+01/15/2022 09:55:01 PM INFO: Player connected: Uri
+01/15/2022 09:55:03 PM INFO: Player ready: Uri
+01/15/2022 09:55:03 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:55:03 PM INFO: Ok, let's start the game!
+01/15/2022 09:55:04 PM INFO: Showing hand to: IA
+01/15/2022 09:56:32 PM INFO: Closing the server...
+01/15/2022 09:56:33 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/15/2022 09:56:38 PM INFO: Connected by: ('127.0.0.1', 54483)
+01/15/2022 09:56:38 PM INFO: Player connected: IA
+01/15/2022 09:56:39 PM INFO: Player ready: IA
+01/15/2022 09:56:43 PM INFO: Connected by: ('127.0.0.1', 54484)
+01/15/2022 09:56:43 PM INFO: Player connected: Uri
+01/15/2022 09:56:46 PM INFO: Player ready: Uri
+01/15/2022 09:56:46 PM INFO: Game start! Between: ['IA', 'Uri']
+01/15/2022 09:56:46 PM INFO: Ok, let's start the game!
+01/15/2022 09:56:48 PM INFO: Showing hand to: IA
+01/15/2022 09:56:50 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3]
+01/15/2022 09:57:23 PM INFO: Showing hand to: Uri
+01/15/2022 09:57:31 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1, 2, 3, 4]
+01/15/2022 09:57:35 PM INFO: Showing hand to: IA
+01/15/2022 09:57:37 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3]
+01/15/2022 09:58:15 PM INFO: Closing the server...
