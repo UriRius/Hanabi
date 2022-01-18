@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+from re import T
 from sys import argv, stdout
 from threading import Thread
 import GameData
+import game
 import socket
 from constants import *
 import os
@@ -27,282 +29,295 @@ status = statuses[0]
 
 hintState = ("", "")
 
-#new variables
+#class extensions
+#names are in Catalan to avoid confussions
+class Jugador(game.Player):
+    def __init__(self, name) -> None:
+        super().__init__(self, name)
+        self.semisolution = "11 play 0"
 
-#For each card in hand there is going to be 3 attributes, the value (default 0), the color (default None) and a Tag
-#with values Res, jugable, descartable, perillosa, perillosajugable
-Hand = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
-UsedTokens = ""
-Players=[]
-PlayedCards= []
-DiscartedCards= []
-p_names=[]
+    def tagHand(self):
+        for c in self.hand:
+            c.evaluaCarta()
 
-#new functions
-"""This function is used to remove the hint played/discard"""
-def RemoveHint(RemHint):
-    cardIndex = RemHint.split(" ")[0]
+    def SemiSolution(self, move):
+        self.semisolution=move
 
-    start= int(cardIndex)-1
-    for i in range(start, 0, -1):
-        Hand[i+1] = Hand[i]
-    Hand[0]=["0", "None", "Res"]
+    def cleanSemiSolution(self):
+        self.semisolution = "11 play 0"
 
+    def getSemiID(self):
+        return int(self.semisolution.split(" ")[0])
 
-def addHintsForIA(NewHint):
+    def countValue(self, value):
+        counter = 0
+        for c in self.hand:
+            if c.value == value:
+                counter+=1
+        return counter
+
+    def countColor(self, color):
+        counter = 0
+        for c in self.hand:
+            if c.color == color:
+                counter+=1
+        return counter
+
+class Carta(game.Card):
+    def __init__(self, card, tag) -> None:
+        super().__init__(self,card.id,card.value,card.color)
+        self.tag = tag
+
+class Joc(object):
+    #I refer as card of the same those cards that share value and color
+    def __init__(self) -> None:
+        super().__init__()
+        self.DiscardPile = []
+        self.PlayedCards = []
+        self.UsedTokens = 0
+        self.Players = []
+        self.Hints = []
+
+    """returns the agent position in Players"""
+    def agentPosition(self):
+        return self.Players.index(playerName)
+            
     
-    cardposition = NewHint.split(" ")[0]
-    cardvalue = NewHint.split(" ")[1]
-    
-    card = Hand[int(cardposition)]
-    value = card[0]
-    color = card[1]
-    tag = card[2]
+    """adds a card to the PlayedPile"""
+    def addPlayedCard(self, carta):
+        self.PlayedCards.append(carta)
 
-    nums = ["1", "2", "3", "4", "5"]
-    if cardvalue in nums:
-        Hand[int(cardposition)] = cardvalue + " " + color + " " + tag
-    else:
-        Hand[int(cardposition)] = value + " " + cardvalue + " " + tag
-    
-    TagHand(Hand)
-
-def most_frequent(List):
-    return max(set(List), key = List.count)
-
-def HotCards():
-    valors = []
-    colors = []
-    HotValue = "0"
-    HotColor = "black"
-    if DiscartedCards:
-        for c in DiscartedCards:
-            cardvalue = c.split(" ")[1]
-            valors.append(cardvalue)
-            cardcolor = c.split(" ")[3]
-            colors.append(cardcolor)
-
-        HotColor = most_frequent(colors)
-        HotValue = most_frequent(valors)
-    return HotValue + " " + HotColor
-
-def isDangerous(value, color):
-    #This function returns True if discarting the card is dangerous
-    Hots = HotCards()
-    HotValue = Hots.split(" ")[0]
-    HotColor = Hots.split(" ")[1]
-    
-    #it's a 5
-    if value == "5":
-        return True
-    #it's the most frequent descarted color/value
-    elif value == HotValue or color == HotColor:
-        return True
-    #it's a between 1 and 4 and the other cards with same value & color had been discarted
-    elif value == "1":
-        discard = "Card "+ value + " - " + color
-        if DiscartedCards.count(discard) > 1: return True
-        else: return False
-    else:
-        discard = "Card "+ value + " - " + color
-        if discard in DiscartedCards: return True
-        else: return False
-
-def isJugable(value, color):
-    #This function returns True if playing the card is save
-    carta = "Card "+ value + " - " + color
-    #the card has been played
-    if carta in PlayedCards:
+    """Returns if a card of the same type has been played"""
+    def estaJugada(self, carta):
+        for i in self.PlayedCards:
+            if i.value == carta.value and i.color == carta.color:
+                return True
         return False
-    #it's a 1 and there are no cards in table
-    if value == "1" and carta not in PlayedCards:
-        return True
-    #card below has been played
-    for c in PlayedCards:
-        val = c.split(" ")[1]
-        col = c.split(" ")[3]
-        value = int(value) - 1
-        if val == str(value) and color == col:
+
+    """adds a card to the DiscardPile"""
+    def addDiscardedCard(self, carta):
+        self.DiscardPile.append(carta)
+
+    """Counts how many cards of the same type had been discarted"""
+    def countDiscarted(self, carta):
+        res = 0
+        for i in self.DiscardPile:
+            if i.value == carta.value and i.color==carta.color:
+                res += 1
+        return res
+
+    """Returns if the inferior cards with the same color have been discarted"""
+    def inferiorsDiscarted(self, carta):
+        for c in self.DiscardPile:
+            if c.color == carta.color:
+                i=self.countDiscarted(c)
+                if c.value == "1" and i==3: return True
+                elif int(i.value) < int(carta.value) and i == 2: return True
+        return False
+
+    """Increases the used tokens"""
+    def incUsedTokens(self):
+        self.UsedTokens+=1
+
+    """Decreases the used tokens"""
+    def decUsedTokens(self):
+        self.UsedTokens-=1
+
+    
+    def addHint(self, jugador, carta):
+        TODO 
+
+    
+    def remHint(self, carta):
+        TODO
+
+    """returns if a card is played"""
+    def IsPlayed(self, carta):
+        return (carta in self.PlayedCards)
+
+    """returns if a card is discarted"""
+    def IsDiscarted(self, carta):
+        return (carta in self.DiscardPile)
+
+    """returns if a card is in the hand of any player"""
+    def InHand(self, carta):
+        estaMA = False
+        for i in self.Players:
+            estaMA = (carta in i.hand)
+        return estaMA
+
+    """returns if a card is dangerous (discarting the card implies losing points)"""
+    def isDangerous(self, carta):
+        #it's a 5 and could be played in the future
+        if carta.value == "5":
             return True
-
-def isJugaPerill(value, color):
-    #This function returns True if discarting the card is dangerous but playing is save
-    return isJugable(value, color) and isDangerous(value,color)
-
-def isDescartable(value, color):
-    #This function returns True if discarting the card is save
-    carta = "Card "+ value + " - " + color
-    #the card has been played
-    if carta in PlayedCards:
-        return True
-    #inferior card had been discarted
-    for c in DiscartedCards:
-        val = c.split(" ")[1]
-        col = c.split(" ")[3]
-        if val == "1" and col == color and DiscartedCards.count(c) == 3: return True
-        if int(val) < int(value) and col == color and DiscartedCards.count(c) == 2: return True
-    return False
-    
-def evaluaCarta(value, color):
-    if isJugaPerill(value, color):
-        tag = "perillosajugable"
-    elif isDescartable(value, color):
-        tag = "descartable"
-    elif isJugable(value, color):
-        tag = "jugable"
-    elif isDangerous(value , color):
-        tag = "perillosa"
-    else:
-        tag = "Res"
-    return tag
-        
-
-def TagHand(ma):
-    #This function changes the tag for every card in a given hand
-    i = 0
-    for card in ma:
-        value = card[0]
-        color = card[1]
-        
-        tag = evaluaCarta(value, color)
-
-        carta = value + " " + color + " " + tag
-        ma[i] = carta
-        i += 1
-
-def downloadPlayersHandsTag():
-    PlayersHands = [[0 for i in range(6)]] * (len(Players)-1)
-    i = -1
-    for p in  Players:
-        if p.name != playerName:
-            PlayersHands[i][0] = str(p.name)
-            j = 1
-            for c in p.hand:
-                value = c.toClientString().split(" ")[1]
-                color = c.toClientString().split(" ")[3]
-                tag = evaluaCarta(value, color)
-                PlayersHands[i][j] = tag
-                j += 1
-        i += 1
-    return PlayersHands
-
-def SearchPosition(player, position):
-    #which card has the player in the given position
-    for p in  Players:
-        if p.name == player:
-            stop = 0
-            for c in p.hand:
-                if stop == position:
-                    card=c.toClientString()
-                    break
-                stop += 1
-    return card
-    
-def getPlayerHand(player):
-    result = []
-    for p in  Players:
-        if p.name == player:
-            for c in p.hand:
-                value = c.toClientString().split(" ")[1]
-                color = c.toClientString().split(" ")[3]
-                result.append(value)
-                result.append(color)
-    return result
-
-
-def Value_Color(player, card):
-    pista = []
-    value = card.split(" ")[1]
-    color = card.split(" ")[3]
-    hand = getPlayerHand(player)
-    valueCounter = hand.count(value)
-    colorCounter = hand.count(color)
-    if colorCounter >= valueCounter:
-        pista.append("value")
-        pista.append(value)
-    else:
-        pista.append("color")
-        pista.append(color)
-    return pista
-
-
-def BestMove():
-    #final solution
-    solution = "10 play 0"
-    #semisolution for every player that will be evaluated later
-    semisolution = ["11 play 0"] * len(Players)
-    #we still can give hints
-    if UsedTokens != "8":
-        PlayersHands=downloadPlayersHandsTag() #format -> [[Player_name, tag, tag, tag, tag, tag], [....]]
-        L = len(PlayersHands)
-        for i in range(L):
-            player = PlayersHands[i][0]
-            for j in range(1, 6):
-                c = PlayersHands[i][j]
-                hand_tag = Hand[i][2]
-                print("hand tag: "+ hand_tag)
-                card=SearchPosition(player, j-1)
-                q1 = semisolution[i].split(" ")[0]
-                if "perillosa" == c:
-                    if int(q1) > 0:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "0 " + "hint " + pista[0] + " " + player + " " + pista[1]
-                elif "perillosajugable" == c:
-                    if int(q1) > 1:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "1 "+"hint " + pista[0] + " " + player + " " + pista[1]
-                elif "jugable" == hand_tag:
-                    if int(q1) > 2:
-                        semisolution[i] = "2 "+"play " + str(i)
-                elif "jugable" == c:
-                    if int(q1) > 3:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "3 "+"hint " + pista[0] + " " + player + " " + pista[1]
-                if "descartable" == hand_tag and UsedTokens != "0":
-                    if int(q1) > 4:
-                        semisolution[i] = "4 "+"discard " + str(i)
-                elif "descartables" == c:
-                    if int(q1) > 5:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "5 "+"hint " + pista[0] + " " + player + " " + pista[1]
-                elif "Res" == hand_tag and UsedTokens != "0":
-                    if int(q1) > 6:
-                        semisolution[i] = "6 "+"discard " + str(i)
-                else:
-                    if int(q1) > 7:
-                        pista = Value_Color(player, card)
-                        semisolution[i] = "7 "+"hint " + pista[0] + " " + player + " " + pista[1]
-                
-    else:
-        L = len(Hand)
-        for i in range(L):
-            c = Hand[i][3]
-            q1 = semisolution[i].split(" ")[0]
-            if "descartable" == c and UsedTokens != "0":
-                if int(q1) > 0:
-                    semisolution[i] = "0 "+"discard " + str(i)
-            elif "jugable" == c:
-                if int(q1) > 1:
-                    semisolution[i] = "1 "+ "play " + str(i)
-            elif "Res" == c and UsedTokens != "0":
-                if int(q1) > 2:
-                    semisolution[i] = "2 "+"discard " + str(i)
-            elif UsedTokens != "0":
-                if int(q1) > 3:
-                    semisolution[i] = "3 "+"discard " + str(i)
+        #it's a between 1 and 4 and the other cards with same value & color had been discarted
+        else:
+            count = self.countDiscarted(carta)
+            if carta.value == "1" and count > 1:
+                return True
             else:
-                if int(q1) > 4:
-                    semisolution[i] = "4 "+"play " + str(i)
+                if count == 1: return True
+                return False
+
+    """This function returns if playing the card is save"""
+    def isJugable(self, carta):
+        #a card with same attributes has been played
+        if self.estaJugada(carta):
+            return False
+        #it's a 1 and there are no cards in table
+        elif carta.value == "1" and not self.PlayedCards:
+            return True
+        #the card below has been played
+        else:
+            for c in self.PlayedCards:
+                Cvalue = int(c.value) + 1
+                if carta.value == str(Cvalue) and carta.color == c.color:
+                    return True
+            return False
+    
+    """This function returns True if discarting the card is dangerous but playing is save"""
+    def isJugaPerill(self, carta):
+        return self.isJugable(carta) and self.isDangerous(carta)
+
+
+    """This function returns if discarting the card is save"""
+    def isDescartable(self, carta):
+        #a card with same value&color has been played
+        if self.estaJugada(carta): return True
+        #inferior card had been discarted
+        return self.inferiorsDiscarted(carta)
+
+    """Changes the tag of a card"""
+    def evaluaCarta(self, carta):
+        if self.isJugaPerill(carta):
+            tag = "perillosajugable"
+        elif self.isDescartable(carta):
+            tag = "descartable"
+        elif self.isJugable(carta):
+            tag = "jugable"
+        elif self.isDangerous(carta):
+            tag = "perillosa"
+        else:
+            tag = "Res"
+        carta.tag = tag
+
+    def Value_Color(self, player, card):
+        pista = []
+        valueCounter = player.countValue(card.value)
+        colorCounter = player.countColor(card.color)
+        if colorCounter >= valueCounter:
+            pista.append("value")
+            pista.append(card.value)
+        else:
+            pista.append("color")
+            pista.append(card.color)
+        return pista
+
+    def teJugables(self, player):
+        for c in player.hand:
+            if c.tag == "jugable": return True
+        return False
+
+    def retornaJugable(self, player):
+        for c in player.hand:
+            if c.tag == "jugable":
+                return str(player.hand.index(c))
+        return "0"
         
+    def teDescatables(self, player):
+        for c in player.hand:
+            if c.tag == "descartable": return True
+        return False
 
-    for sol in semisolution:
-        q1 = solution.split(" ")[0]
-        q2 = sol.split(" ")[0]
-        if int(q1) > int(q2):
-            solution = sol
+    def retornaDescartable(self, player):
+        for c in player.hand:
+            if c.tag == "descartable":
+                return str(player.hand.index(c))
+        return "0"
 
-    solution = solution[2:]
-    return solution            
+    def teRes(self, player):
+        for c in player.hand:
+            if c.tag == "Res": return True
+        return False
+
+    def retornaRes(self, player):
+        for c in player.hand:
+            if c.tag == "Res":
+                return str(player.hand.index(c))
+        return "0"
+
+    def BestMove(self):
+        #final solution
+        solution = "10 play 0"
+        #semisolution for every player that will be evaluated later
+        agent = self.agentPosition()
+        #we still can give hints
+        if self.UsedTokens != 8:
+            for player in self.Players:
+                for card in player.hand:
+                    q1 = player.getSemiID()
+                    pista = self.Value_Color(player, card)
+                    if "perillosa" == card.tag and player != self.Player[agent]:
+                        if q1 > 0:
+                            player.semisolution = "0 " + "hint " + pista[0] + " " + player + " " + pista[1]
+                    elif "perillosajugable" == card.tag and player != self.Player[agent]:
+                        if q1 > 1:
+                            player.semisolution = "1 "+"hint " + pista[0] + " " + player + " " + pista[1]
+                    elif self.teJugables(self.Player[agent]):
+                        if q1 > 2:
+                            pos = self.retornaJugable(self.Player[agent])
+                            player.semisolution = "2 "+"play " + pos
+                    elif "jugable" == card.tag and player != self.Player[agent]:
+                        if q1 > 3:
+                            player.semisolution = "3 "+"hint " + pista[0] + " " + player + " " + pista[1]
+                    if self.UsedTokens != 0 and self.teDescartables(self.Player[agent]):
+                        if q1 > 4:
+                            pos = self.retornaDescartable(self.Players[agent])
+                            player.semisolution = "4 "+"discard " + pos
+                    elif "descartables" == card.tag and player != self.Player[agent]:
+                        if q1 > 5:
+                            player.semisolution = "5 "+"hint " + pista[0] + " " + player + " " + pista[1]
+                    elif self.UsedTokens != 0 and self.teRes(self.Players[agent]):
+                        if q1 > 6:
+                            pos = self.retornaRes(self.Players[agent])
+                            player.semisolution = "6 "+"discard " + pos
+                    else:
+                        if q1 > 7 and player != self.Player[agent]:
+                            player.semisolution = "7 "+"hint " + pista[0] + " " + player + " " + pista[1]
+                    
+        else:
+            player=self.Player[agent]
+            tenimTokens=self.UsedTokens != 0
+            for card in player.hand:
+                q1 = player.getSemiID()
+                cardIndex = player.hand.index(card)
+                if "descartable" == card.tag and tenimTokens:
+                    if q1 > 0:
+                        player.semisolution = "0 "+"discard " + cardIndex
+                elif "jugable" == card.tag:
+                    if q1 > 1:
+                        player.semisolution = "1 "+ "play " + cardIndex
+                elif "Res" == card.tag and tenimTokens:
+                    if q1 > 2:
+                        player.semisolution = "2 "+"discard " + cardIndex
+                elif tenimTokens:
+                    if q1 > 3:
+                        player.semisolution = "3 "+"discard " + cardIndex
+                else:
+                    if q1 > 4:
+                        player.semisolution = "4 "+"play " + cardIndex
+            
+
+        for player in self.Players:
+            q1 = solution.split(" ")[0]
+            q2 = player.getSemiID()
+            if int(q1) > int(q2):
+                solution = player.semisolution
+
+        solution = solution[2:]
+        return solution 
+
 
 def manageInput():
     global run
@@ -317,13 +332,15 @@ def manageInput():
                 #If status==Lobby we send start request
                 s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             else:
+                joc = Joc()
                 #We request the show action everytime we play
                 s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-                #we have to sleep to get the response before doing anything
+                #we have to sleep to get the show response before doing anything
                 time.sleep(2)
                 #try:
+
                 #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
-                BstMv=BestMove()
+                BstMv=joc.BestMove()
 
                 print(BstMv)
 
@@ -378,22 +395,23 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Current player: " + data.currentPlayer)
             print("Player hands: ")
             #Aqui actualitzem la nostra variable de players per tenir la seva ma en tot moment
-            Players= data.players
+            Joc.Players = data.players
             for p in data.players:
                 print(p.toClientString())
+                for card in p.hand:
+                    print("Carta: "+ str(card.value) + " - " + str(card.color))
             print("Table cards: ")
+            Joc.PlayedCards = data.tableCards
             for pos in data.tableCards:
                 print(pos + ": [ ")
                 for c in data.tableCards[pos]:
-                    #AQUI ES PODEN AGAFAR LES CARTES JUGADES
-                    PlayedCards.append(c.toClientString())
                     print(c.toClientString() + " ")
                 print("]")
             print("Discard pile: ")
+            Joc.DiscardPile = data.discardPile
             for c in data.discardPile:
-                DiscartedCards.append[c.toClientString()]
                 print("\t" + c.toClientString())           
-            UsedTokens=str(data.usedNoteTokens)
+            Joc.UsedTokens=int(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
         if type(data) is GameData.ServerActionInvalid:
@@ -402,29 +420,19 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print(data.message)
         if type(data) is GameData.ServerActionValid:
             dataOk = True
-            print("Card played Valid: " +  str(data.card.value)+ " " + str(data.card.color))
-            print("Played by Valid: " +  str(data.lastPlayer))
             RemHint = (str(data.cardHandIndex))
-            if str(data.lastPlayer) == playerName:
-                RemoveHint(RemHint)
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
             #Hem jugat bé una carta
             dataOk = True
-            print("Card played: " +  str(data.card.value)+ " " + str(data.card.color))
-            print("Played by: " +  str(data.lastPlayer))
             RemHint = (str(data.cardHandIndex))
-            if str(data.lastPlayer) == playerName:
-                RemoveHint(RemHint)
             print("Action valid!")
             print("Nice move!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerThunderStrike:
             #Hem jugat malament una carta
             dataOk = True
-            print("Card played OH NO: " +  str(data.card.value)+ " " + str(data.card.color))
-            print("Played by OH NO: " +  str(data.lastPlayer))
             print("OH NO! The Gods are unhappy with you!")
         if type(data) is GameData.ServerHintData:
             #Aqui es reben les pistes
@@ -432,9 +440,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Hint type: " + data.type)
             print("Player " + data.destination + " cards with value " + str(data.value) + " are:")
             for i in data.positions:
-                if str(data.destination) == playerName:
-                    NewHint = (str(i) + " " + str(data.value))
-                    addHintsForIA(NewHint)
                 print("\t" + str(i))
         if type(data) is GameData.ServerInvalidDataReceived:
             dataOk = True
