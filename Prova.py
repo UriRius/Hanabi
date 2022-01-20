@@ -145,10 +145,7 @@ class Joc(object):
             else:
                 p.hand[i].hintValue = value
     
-    def remHint(self, carta):
-        TODO
-    ########################################################
-    
+
     """returns if a card is played"""
     def IsPlayed(self, carta):
         return (carta in self.PlayedCards)
@@ -338,49 +335,6 @@ class Joc(object):
 
 
 joc = Joc()
-
-def manageInput():
-    global run
-    global status
-    while run:
-        command = input()
-        if command == "exit":
-            run = False
-            os._exit(0)
-        else:
-            if status == statuses[0]:
-                #If status==Lobby we send start request
-                s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
-            else:
-                #We request the show action everytime we play
-                s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
-                #we have to sleep to get the show response before doing anything
-                time.sleep(2)
-                #try:
-
-                #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
-                BstMv=joc.BestMove()
-
-                print(BstMv)
-
-                move = BstMv.split(" ")[0]
-                num = BstMv.split(" ")[1]
-                
-                if move == "play":
-                    s.send(GameData.ClientPlayerPlayCardRequest(playerName, num).serialize())
-                elif move == "discard":
-                    s.send(GameData.ClientPlayerDiscardCardRequest(playerName, num).serialize())
-                else:
-                    player = BstMv.split(" ")[2]
-                    value = BstMv.split(" ")[3]
-                    if num == "value":
-                        value = int(value)
-                    s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
-                
-                #except:
-                    #print("Ups problemita, hem fallat en algo 0w0")
-                    #continue
-        stdout.flush()
 
 game = Game()
 
