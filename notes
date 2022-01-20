@@ -1,0 +1,56 @@
+pistes: <pos> <valor/color> <player>
+estats de la pista: res, color, valor, tot
+array de pistes que siguin totes les cartes
+pista[jugador][pos][valor, color, tag]
+Hand = [["valor", "color", "tag"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+
+
+[res][res][res][perillosa][jugable]
+pista[jugador[res][res][res][perillosa][res], jugador[res][res][res][res][res]]
+jugable
+
+pista[IA1] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+pista[IA2] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+pista[Oriol] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+
+pista[IA1] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+pista[IA2] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "white", "Res"]]
+pista[Oriol] = [["0", "None", "Res"],["0", "yellow", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+
+pista[IA1] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+pista[IA2] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["5", "None", "Res"]]
+pista[Oriol] = [["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"],["0", "None", "Res"]]
+############################################################
+
+Pista = [[Player_name, "0 None Res", "0 None Res", "0 None Res", "0 None Res", "0 None Res"], [....]]
+############################################################
+
+s'ha de fer:
+x=[] #->crea el tot
+x.append([]) #-> crea els jugadors fer tants com jugadors
+(ex: x[0] es un jugador, x[1] es un altre amb la seva ma completa)
+x[0].append([])
+
+
+
+
+
+
+
+
+
+classes:
+
+jugadors -> nom,  hand
+hand[cards]
+player.hand[0]
+
+card -> id, value, color, tag
+
+
+3 punts:
+-maximitzar la puntuacio per cada moviment de cada jugador
+-evitar situacions d'estancament (l'altre no sap quin moviment fer i si no pot donarte pistes esta forçat a descartar)
+-minimitzar el num de pistes donades per carta
+
+
