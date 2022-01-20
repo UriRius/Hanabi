@@ -68,13 +68,29 @@ class Jugador(game.Player):
                 counter+=1
         return counter
 
+    def actualitzaMA(self, cardHandIndex):
+        self.ma.pop(cardHandIndex)
+        k = Carta(5, 0, "", "Res")
+        self.ma.append(k)
+
     def ActualizaHand(self, hand):
+        print("ACTUALITZANT HAND DE "+ self.name)
         for c in hand:
+            print("carta de parametre color: "+c.color+" valor: "+str(c.value)+" id:"+str(c.id))
             m = self.ma[hand.index(c)]
+            print("carta de MA color: "+m.color+" valor: "+str(m.value)+" id:"+str(m.id))
             if m.id != c.id:
                 self.ma.pop(hand.index(c))
                 k = Carta(c.id, c.value, c.color, "Res")
-                self.ma.insert(hand.index(c),k)
+                self.ma.append(k)
+
+    def toClientString(self):
+        c = "[ "
+        for card in self.ma:
+            c += card.toClientString() + " ,"
+        c += " ]"
+        return ("Player " + self.name + " { cards: " + c + "\n}")
+
 
     def BestMoveIA(self, tokens):
         ## IA player is preasumed 
@@ -104,7 +120,7 @@ class Jugador(game.Player):
             else: 
                 print("la carta es merdosa i no tinc descarte")
                 if q1 > 7:
-                    self.semisolution = "0 "+ "play " + cardIndex
+                    self.semisolution = "7 "+ "play " + cardIndex
             
     def Value_Color(self, card):
         pista = []
@@ -145,14 +161,14 @@ class Jugador(game.Player):
             if card.tag == "jugable":
                 print("la carta es pot jugar")
                 if q1 > 1:
-                    self.semisolution = "1 "+"hint " + pista[0] + " " + self.name + " " + pista[1]
+                    self.semisolution = "1 "+"hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
             elif "perillosa" == card.tag:
                 print("la carta es perillosa")
                 if q1 > 2:
-                    self.semisolution = "2 " + "hint " + pista[0] + " " + self.name + " " + pista[1]
+                    self.semisolution = "2 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
             else:
                 if q1 > 5:
-                    self.semisolution = "5 " + "hint " + pista[0] + " " + self.name + " " + pista[1]
+                    self.semisolution = "5 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
 
 class Carta(game.Card):
     def __init__(self, id,value,color, tag) -> None:
@@ -160,6 +176,10 @@ class Carta(game.Card):
         self.tag = tag
         self.hintColor = ""
         self.hintValue = 0
+
+    def toClientString(self):
+        return ("Carta [" + str(self.value) + " - " + str(self.color) + "] Hints [" + str(self.hintValue) + " - " + str(self.hintColor) + "]")
+
 
 class Joc(object):
     #I refer as card of the same those cards that share value and color
@@ -188,7 +208,8 @@ class Joc(object):
 
     def actualitzaJugador(self, players):
         for p in players:
-            self.Players[players.index(p)].ActualizaHand(p.hand)
+            if p.name != playerName:
+                self.Players[players.index(p)].ActualizaHand(p.hand)
 
     def LoadDiscardPile(self,DiscardPile):
         self.DiscardPile = []
@@ -234,11 +255,11 @@ class Joc(object):
             if c.color == carta.color:
                 i=self.countDiscarted(c)
                 if c.value == 1 and i==3: return True
-                elif int(i.value) < carta.value and i == 2: return True
+                elif int(c.value) < carta.value and i == 2: return True
             else:
                 i=self.countDiscartedVal(c)
                 if c.value == 1 and i==15: return True
-                elif int(i.value) < carta.value and i == 10: return True
+                elif int(c.value) < carta.value and i == 10: return True
         return False
 
     """Increases the used tokens"""
@@ -259,9 +280,14 @@ class Joc(object):
         self.Players.append(j)
         return j
 
-    def addHint(self, playerName, tipus, value, positions):
+    def ActualizaMaIA(self, cardHandIndex):
         p = self.FindPlayer(playerName)
+        p.actualitzaMA(cardHandIndex)
+
+    def addHint(self, name, tipus, value, positions):
+        p = self.FindPlayer(name)
         for i in positions:
+            print("DIENTLI AL PLAYER "+ name+ " QUE GUARDI PISTA")
             if tipus == "color":
                 p.ma[i].hintColor = value
                 p.ma[i].color = value
@@ -433,6 +459,24 @@ class Joc(object):
         solution = solution[2:]
         return solution 
 
+    def ToString(self): 
+        print ("Informació Jugadors:")
+        print("len de players "+ str(len(self.Players)))
+        for p in self.Players:
+            print(p.toClientString())
+        print ("Played Cards:")
+        for pos in self.PlayedCards:
+            print(pos + ": [ ")
+            for c in self.PlayedCards[pos]:
+                print(c.toClientString() + " ")
+            print("]")
+        print("Discard pile: ")
+        for c in self.DiscardPile:
+            print("\t" + c.toClientString())           
+        print("Note tokens used: " + str(self.UsedTokens) + "/8")
+        print("==================== END OF GAME DATA ============================")
+
+
 
 joc = Joc()
 
@@ -529,17 +573,20 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             joc.UsedTokens=int(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
+            joc.ToString()
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
             print("Invalid action performed. Reason:")
             print(data.message)
         if type(data) is GameData.ServerActionValid:
             #Hem descartat
+            joc.ActualizaMaIA(data.cardHandIndex)
             dataOk = True
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
             #Hem jugat bé una carta
+            joc.ActualizaMaIA(data.cardHandIndex)
             dataOk = True
             print("Action valid!")
             print("Nice move!")
@@ -560,8 +607,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             value = str(data.value)
             pos = data.positions
             if joc.estat == 0:
+                print("GUARDANT PISTA")
                 joc.guradaPista(dest, tipus, value, pos)
             else:
+                print("ADD PISTA")
                 joc.addHint(dest, tipus, value, pos)
              
         if type(data) is GameData.ServerInvalidDataReceived:
