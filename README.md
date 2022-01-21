@@ -2,7 +2,7 @@
 Exam of computational intelligence 2021 - 2022. Hanabi project
 
 ## Usage
-To start a game with the agent:
+To start a game with the agent use the following command:
   python client_mark1.py <IP> <port> <PlayerName>
   
   There's no need to introduce any commands to the agent, everything is done by its self
