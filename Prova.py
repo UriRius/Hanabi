@@ -379,17 +379,26 @@ print(c)
 c.insert(i,9)
 print(c)
 
-playedCards = game._Game__tableCards
+playedCards = {
+            "red": [],
+            "yellow": [],
+            "green": [],
+            "blue": [],
+            "white": []
+        }
 
 rojos = [1,2,3]
 print("Cartas rojas" + str(rojos))
-c =  4
+c =  2
 esta = c in rojos 
 print (esta)
 
 ply = playedCards["red"]
 
 playedCards["red"].append(4)
+playedCards["red"].append(5)
+playedCards["red"].append(2)
+playedCards["blue"].append(1)
 print(ply)
 aa = c in ply
 print(aa)

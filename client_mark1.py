@@ -40,14 +40,7 @@ class Jugador(game.Player):
             for i in range(5):
                 s = Carta(i,0,"","Res")
                 self.ma.append(s)
-
-    def tagHand(self):
-        for c in self.hand:
-            c.evaluaCarta()
-
-    def SemiSolution(self, move):
-        self.semisolution=move
-
+                
     def cleanSemiSolution(self):
         self.semisolution = "11 play 0"
 
@@ -69,12 +62,9 @@ class Jugador(game.Player):
         return counter
 
     def actualitzaMA(self, cardHandIndex):
-        m = self.ma[cardHandIndex]
-        print("carta de MA color: "+m.color+" valor: "+str(m.value)+" id:"+str(m.id))
         self.ma.pop(cardHandIndex)
         k = Carta(5, 0, "", "Res")
         self.ma.append(k)
-        print("aixi queda la ma de la IA despres d'actualitzar")
         print(self.toClientString())
 
     def ActualizaHand(self, hand):
@@ -94,7 +84,6 @@ class Jugador(game.Player):
 
 
     def BestMoveIA(self, tokens):
-        ## IA player is preasumed 
         self.cleanSemiSolution()
         for card in self.ma:
             q1 = self.getSemiID()
@@ -103,17 +92,18 @@ class Jugador(game.Player):
                 if q1 > 0:
                     self.semisolution = "0 "+ "play " + cardIndex
             elif "descartable" == card.tag and tokens>0:
-                if q1 > 3:
-                    self.semisolution = "3 "+"discard " + cardIndex
+                if q1 > 2:
+                    self.semisolution = "2 "+"discard " + cardIndex
             elif "Res" == card.tag and tokens>0:
-                if q1 > 4:
-                    self.semisolution = "4 "+"discard " + cardIndex
+                if q1 > 5:
+                    self.semisolution = "5 "+"discard " + cardIndex
             elif tokens>0:
                 if q1 > 6:
                     self.semisolution = "6 discard 4"
             else: 
-                if q1 > 7:
-                    self.semisolution = "7 "+ "play " + cardIndex
+                if q1 > 8:
+                    self.semisolution = "8 "+ "play " + cardIndex
+            print("semi " + self.semisolution)
             
     def Value_Color(self, card):
         pista = []
@@ -135,21 +125,33 @@ class Jugador(game.Player):
                 pista.append(card.color)
         return pista
     
+    def repetida(self, card, pista):
+        if card.hintValue != 0 and pista[0] == "value":
+            return True
+        if card.hintValue == 5 or (card.hintColor != "" and pista[0] == "color"):
+            return True
+        return False
+
     #calcular el millor move per cada jugador
     def BestMove(self):
         self.cleanSemiSolution()
         for card in self.ma:
             q1 = self.getSemiID()
             pista = self.Value_Color(card)
-            if card.tag == "jugable":
-                if q1 > 1:
-                    self.semisolution = "1 "+"hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
-            elif "perillosa" == card.tag:
-                if q1 > 2:
-                    self.semisolution = "2 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
-            else:
-                if q1 > 5:
-                    self.semisolution = "5 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
+            repetida = self.repetida(card, pista)
+            if not repetida:
+                if card.tag == "jugable":
+                    if q1 > 1:
+                        self.semisolution = "1 "+"hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
+                elif "perillosa" == card.tag:
+                    if q1 > 3:
+                        self.semisolution = "3 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
+                elif "descartable" == card.tag:
+                    if q1 > 4:
+                        self.semisolution = "4 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
+                else:
+                    if q1 > 7:
+                        self.semisolution = "7 " + "hint " + str(pista[0]) + " " + self.name + " " + str(pista[1])
 
 class Carta(game.Card):
     def __init__(self, id,value,color, tag) -> None:
@@ -178,10 +180,6 @@ class Joc(object):
         self.pvalue = ""
         self.pposit = []
 
-    """returns the agent position in Players"""
-    def agentPosition(self):
-        return self.Players.index(playerName)
-            
     def creaJugador(self, players):
         for p in players:
             j = Jugador(p)
@@ -211,9 +209,10 @@ class Joc(object):
     """Returns if a card of the same type has been played"""
     def estaJugada(self, carta):
         if carta.color != "":
-            return carta.value in self.PlayedCards[carta.color]
-        else: return False
-       
+            for i in self.PlayedCards[carta.color]:
+                if int(i.value) == int(carta.value):
+                    return True
+        return False
 
     """Counts how many cards of the same type had been discarted"""
     def countDiscarted(self, carta):
@@ -236,26 +235,18 @@ class Joc(object):
             if c.color == carta.color:
                 i=self.countDiscarted(c)
                 if c.value == 1 and i==3: return True
-                elif int(c.value) < carta.value and i == 2: return True
+                elif c.value != 1 and int(c.value) < carta.value and i == 2: 
+                    return True
             else:
                 i=self.countDiscartedVal(c)
                 if c.value == 1 and i==15: return True
                 elif int(c.value) < carta.value and i == 10: return True
         return False
 
-    """Increases the used tokens"""
-    def incUsedTokens(self):
-        self.UsedTokens+=1
-
-    """Decreases the used tokens"""
-    def decUsedTokens(self):
-        self.UsedTokens-=1
-
     def FindPlayer(self, name):
         for p in self.Players:
             if p.name == name: 
                 return p
-        #NO HA TROBAT CAP JUGADOR PQ ENCARA NO ESTAN INICIATS
         p=game.Player(name)
         j=Jugador(p)
         self.Players.append(j)
@@ -281,13 +272,6 @@ class Joc(object):
         self.pvalue = value
         self.pposit = pos
 
-    """returns if a card is in the hand of any player"""
-    def InHand(self, carta):
-        estaMA = False
-        for i in self.Players:
-            estaMA = (carta in i.hand)
-        return estaMA
-
     def colorComplet(self, carta):
         if carta.color != "":
             return 5 in self.PlayedCards[carta.color]
@@ -297,20 +281,29 @@ class Joc(object):
         if carta.color == "": return False
         return not self.PlayedCards[carta.color]
 
-    def teLLoc(self, carta):
-        colors=["red","blue","green","yellow","white"]
-        menor = (carta.value-1)
-        for col in colors:
-            if menor==0 or menor in self.PlayedCards[col]:
-                return True
-            if not(self.colorComplet(carta)) and carta.hintColor!="":
-                return True
-        return False
+    def juga100(self, carta):
+        if len(self.PlayedCards[carta.color])>0:
+            print("juga100: "+str(self.PlayedCards[carta.color][-1].value)+" cartaval "+ str(carta.value))
+            return ((self.PlayedCards[carta.color][-1].value)+1) == carta.value
+        else: return False
 
     def cartaMenorJugada(self, carta):
         if self.colorNoJugat(carta) and carta.value == 1: return True
         if carta.color != "" and (carta.value-1) in self.PlayedCards[carta.color]: return True
-        return self.teLLoc(carta)
+        colors=["red", "blue", "white", "green"]
+        contador = 0
+        buit = True
+        for col in colors:
+            c = 0
+            if len(self.PlayedCards[col])>0:
+                c = self.PlayedCards[col][-1].value
+                buit = False
+            if (c+1)==carta.value:
+                contador +=1
+        if contador == 5: True
+        if buit == True:
+            return carta.value== 1
+        return False
 
     """returns if a card is dangerous (discarting the card implies losing points)"""
     def isDangerous(self, carta, player):
@@ -322,7 +315,13 @@ class Joc(object):
             if not(self.isJugable(carta, player)):
                 if not(self.isDescartable(carta)):
                     return True
-
+        elif carta.color != "" and carta.value != 0:
+            res = 0
+            for c in self.DiscardPile:
+                if c.color == carta.color and c.value==carta.value:
+                    res += 1
+            if carta.value == 1 and res>2 or carta.value != 1 and res>1:
+                return True
         return False
 
     """This function returns if playing the card is save"""
@@ -332,23 +331,24 @@ class Joc(object):
                 return self.cartaMenorJugada(carta)
             else:
                 return False
-        else:            
+        else: 
+            if self.juga100(carta): return True
             return self.cartaMenorJugada(carta)
 
     """This function returns True if discarting the card is dangerous but playing is save"""
     def isJugaPerill(self, carta, player):
         return self.isJugable(carta, player) and self.isDangerous(carta, player)
 
-
     """This function returns if discarting the card is save"""
     def isDescartable(self, carta):
         #a card with same value&color has been played
-        if self.estaJugada(carta): return True
+        if self.estaJugada(carta): 
+            return True
         #color complet
-        elif self.colorComplet(carta): return True
+        elif self.colorComplet(carta): 
+            return True
         #inferior card had been discarted
         return self.inferiorsDiscarted(carta)
-
 
     def avaluarTotesLesCartes(self): 
         for p in self.Players:
@@ -368,39 +368,6 @@ class Joc(object):
         else:
             tag = "Res"
         carta.tag = tag
-        
-    def teJugables(self, player):
-        for c in player.hand:
-            if c.tag == "jugable": return True
-        return False
-
-    def retornaJugable(self, player):
-        for c in player.hand:
-            if c.tag == "jugable":
-                return str(player.hand.index(c))
-        return "0"
-        
-    def teDescatables(self, player):
-        for c in player.hand:
-            if c.tag == "descartable": return True
-        return False
-
-    def retornaDescartable(self, player):
-        for c in player.hand:
-            if c.tag == "descartable":
-                return str(player.hand.index(c))
-        return "0"
-
-    def teRes(self, player):
-        for c in player.hand:
-            if c.tag == "Res": return True
-        return False
-
-    def retornaRes(self, player):
-        for c in player.hand:
-            if c.tag == "Res":
-                return str(player.hand.index(c))
-        return "0"
 
     def BestMove(self):
         #final solution
@@ -420,6 +387,7 @@ class Joc(object):
             if int(q1) > int(q2):
                 solution = player.semisolution
 
+        print("solution:" + solution)
         solution = solution[2:]
         return solution 
 
@@ -440,8 +408,6 @@ class Joc(object):
         print("Note tokens used: " + str(self.UsedTokens) + "/8")
         print("==================== END OF GAME DATA ============================")
 
-
-
 joc = Joc()
 
 def manageInput():
@@ -461,7 +427,6 @@ def manageInput():
                 s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 #we have to sleep to get the show response before doing anything
                 time.sleep(2)
-                #try:
 
                 #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
                 BstMv=joc.BestMove()
@@ -481,10 +446,7 @@ def manageInput():
                     if num == "value":
                         value = int(value)
                     s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
-                
-                #except:
-                    #print("Ups problemita, hem fallat en algo 0w0")
-                    #continue
+                joc.ToString()
         stdout.flush()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -537,27 +499,29 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             joc.UsedTokens=int(data.usedNoteTokens)
             print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
             print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
-            joc.ToString()
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
             print("Invalid action performed. Reason:")
             print(data.message)
         if type(data) is GameData.ServerActionValid:
             #Hem descartat
-            joc.ActualizaMaIA(data.cardHandIndex)
+            if data.lastPlayer == playerName:
+                joc.ActualizaMaIA(data.cardHandIndex)
             dataOk = True
             print("Action valid!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerMoveOk:
             #Hem jugat bé una carta
-            joc.ActualizaMaIA(data.cardHandIndex)
+            if data.lastPlayer == playerName:
+                joc.ActualizaMaIA(data.cardHandIndex)
             dataOk = True
             print("Action valid!")
             print("Nice move!")
             print("Current player: " + data.player)
         if type(data) is GameData.ServerPlayerThunderStrike:
             #Hem jugat malament una carta
-            joc.ActualizaMaIA(data.cardHandIndex)
+            if data.lastPlayer == playerName:
+                joc.ActualizaMaIA(data.cardHandIndex)
             dataOk = True
             print("OH NO! The Gods are unhappy with you!")
         if type(data) is GameData.ServerHintData:
@@ -585,7 +549,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print(data.score)
             print(data.scoreMessage)
             stdout.flush()
-            #run = False
             print("Ready for a new game!")
         if not dataOk:
             print("Unknown or unimplemented data type: " +  str(type(data)))
