@@ -2,6 +2,7 @@
 
 from sys import argv, stdout
 from threading import Thread
+from traceback import print_tb
 import GameData
 import game
 import socket
@@ -85,25 +86,26 @@ class Jugador(game.Player):
 
     def BestMoveIA(self, tokens):
         self.cleanSemiSolution()
+        cardIndex = 0
         for card in self.ma:
             q1 = self.getSemiID()
-            cardIndex = str(self.ma.index(card))
             if "jugable" == card.tag or "perillosajugable"== card.tag:
                 if q1 > 0:
-                    self.semisolution = "0 "+ "play " + cardIndex
+                    self.semisolution = "0 "+ "play " + str(cardIndex)
             elif "descartable" == card.tag and tokens>0:
                 if q1 > 2:
-                    self.semisolution = "2 "+"discard " + cardIndex
+                    self.semisolution = "2 "+"discard " + str(cardIndex)
             elif "Res" == card.tag and tokens>0:
                 if q1 > 5:
-                    self.semisolution = "5 "+"discard " + cardIndex
+                    self.semisolution = "5 "+"discard " + str(cardIndex)
             elif tokens>0:
                 if q1 > 6:
                     self.semisolution = "6 discard 4"
             else: 
                 if q1 > 8:
-                    self.semisolution = "8 "+ "play " + cardIndex
+                    self.semisolution = "8 "+ "play " + str(cardIndex)
             print("semi " + self.semisolution)
+            cardIndex +=1
             
     def Value_Color(self, card):
         pista = []
@@ -283,13 +285,12 @@ class Joc(object):
 
     def juga100(self, carta):
         if len(self.PlayedCards[carta.color])>0:
-            print("juga100: "+str(self.PlayedCards[carta.color][-1].value)+" cartaval "+ str(carta.value))
             return ((self.PlayedCards[carta.color][-1].value)+1) == carta.value
         else: return False
 
     def cartaMenorJugada(self, carta):
-        if self.colorNoJugat(carta) and carta.value == 1: return True
-        if carta.color != "" and (carta.value-1) in self.PlayedCards[carta.color]: return True
+        if self.colorNoJugat(carta) and carta.value == 1: 
+            return True
         colors=["red", "blue", "white", "green"]
         contador = 0
         buit = True
@@ -328,6 +329,7 @@ class Joc(object):
     def isJugable(self, carta, player):
         if player.name == playerName:
             if carta.hintColor != "" or carta.hintValue != 0:
+                if carta.hintColor != "" and self.juga100(carta): return True
                 return self.cartaMenorJugada(carta)
             else:
                 return False
@@ -376,9 +378,10 @@ class Joc(object):
         self.avaluarTotesLesCartes()
         #we still can give hints
         for player in self.Players:
+            player.cleanSemiSolution()
             if player.name != playerName and self.UsedTokens != 8:
                 player.BestMove()
-            else:
+            elif player.name == playerName:
                 player.BestMoveIA(self.UsedTokens)
 
         for player in self.Players:
@@ -413,40 +416,42 @@ joc = Joc()
 def manageInput():
     global run
     global status
+    done = False
     while run:
-        command = input()
-        if command == "exit":
-            run = False
-            os._exit(0)
+        if status == statuses[0] and done==False:
+            #If status==Lobby we send start request
+            s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
+            done = True
+        
         else:
-            if status == statuses[0]:
-                #If status==Lobby we send start request
-                s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
-            else:
+            while(joc.currentPlayer != playerName):
                 #We request the show action everytime we play
                 s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 #we have to sleep to get the show response before doing anything
                 time.sleep(2)
 
-                #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
-                BstMv=joc.BestMove()
-                
-                print("solucio final:" + BstMv)
-                
-                move = BstMv.split(" ")[0]
-                num = BstMv.split(" ")[1]
-                
-                if move == "play":
-                    s.send(GameData.ClientPlayerPlayCardRequest(playerName, int(num)).serialize())
-                elif move == "discard":
-                    s.send(GameData.ClientPlayerDiscardCardRequest(playerName, int(num)).serialize())
-                else:
-                    player = BstMv.split(" ")[2]
-                    value = BstMv.split(" ")[3]
-                    if num == "value":
-                        value = int(value)
-                    s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
-                joc.ToString()
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            print("current player = "+joc.currentPlayer+", playerName = "+playerName)
+            #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
+            BstMv=joc.BestMove()
+            
+            print("solucio final:" + BstMv)
+            
+            move = BstMv.split(" ")[0]
+            num = BstMv.split(" ")[1]
+            
+            if move == "play":
+                s.send(GameData.ClientPlayerPlayCardRequest(playerName, int(num)).serialize())
+            elif move == "discard":
+                s.send(GameData.ClientPlayerDiscardCardRequest(playerName, int(num)).serialize())
+            else:
+                player = BstMv.split(" ")[2]
+                value = BstMv.split(" ")[3]
+                if num == "value":
+                    value = int(value)
+                s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
+            joc.ToString()
+            joc.currentPlayer = ""
         stdout.flush()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:

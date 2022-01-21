@@ -4677,3 +4677,1474 @@
 01/21/2022 02:32:35 AM INFO: Player IA providing hint to Uri: cards with value 4 are in positions: [1]
 01/21/2022 02:32:41 AM INFO: Uri: card played and correctly put on the table
 01/21/2022 02:32:42 AM INFO: Showing hand to: IA
+01/21/2022 11:53:04 AM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 11:53:10 AM INFO: Connected by: ('127.0.0.1', 58879)
+01/21/2022 11:53:10 AM INFO: Player connected: Uri
+01/21/2022 11:53:12 AM INFO: Player ready: Uri
+01/21/2022 11:53:16 AM INFO: Connected by: ('127.0.0.1', 58880)
+01/21/2022 11:53:16 AM INFO: Player connected: IA
+01/21/2022 11:53:17 AM INFO: Player ready: IA
+01/21/2022 11:53:17 AM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 11:53:17 AM INFO: Ok, let's start the game!
+01/21/2022 11:53:19 AM INFO: Showing hand to: Uri
+01/21/2022 11:53:25 AM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3]
+01/21/2022 11:53:27 AM INFO: Showing hand to: IA
+01/21/2022 11:53:29 AM INFO: IA: card played and correctly put on the table
+01/21/2022 11:53:46 AM INFO: Showing hand to: Uri
+01/21/2022 11:53:55 AM INFO: Player Uri providing hint to IA: cards with value 5 are in positions: [3]
+01/21/2022 11:54:00 AM INFO: Showing hand to: IA
+01/21/2022 11:54:02 AM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 2, 4]
+01/21/2022 11:54:13 AM INFO: Uri: card played and correctly put on the table
+01/21/2022 11:54:15 AM INFO: Showing hand to: IA
+01/21/2022 11:54:17 AM INFO: Player IA providing hint to Uri: cards with value 2 are in positions: [2, 4]
+01/21/2022 11:54:23 AM INFO: Showing hand to: Uri
+01/21/2022 11:54:50 AM INFO: Player: Uri: card 26 discarded successfully
+01/21/2022 11:54:51 AM INFO: Showing hand to: IA
+01/21/2022 11:54:53 AM INFO: Player IA providing hint to Uri: cards with color yellow are in positions: [2, 3]
+01/21/2022 11:55:10 AM INFO: Player: Uri: card 1 discarded successfully
+01/21/2022 11:55:12 AM INFO: Showing hand to: IA
+01/21/2022 11:55:14 AM INFO: Player IA providing hint to Uri: cards with color blue are in positions: [1]
+01/21/2022 11:55:30 AM INFO: Showing hand to: Uri
+01/21/2022 11:55:41 AM INFO: Uri: card played and correctly put on the table
+01/21/2022 11:55:43 AM INFO: Showing hand to: IA
+01/21/2022 11:55:45 AM INFO: Player IA providing hint to Uri: cards with value 3 are in positions: [3, 4]
+01/21/2022 11:57:09 AM INFO: Showing hand to: Uri
+01/21/2022 11:57:31 AM INFO: Player: Uri: card 4 discarded successfully
+01/21/2022 11:57:33 AM INFO: Showing hand to: IA
+01/21/2022 11:57:35 AM INFO: Player IA providing hint to Uri: cards with color yellow are in positions: [2]
+01/21/2022 11:57:44 AM INFO: Uri: card played and correctly put on the table
+01/21/2022 11:57:46 AM INFO: Showing hand to: IA
+01/21/2022 11:57:48 AM INFO: Player IA providing hint to Uri: cards with color white are in positions: [1, 2, 3]
+01/21/2022 11:58:18 AM INFO: Showing hand to: Uri
+01/21/2022 11:59:03 AM INFO: Player Uri providing hint to IA: cards with color blue are in positions: [3]
+01/21/2022 11:59:05 AM INFO: Showing hand to: IA
+01/21/2022 11:59:07 AM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [4]
+01/21/2022 11:59:23 AM INFO: Player: Uri: card 23 discarded successfully
+01/21/2022 11:59:25 AM INFO: Showing hand to: IA
+01/21/2022 11:59:27 AM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3, 4]
+01/21/2022 11:59:46 AM INFO: Player: Uri: card 29 discarded successfully
+01/21/2022 11:59:47 AM INFO: Showing hand to: IA
+01/21/2022 11:59:49 AM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [1]
+01/21/2022 11:59:54 AM INFO: Showing hand to: Uri
+01/21/2022 12:00:04 PM INFO: Player: Uri: card 14 discarded successfully
+01/21/2022 12:00:06 PM INFO: Showing hand to: IA
+01/21/2022 12:00:08 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+01/21/2022 12:00:18 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:00:20 PM INFO: Showing hand to: IA
+01/21/2022 12:18:41 PM INFO: Closing the server...
+01/21/2022 12:18:42 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:18:46 PM INFO: Connected by: ('127.0.0.1', 62516)
+01/21/2022 12:18:46 PM INFO: Player connected: Uri
+01/21/2022 12:18:49 PM INFO: Player ready: Uri
+01/21/2022 12:18:52 PM INFO: Connected by: ('127.0.0.1', 62517)
+01/21/2022 12:18:52 PM INFO: Player connected: IA
+01/21/2022 12:18:53 PM INFO: Player ready: IA
+01/21/2022 12:18:53 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:18:53 PM INFO: Ok, let's start the game!
+01/21/2022 12:18:55 PM INFO: Showing hand to: Uri
+01/21/2022 12:18:59 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3]
+01/21/2022 12:19:01 PM INFO: Showing hand to: IA
+01/21/2022 12:19:03 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:19:11 PM INFO: Showing hand to: Uri
+01/21/2022 12:19:19 PM INFO: Player Uri providing hint to IA: cards with value 5 are in positions: [0]
+01/21/2022 12:19:20 PM INFO: Showing hand to: IA
+01/21/2022 12:19:22 PM INFO: Player: IA: card 35 discarded successfully
+01/21/2022 12:19:41 PM INFO: Showing hand to: Uri
+01/21/2022 12:19:53 PM INFO: Player: Uri: card 25 discarded successfully
+01/21/2022 12:19:55 PM INFO: Showing hand to: IA
+01/21/2022 12:19:57 PM INFO: Player IA providing hint to Uri: cards with value 4 are in positions: [0, 2, 4]
+01/21/2022 12:20:01 PM INFO: Showing hand to: IA
+01/21/2022 12:20:21 PM INFO: Player: Uri: card 26 discarded successfully
+01/21/2022 12:20:23 PM INFO: Showing hand to: IA
+01/21/2022 12:20:25 PM INFO: Player IA providing hint to Uri: cards with color red are in positions: [0, 4]
+01/21/2022 12:20:28 PM INFO: Showing hand to: Uri
+01/21/2022 12:20:47 PM INFO: Player: Uri: card 38 discarded successfully
+01/21/2022 12:20:49 PM INFO: Showing hand to: IA
+01/21/2022 12:20:51 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+01/21/2022 12:20:58 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:21:00 PM INFO: Showing hand to: IA
+01/21/2022 12:21:02 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [4]
+01/21/2022 12:21:07 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:21:08 PM INFO: Showing hand to: IA
+01/21/2022 12:21:10 PM INFO: Player IA providing hint to Uri: cards with color yellow are in positions: [1, 2, 4]
+01/21/2022 12:21:14 PM INFO: Showing hand to: Uri
+01/21/2022 12:21:31 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [2, 3]
+01/21/2022 12:21:32 PM INFO: Showing hand to: IA
+01/21/2022 12:21:34 PM INFO: Player: IA: card 37 discarded successfully
+01/21/2022 12:21:51 PM INFO: Showing hand to: Uri
+01/21/2022 12:22:15 PM INFO: Player Uri providing hint to IA: cards with color green are in positions: [0, 1]
+01/21/2022 12:22:17 PM INFO: Showing hand to: IA
+01/21/2022 12:22:19 PM INFO: Player: IA: card 23 discarded successfully
+01/21/2022 12:30:25 PM INFO: Closing the server...
+01/21/2022 12:30:26 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:30:29 PM INFO: Connected by: ('127.0.0.1', 62609)
+01/21/2022 12:30:29 PM INFO: Player connected: Uri
+01/21/2022 12:30:31 PM INFO: Player ready: Uri
+01/21/2022 12:30:34 PM INFO: Connected by: ('127.0.0.1', 62611)
+01/21/2022 12:30:34 PM INFO: Player connected: IA
+01/21/2022 12:30:37 PM INFO: Player ready: IA
+01/21/2022 12:30:37 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:30:37 PM INFO: Ok, let's start the game!
+01/21/2022 12:30:40 PM INFO: Showing hand to: Uri
+01/21/2022 12:30:44 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 3]
+01/21/2022 12:30:47 PM INFO: Showing hand to: IA
+01/21/2022 12:30:49 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:32:31 PM INFO: Showing hand to: Uri
+01/21/2022 12:32:41 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [1, 2]
+01/21/2022 12:32:42 PM INFO: Showing hand to: IA
+01/21/2022 12:32:44 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 4]
+01/21/2022 12:32:55 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:32:57 PM INFO: Showing hand to: IA
+01/21/2022 12:32:59 PM INFO: Player IA providing hint to Uri: cards with color white are in positions: [0, 3, 4]
+01/21/2022 12:33:14 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [1]
+01/21/2022 12:33:15 PM INFO: Showing hand to: IA
+01/21/2022 12:33:17 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [3, 4]
+01/21/2022 12:36:31 PM INFO: Closing the server...
+01/21/2022 12:36:32 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:36:36 PM INFO: Connected by: ('127.0.0.1', 62655)
+01/21/2022 12:36:36 PM INFO: Player connected: Uri
+01/21/2022 12:36:38 PM INFO: Player ready: Uri
+01/21/2022 12:36:40 PM INFO: Connected by: ('127.0.0.1', 62659)
+01/21/2022 12:36:40 PM INFO: Player connected: IA
+01/21/2022 12:36:41 PM INFO: Player ready: IA
+01/21/2022 12:36:41 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:36:41 PM INFO: Ok, let's start the game!
+01/21/2022 12:36:43 PM INFO: Showing hand to: Uri
+01/21/2022 12:36:47 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [2]
+01/21/2022 12:36:49 PM INFO: Showing hand to: IA
+01/21/2022 12:36:51 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:37:01 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:37:03 PM INFO: Showing hand to: IA
+01/21/2022 12:37:05 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2]
+01/21/2022 12:37:08 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:37:09 PM INFO: Showing hand to: IA
+01/21/2022 12:37:11 PM INFO: Player: IA: card 49 discarded successfully
+01/21/2022 12:37:14 PM INFO: Showing hand to: Uri
+01/21/2022 12:37:25 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [3]
+01/21/2022 12:37:26 PM INFO: Showing hand to: IA
+01/21/2022 12:37:28 PM INFO: Player: IA: card 30 discarded successfully
+01/21/2022 12:37:37 PM INFO: Player Uri providing hint to IA: cards with color green are in positions: [2, 3]
+01/21/2022 12:37:38 PM INFO: Showing hand to: IA
+01/21/2022 12:37:40 PM INFO: Player: IA: card 34 discarded successfully
+01/21/2022 12:42:47 PM INFO: Closing the server...
+01/21/2022 12:42:47 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:42:56 PM INFO: Closing the server...
+01/21/2022 12:43:41 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:43:45 PM INFO: Connected by: ('127.0.0.1', 62713)
+01/21/2022 12:43:45 PM INFO: Player connected: Uri
+01/21/2022 12:43:46 PM INFO: Player ready: Uri
+01/21/2022 12:43:49 PM INFO: Connected by: ('127.0.0.1', 62714)
+01/21/2022 12:43:49 PM INFO: Player connected: IA
+01/21/2022 12:43:50 PM INFO: Player ready: IA
+01/21/2022 12:43:50 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:43:50 PM INFO: Ok, let's start the game!
+01/21/2022 12:43:52 PM INFO: Showing hand to: Uri
+01/21/2022 12:43:56 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1, 2, 3]
+01/21/2022 12:43:58 PM INFO: Showing hand to: IA
+01/21/2022 12:44:34 PM INFO: Closing the server...
+01/21/2022 12:44:44 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:44:46 PM INFO: Connected by: ('127.0.0.1', 62725)
+01/21/2022 12:44:46 PM INFO: Player connected: Uri
+01/21/2022 12:44:47 PM INFO: Player ready: Uri
+01/21/2022 12:44:49 PM INFO: Connected by: ('127.0.0.1', 62726)
+01/21/2022 12:44:49 PM INFO: Player connected: IA
+01/21/2022 12:44:50 PM INFO: Player ready: IA
+01/21/2022 12:44:50 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:44:50 PM INFO: Ok, let's start the game!
+01/21/2022 12:44:51 PM INFO: Showing hand to: Uri
+01/21/2022 12:45:02 PM INFO: Closing the server...
+01/21/2022 12:45:03 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:45:07 PM INFO: Connected by: ('127.0.0.1', 62737)
+01/21/2022 12:45:07 PM INFO: Player connected: Uri
+01/21/2022 12:45:09 PM INFO: Player ready: Uri
+01/21/2022 12:45:11 PM INFO: Connected by: ('127.0.0.1', 62738)
+01/21/2022 12:45:11 PM INFO: Player connected: IA
+01/21/2022 12:45:11 PM INFO: Player ready: IA
+01/21/2022 12:45:11 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:45:11 PM INFO: Ok, let's start the game!
+01/21/2022 12:45:14 PM INFO: Showing hand to: Uri
+01/21/2022 12:45:19 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [4]
+01/21/2022 12:45:22 PM INFO: Showing hand to: IA
+01/21/2022 12:45:24 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:45:34 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [1, 3]
+01/21/2022 12:45:36 PM INFO: Showing hand to: IA
+01/21/2022 12:45:38 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 3, 4]
+01/21/2022 12:45:43 PM INFO: Showing hand to: Uri
+01/21/2022 12:45:52 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:45:54 PM INFO: Showing hand to: IA
+01/21/2022 12:45:56 PM INFO: Player IA providing hint to Uri: cards with color yellow are in positions: [3]
+01/21/2022 12:46:01 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [3]
+01/21/2022 12:46:02 PM INFO: Showing hand to: IA
+01/21/2022 12:46:04 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:46:16 PM INFO: Showing hand to: Uri
+01/21/2022 12:48:19 PM INFO: Closing the server...
+01/21/2022 12:48:20 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:48:33 PM INFO: Connected by: ('127.0.0.1', 63718)
+01/21/2022 12:48:33 PM INFO: Player connected: Uri
+01/21/2022 12:48:41 PM INFO: Player ready: Uri
+01/21/2022 12:48:45 PM INFO: Connected by: ('127.0.0.1', 63721)
+01/21/2022 12:48:45 PM INFO: Player connected: IA
+01/21/2022 12:48:45 PM INFO: Player ready: IA
+01/21/2022 12:48:45 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:48:45 PM INFO: Ok, let's start the game!
+01/21/2022 12:48:48 PM INFO: Showing hand to: Uri
+01/21/2022 12:48:56 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0]
+01/21/2022 12:48:58 PM INFO: Showing hand to: IA
+01/21/2022 12:49:00 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:49:03 PM INFO: Showing hand to: Uri
+01/21/2022 12:49:49 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [0, 1]
+01/21/2022 12:49:50 PM INFO: Showing hand to: IA
+01/21/2022 12:49:53 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 1, 3, 4]
+01/21/2022 12:50:01 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:50:07 PM INFO: Showing hand to: Uri
+01/21/2022 12:50:38 PM INFO: Showing hand to: IA
+01/21/2022 12:50:40 PM INFO: Player IA providing hint to Uri: cards with color green are in positions: [2, 4]
+01/21/2022 12:50:43 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [0]
+01/21/2022 12:50:46 PM INFO: Showing hand to: IA
+01/21/2022 12:50:48 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:50:52 PM INFO: Showing hand to: Uri
+01/21/2022 12:51:24 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:51:53 PM INFO: Showing hand to: Uri
+01/21/2022 12:51:55 PM INFO: Showing hand to: IA
+01/21/2022 12:51:57 PM INFO: Player IA providing hint to Uri: cards with value 3 are in positions: [1]
+01/21/2022 12:52:10 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 12:52:12 PM INFO: Showing hand to: IA
+01/21/2022 12:52:14 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [4]
+01/21/2022 12:52:34 PM INFO: Showing hand to: Uri
+01/21/2022 12:53:02 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [1]
+01/21/2022 12:53:11 PM INFO: Showing hand to: IA
+01/21/2022 12:53:13 PM WARNING: All the note tokens have been used. Impossible getting hints
+01/21/2022 12:53:24 PM INFO: Showing hand to: IA
+01/21/2022 12:53:26 PM WARNING: All the note tokens have been used. Impossible getting hints
+01/21/2022 12:53:27 PM INFO: Showing hand to: IA
+01/21/2022 12:53:29 PM WARNING: All the note tokens have been used. Impossible getting hints
+01/21/2022 12:53:40 PM INFO: Showing hand to: Uri
+01/21/2022 12:59:11 PM INFO: Closing the server...
+01/21/2022 12:59:12 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 12:59:16 PM INFO: Connected by: ('127.0.0.1', 63827)
+01/21/2022 12:59:16 PM INFO: Player connected: Uri
+01/21/2022 12:59:17 PM INFO: Player ready: Uri
+01/21/2022 12:59:20 PM INFO: Connected by: ('127.0.0.1', 63828)
+01/21/2022 12:59:20 PM INFO: Player connected: IA
+01/21/2022 12:59:21 PM INFO: Player ready: IA
+01/21/2022 12:59:21 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 12:59:21 PM INFO: Ok, let's start the game!
+01/21/2022 12:59:25 PM INFO: Showing hand to: Uri
+01/21/2022 12:59:30 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 1]
+01/21/2022 12:59:32 PM INFO: Showing hand to: IA
+01/21/2022 12:59:34 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:59:38 PM INFO: Showing hand to: Uri
+01/21/2022 12:59:46 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [0]
+01/21/2022 12:59:48 PM INFO: Showing hand to: IA
+01/21/2022 12:59:50 PM INFO: IA: card played and correctly put on the table
+01/21/2022 12:59:54 PM INFO: Showing hand to: Uri
+01/21/2022 01:00:02 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [0, 1, 2, 3, 4]
+01/21/2022 01:00:03 PM INFO: Showing hand to: IA
+01/21/2022 01:00:05 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0, 4]
+01/21/2022 01:00:13 PM INFO: Player Uri providing hint to IA: cards with color white are in positions: [0, 3]
+01/21/2022 01:00:15 PM INFO: Showing hand to: IA
+01/21/2022 01:00:17 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:00:19 PM INFO: Showing hand to: Uri
+01/21/2022 01:00:36 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [4]
+01/21/2022 01:00:38 PM INFO: Showing hand to: IA
+01/21/2022 01:00:40 PM INFO: Player IA providing hint to Uri: cards with color green are in positions: [4]
+01/21/2022 01:00:49 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [0, 4]
+01/21/2022 01:00:50 PM INFO: Showing hand to: IA
+01/21/2022 01:02:07 PM INFO: Showing hand to: Uri
+01/21/2022 01:07:20 PM INFO: Showing hand to: Uri
+01/21/2022 01:07:42 PM INFO: Player: Uri: card 1 discarded successfully
+01/21/2022 01:07:43 PM INFO: Showing hand to: IA
+01/21/2022 01:09:28 PM INFO: Closing the server...
+01/21/2022 01:09:34 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:09:39 PM INFO: Connected by: ('127.0.0.1', 52016)
+01/21/2022 01:09:39 PM INFO: Player connected: Uri
+01/21/2022 01:09:42 PM INFO: Player ready: Uri
+01/21/2022 01:09:44 PM INFO: Connected by: ('127.0.0.1', 52018)
+01/21/2022 01:09:44 PM INFO: Player connected: IA
+01/21/2022 01:09:45 PM INFO: Player ready: IA
+01/21/2022 01:09:45 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:09:45 PM INFO: Ok, let's start the game!
+01/21/2022 01:09:47 PM INFO: Showing hand to: Uri
+01/21/2022 01:09:51 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [2, 3]
+01/21/2022 01:09:52 PM INFO: Showing hand to: IA
+01/21/2022 01:09:54 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:10:08 PM INFO: Player Uri providing hint to IA: cards with color green are in positions: [2]
+01/21/2022 01:10:09 PM INFO: Showing hand to: IA
+01/21/2022 01:10:12 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:10:19 PM INFO: Showing hand to: Uri
+01/21/2022 01:10:23 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [4]
+01/21/2022 01:10:25 PM INFO: Showing hand to: IA
+01/21/2022 01:10:27 PM INFO: Player IA providing hint to Uri: cards with value 2 are in positions: [0, 2, 3]
+01/21/2022 01:10:37 PM INFO: Player Uri providing hint to IA: cards with color white are in positions: [3, 4]
+01/21/2022 01:10:39 PM INFO: Showing hand to: IA
+01/21/2022 01:18:15 PM INFO: Showing hand to: Uri
+01/21/2022 01:18:26 PM INFO: Closing the server...
+01/21/2022 01:18:26 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:18:30 PM INFO: Connected by: ('127.0.0.1', 52117)
+01/21/2022 01:18:30 PM INFO: Player connected: Uri
+01/21/2022 01:18:32 PM INFO: Player ready: Uri
+01/21/2022 01:18:37 PM INFO: Connected by: ('127.0.0.1', 52118)
+01/21/2022 01:18:37 PM INFO: Player connected: IA
+01/21/2022 01:18:39 PM INFO: Player ready: IA
+01/21/2022 01:18:39 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:18:39 PM INFO: Ok, let's start the game!
+01/21/2022 01:18:42 PM INFO: Showing hand to: Uri
+01/21/2022 01:18:50 PM INFO: Closing the server...
+01/21/2022 01:18:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:18:54 PM INFO: Connected by: ('127.0.0.1', 52124)
+01/21/2022 01:18:54 PM INFO: Player connected: Uri
+01/21/2022 01:18:56 PM INFO: Player ready: Uri
+01/21/2022 01:18:58 PM INFO: Connected by: ('127.0.0.1', 52127)
+01/21/2022 01:18:58 PM INFO: Player connected: IA
+01/21/2022 01:18:58 PM INFO: Player ready: IA
+01/21/2022 01:18:58 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:18:58 PM INFO: Ok, let's start the game!
+01/21/2022 01:19:00 PM INFO: Showing hand to: Uri
+01/21/2022 01:19:08 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0, 3]
+01/21/2022 01:19:09 PM INFO: Showing hand to: IA
+01/21/2022 01:19:11 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:19:46 PM INFO: Showing hand to: Uri
+01/21/2022 01:19:55 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [1, 2, 3]
+01/21/2022 01:19:56 PM INFO: Showing hand to: IA
+01/21/2022 01:19:58 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:20:17 PM INFO: Showing hand to: Uri
+01/21/2022 01:20:34 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:20:35 PM INFO: Showing hand to: IA
+01/21/2022 01:20:37 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [4]
+01/21/2022 01:20:44 PM INFO: Player: Uri: card 8 discarded successfully
+01/21/2022 01:20:45 PM INFO: Showing hand to: IA
+01/21/2022 01:20:47 PM INFO: Player: IA: card 35 discarded successfully
+01/21/2022 01:21:02 PM INFO: Showing hand to: Uri
+01/21/2022 01:21:07 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3, 4]
+01/21/2022 01:21:08 PM INFO: Showing hand to: IA
+01/21/2022 01:21:10 PM INFO: Player: IA: card 41 discarded successfully
+01/21/2022 01:21:26 PM INFO: Showing hand to: Uri
+01/21/2022 01:21:37 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [3]
+01/21/2022 01:21:39 PM INFO: Showing hand to: IA
+01/21/2022 01:27:54 PM INFO: Closing the server...
+01/21/2022 01:27:54 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:28:02 PM INFO: Connected by: ('127.0.0.1', 52201)
+01/21/2022 01:28:02 PM INFO: Player connected: Uri
+01/21/2022 01:28:03 PM INFO: Player ready: Uri
+01/21/2022 01:28:06 PM INFO: Connected by: ('127.0.0.1', 52203)
+01/21/2022 01:28:06 PM INFO: Player connected: IA
+01/21/2022 01:28:07 PM INFO: Player ready: IA
+01/21/2022 01:28:07 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:28:07 PM INFO: Ok, let's start the game!
+01/21/2022 01:28:11 PM INFO: Showing hand to: Uri
+01/21/2022 01:29:16 PM INFO: Closing the server...
+01/21/2022 01:29:17 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:29:32 PM INFO: Connected by: ('127.0.0.1', 52212)
+01/21/2022 01:29:32 PM INFO: Player connected: Uri
+01/21/2022 01:29:33 PM INFO: Player ready: Uri
+01/21/2022 01:29:36 PM INFO: Connected by: ('127.0.0.1', 52214)
+01/21/2022 01:29:36 PM INFO: Player connected: IA
+01/21/2022 01:29:36 PM INFO: Player ready: IA
+01/21/2022 01:29:36 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:29:36 PM INFO: Ok, let's start the game!
+01/21/2022 01:29:38 PM INFO: Showing hand to: Uri
+01/21/2022 01:29:47 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [2]
+01/21/2022 01:29:48 PM INFO: Showing hand to: IA
+01/21/2022 01:29:50 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:30:08 PM INFO: Showing hand to: Uri
+01/21/2022 01:30:24 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:30:25 PM INFO: Showing hand to: IA
+01/21/2022 01:30:27 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2, 4]
+01/21/2022 01:30:30 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:30:31 PM INFO: Showing hand to: IA
+01/21/2022 01:30:33 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [2, 4]
+01/21/2022 01:30:38 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:30:40 PM INFO: Showing hand to: IA
+01/21/2022 01:30:42 PM INFO: Player IA providing hint to Uri: cards with value 5 are in positions: [3]
+01/21/2022 01:30:49 PM INFO: Showing hand to: Uri
+01/21/2022 01:31:03 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [0, 1, 3]
+01/21/2022 01:31:05 PM INFO: Showing hand to: IA
+01/21/2022 01:31:07 PM INFO: Player IA providing hint to Uri: cards with color red are in positions: [0, 1, 2]
+01/21/2022 01:32:01 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [2, 3]
+01/21/2022 01:32:02 PM INFO: Showing hand to: IA
+01/21/2022 01:32:04 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:32:15 PM INFO: Showing hand to: Uri
+01/21/2022 01:32:23 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [4]
+01/21/2022 01:32:24 PM INFO: Showing hand to: IA
+01/21/2022 01:32:26 PM INFO: Player: IA: card 35 discarded successfully
+01/21/2022 01:32:30 PM INFO: Showing hand to: Uri
+01/21/2022 01:32:57 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [3]
+01/21/2022 01:32:59 PM INFO: Showing hand to: IA
+01/21/2022 01:36:30 PM INFO: Closing the server...
+01/21/2022 01:36:31 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:36:37 PM INFO: Connected by: ('127.0.0.1', 52260)
+01/21/2022 01:36:37 PM INFO: Player connected: Uri
+01/21/2022 01:36:39 PM INFO: Player ready: Uri
+01/21/2022 01:36:42 PM INFO: Connected by: ('127.0.0.1', 52263)
+01/21/2022 01:36:42 PM INFO: Player connected: IA
+01/21/2022 01:36:43 PM INFO: Player ready: IA
+01/21/2022 01:36:43 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:36:43 PM INFO: Ok, let's start the game!
+01/21/2022 01:36:45 PM INFO: Showing hand to: Uri
+01/21/2022 01:36:57 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [2]
+01/21/2022 01:36:59 PM INFO: Showing hand to: IA
+01/21/2022 01:37:31 PM INFO: Closing the server...
+01/21/2022 01:37:32 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:37:35 PM INFO: Connected by: ('127.0.0.1', 52275)
+01/21/2022 01:37:35 PM INFO: Player connected: Uri
+01/21/2022 01:37:41 PM INFO: Player ready: Uri
+01/21/2022 01:37:43 PM INFO: Connected by: ('127.0.0.1', 52276)
+01/21/2022 01:37:43 PM INFO: Player connected: IA
+01/21/2022 01:37:43 PM INFO: Player ready: IA
+01/21/2022 01:37:43 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:37:43 PM INFO: Ok, let's start the game!
+01/21/2022 01:37:45 PM INFO: Showing hand to: Uri
+01/21/2022 01:37:50 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3, 4]
+01/21/2022 01:37:51 PM INFO: Showing hand to: IA
+01/21/2022 01:37:53 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:38:09 PM INFO: Showing hand to: Uri
+01/21/2022 01:38:22 PM INFO: Player Uri providing hint to IA: cards with color white are in positions: [2, 4]
+01/21/2022 01:38:24 PM INFO: Showing hand to: IA
+01/21/2022 01:38:26 PM INFO: Player IA providing hint to Uri: cards with value 2 are in positions: [0, 3]
+01/21/2022 01:39:00 PM INFO: Player Uri providing hint to IA: cards with color yellow are in positions: [1, 3]
+01/21/2022 01:39:02 PM INFO: Showing hand to: IA
+01/21/2022 01:39:04 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:39:24 PM INFO: Showing hand to: Uri
+01/21/2022 01:39:39 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [3, 4]
+01/21/2022 01:39:41 PM INFO: Showing hand to: IA
+01/21/2022 01:39:43 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:39:47 PM INFO: Showing hand to: Uri
+01/21/2022 01:40:20 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:40:21 PM INFO: Showing hand to: IA
+01/21/2022 01:40:23 PM INFO: Player IA providing hint to Uri: cards with value 1 are in positions: [0]
+01/21/2022 01:40:27 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:40:28 PM INFO: Showing hand to: IA
+01/21/2022 01:40:30 PM INFO: Player IA providing hint to Uri: cards with color yellow are in positions: [1]
+01/21/2022 01:40:39 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:40:40 PM INFO: Showing hand to: IA
+01/21/2022 01:40:43 PM INFO: Player IA providing hint to Uri: cards with value 3 are in positions: [1, 4]
+01/21/2022 01:41:00 PM INFO: Showing hand to: Uri
+01/21/2022 01:41:13 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:41:15 PM INFO: Showing hand to: IA
+01/21/2022 01:41:17 PM INFO: Player: IA: card 23 discarded successfully
+01/21/2022 01:41:28 PM INFO: Showing hand to: Uri
+01/21/2022 01:41:40 PM INFO: Player Uri providing hint to IA: cards with value 2 are in positions: [1, 3, 4]
+01/21/2022 01:41:41 PM INFO: Showing hand to: IA
+01/21/2022 01:41:43 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:41:53 PM INFO: Showing hand to: Uri
+01/21/2022 01:42:26 PM INFO: Uri: card played and correctly put on the table
+01/21/2022 01:42:27 PM INFO: Showing hand to: IA
+01/21/2022 01:42:29 PM INFO: Player: IA: card 41 discarded successfully
+01/21/2022 01:42:34 PM INFO: Showing hand to: Uri
+01/21/2022 01:42:44 PM INFO: Showing hand to: IA
+01/21/2022 01:42:48 PM INFO: Showing hand to: Uri
+01/21/2022 01:43:08 PM INFO: Player Uri providing hint to IA: cards with color red are in positions: [1, 3]
+01/21/2022 01:43:10 PM INFO: Showing hand to: IA
+01/21/2022 01:43:12 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:43:17 PM INFO: Showing hand to: Uri
+01/21/2022 01:49:21 PM INFO: Closing the server...
+01/21/2022 01:49:21 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:49:35 PM INFO: Connected by: ('127.0.0.1', 56763)
+01/21/2022 01:49:35 PM INFO: Player connected: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:35 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:36 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:37 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:49:38 PM INFO: Player ready: IA
+01/21/2022 01:50:49 PM INFO: Closing the server...
+01/21/2022 01:50:50 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:50:55 PM INFO: Connected by: ('127.0.0.1', 56773)
+01/21/2022 01:50:55 PM INFO: Player connected: IA
+01/21/2022 01:50:55 PM INFO: Player ready: IA
+01/21/2022 01:51:01 PM INFO: Connected by: ('127.0.0.1', 56776)
+01/21/2022 01:51:01 PM INFO: Player connected: IA2
+01/21/2022 01:51:01 PM INFO: Player ready: IA2
+01/21/2022 01:51:01 PM INFO: Game start! Between: ['IA', 'IA2']
+01/21/2022 01:51:01 PM INFO: Ok, let's start the game!
+01/21/2022 01:51:42 PM INFO: Closing the server...
+01/21/2022 01:51:43 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:51:55 PM INFO: Connected by: ('127.0.0.1', 56790)
+01/21/2022 01:51:55 PM INFO: Player connected: IA
+01/21/2022 01:51:55 PM INFO: Player ready: IA
+01/21/2022 01:52:00 PM INFO: Connected by: ('127.0.0.1', 56793)
+01/21/2022 01:52:00 PM INFO: Player connected: IA2
+01/21/2022 01:52:00 PM INFO: Player ready: IA2
+01/21/2022 01:52:00 PM INFO: Game start! Between: ['IA', 'IA2']
+01/21/2022 01:52:00 PM INFO: Ok, let's start the game!
+01/21/2022 01:52:00 PM INFO: Showing hand to: IA
+01/21/2022 01:52:00 PM INFO: Showing hand to: IA
+01/21/2022 01:52:00 PM INFO: Showing hand to: IA
+01/21/2022 01:52:00 PM INFO: Showing hand to: IA2
+01/21/2022 01:52:01 PM INFO: Player IA providing hint to IA2: cards with value 1 are in positions: [0, 3]
+01/21/2022 01:52:01 PM WARNING: Player disconnected: IA2
+01/21/2022 01:52:01 PM WARNING: Player disconnected: IA
+01/21/2022 01:52:01 PM INFO: Shutting down server
+01/21/2022 01:53:24 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:53:31 PM INFO: Connected by: ('127.0.0.1', 56808)
+01/21/2022 01:53:31 PM INFO: Player connected: IA
+01/21/2022 01:53:31 PM INFO: Player ready: IA
+01/21/2022 01:53:34 PM INFO: Connected by: ('127.0.0.1', 56809)
+01/21/2022 01:53:34 PM INFO: Player connected: IA2
+01/21/2022 01:53:34 PM INFO: Player ready: IA2
+01/21/2022 01:53:34 PM INFO: Game start! Between: ['IA', 'IA2']
+01/21/2022 01:53:34 PM INFO: Ok, let's start the game!
+01/21/2022 01:53:34 PM INFO: Showing hand to: IA
+01/21/2022 01:53:34 PM INFO: Showing hand to: IA
+01/21/2022 01:53:34 PM INFO: Showing hand to: IA2
+01/21/2022 01:53:35 PM INFO: Player IA providing hint to IA2: cards with value 1 are in positions: [0, 2]
+01/21/2022 01:53:36 PM INFO: Showing hand to: IA2
+01/21/2022 01:53:38 PM INFO: IA2: card played and correctly put on the table
+01/21/2022 01:53:38 PM INFO: Player IA providing hint to IA2: cards with value 1 are in positions: [1]
+01/21/2022 01:53:38 PM INFO: IA2: card played and correctly put on the table
+01/21/2022 01:53:38 PM INFO: Player IA providing hint to IA2: cards with value 1 are in positions: [4]
+01/21/2022 01:53:38 PM INFO: IA2: card played and correctly put on the table
+01/21/2022 01:54:16 PM WARNING: Player disconnected: IA2
+01/21/2022 01:54:18 PM WARNING: Player disconnected: IA
+01/21/2022 01:54:18 PM INFO: Shutting down server
+01/21/2022 01:55:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:55:54 PM INFO: Connected by: ('127.0.0.1', 56835)
+01/21/2022 01:55:54 PM INFO: Player connected: Uri
+01/21/2022 01:55:57 PM INFO: Connected by: ('127.0.0.1', 56836)
+01/21/2022 01:55:57 PM INFO: Player connected: IA
+01/21/2022 01:55:57 PM INFO: Player ready: IA
+01/21/2022 01:56:02 PM INFO: Player ready: Uri
+01/21/2022 01:56:02 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:56:02 PM INFO: Ok, let's start the game!
+01/21/2022 01:56:02 PM INFO: Showing hand to: IA
+01/21/2022 01:56:02 PM INFO: Showing hand to: IA
+01/21/2022 01:56:02 PM INFO: Showing hand to: IA
+01/21/2022 01:56:03 PM INFO: Showing hand to: IA
+01/21/2022 01:56:05 PM INFO: Showing hand to: IA
+01/21/2022 01:56:07 PM INFO: Showing hand to: IA
+01/21/2022 01:56:08 PM INFO: Showing hand to: Uri
+01/21/2022 01:56:09 PM INFO: Showing hand to: IA
+01/21/2022 01:56:11 PM INFO: Showing hand to: IA
+01/21/2022 01:56:13 PM INFO: Showing hand to: IA
+01/21/2022 01:56:15 PM INFO: Showing hand to: IA
+01/21/2022 01:56:17 PM INFO: Showing hand to: IA
+01/21/2022 01:56:18 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [0]
+01/21/2022 01:56:19 PM INFO: Showing hand to: IA
+01/21/2022 01:56:21 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:56:25 PM WARNING: Player disconnected: IA
+01/21/2022 01:57:50 PM INFO: Closing the server...
+01/21/2022 01:57:51 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 01:57:56 PM INFO: Connected by: ('127.0.0.1', 56856)
+01/21/2022 01:57:56 PM INFO: Player connected: Uri
+01/21/2022 01:57:58 PM INFO: Player ready: Uri
+01/21/2022 01:58:00 PM INFO: Connected by: ('127.0.0.1', 56860)
+01/21/2022 01:58:00 PM INFO: Player connected: IA
+01/21/2022 01:58:00 PM INFO: Player ready: IA
+01/21/2022 01:58:00 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 01:58:00 PM INFO: Ok, let's start the game!
+01/21/2022 01:58:00 PM INFO: Showing hand to: IA
+01/21/2022 01:58:02 PM INFO: Showing hand to: IA
+01/21/2022 01:58:04 PM INFO: Showing hand to: IA
+01/21/2022 01:58:05 PM INFO: Showing hand to: Uri
+01/21/2022 01:58:07 PM INFO: Showing hand to: IA
+01/21/2022 01:58:09 PM INFO: Showing hand to: IA
+01/21/2022 01:58:11 PM INFO: Showing hand to: IA
+01/21/2022 01:58:11 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1]
+01/21/2022 01:58:13 PM INFO: Showing hand to: IA
+01/21/2022 01:58:15 PM INFO: IA: card played and correctly put on the table
+01/21/2022 01:58:15 PM INFO: Showing hand to: IA
+01/21/2022 01:58:17 PM INFO: Showing hand to: IA
+01/21/2022 01:58:19 PM INFO: Showing hand to: IA
+01/21/2022 01:58:21 PM INFO: Showing hand to: IA
+01/21/2022 01:58:21 PM WARNING: Player disconnected: IA
+01/21/2022 02:00:22 PM INFO: Closing the server...
+01/21/2022 02:00:23 PM INFO: Hanabi server started on 127.0.0.1:1024
+01/21/2022 02:00:30 PM INFO: Connected by: ('127.0.0.1', 56883)
+01/21/2022 02:00:30 PM INFO: Player connected: Uri
+01/21/2022 02:00:34 PM INFO: Player ready: Uri
+01/21/2022 02:00:37 PM INFO: Connected by: ('127.0.0.1', 56885)
+01/21/2022 02:00:37 PM INFO: Player connected: IA
+01/21/2022 02:00:37 PM INFO: Player ready: IA
+01/21/2022 02:00:37 PM INFO: Game start! Between: ['Uri', 'IA']
+01/21/2022 02:00:37 PM INFO: Ok, let's start the game!
+01/21/2022 02:00:37 PM INFO: Showing hand to: IA
+01/21/2022 02:00:39 PM INFO: Showing hand to: IA
+01/21/2022 02:00:40 PM INFO: Showing hand to: Uri
+01/21/2022 02:00:41 PM INFO: Showing hand to: IA
+01/21/2022 02:00:43 PM INFO: Showing hand to: IA
+01/21/2022 02:00:45 PM INFO: Player Uri providing hint to IA: cards with value 1 are in positions: [1, 3]
+01/21/2022 02:00:45 PM INFO: Showing hand to: IA
+01/21/2022 02:00:47 PM INFO: IA: card played and correctly put on the table
+01/21/2022 02:00:47 PM INFO: Showing hand to: IA
+01/21/2022 02:00:49 PM INFO: Showing hand to: IA
+01/21/2022 02:00:49 PM WARNING: Player disconnected: IA
