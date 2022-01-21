@@ -1,6 +1,14 @@
 # Hanabi
 Exam of computational intelligence 2021 - 2022. Hanabi project
 
+## Usage
+To start a game with the agent:
+  python client_mark1.py <IP> <port> <PlayerName>
+  
+  There's no need to introduce any commands to the agent, everything is done by its self
+
+To start a game using the client see the Client point below
+
 # Computational Intelligence 2021-2022
 
 Exam of computational intelligence 2021 - 2022. It requires teaching the client to play the game of Hanabi (rules can be found [here](https://www.spillehulen.dk/media/102616/hanabi-card-game-rules.pdf)).

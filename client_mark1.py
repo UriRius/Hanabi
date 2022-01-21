@@ -66,7 +66,6 @@ class Jugador(game.Player):
         self.ma.pop(cardHandIndex)
         k = Carta(5, 0, "", "Res")
         self.ma.append(k)
-        print(self.toClientString())
 
     def ActualizaHand(self, hand):
         for c in hand:
@@ -104,7 +103,6 @@ class Jugador(game.Player):
             else: 
                 if q1 > 8:
                     self.semisolution = "8 "+ "play " + str(cardIndex)
-            print("semi " + self.semisolution)
             cardIndex +=1
             
     def Value_Color(self, card):
@@ -173,6 +171,7 @@ class Joc(object):
         self.DiscardPile = []
         self.PlayedCards = {}
         self.UsedTokens = 0
+        self.Storms = 0
         self.Players = []
         self.Hints = []
         self.estat = 0
@@ -390,7 +389,6 @@ class Joc(object):
             if int(q1) > int(q2):
                 solution = player.semisolution
 
-        print("solution:" + solution)
         solution = solution[2:]
         return solution 
 
@@ -422,20 +420,16 @@ def manageInput():
             #If status==Lobby we send start request
             s.send(GameData.ClientPlayerStartRequest(playerName).serialize())
             done = True
-        
+            print("[" + playerName + " - " + status + "]: ", end="")
         else:
             while(joc.currentPlayer != playerName):
                 #We request the show action everytime we play
                 s.send(GameData.ClientGetGameStateRequest(playerName).serialize())
                 #we have to sleep to get the show response before doing anything
-                time.sleep(2)
-
-            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-            print("current player = "+joc.currentPlayer+", playerName = "+playerName)
+                time.sleep(1)
+            
             #BstMv options are (play <num>), (discard <num>), (hint <type> <player> <value>)
             BstMv=joc.BestMove()
-            
-            print("solucio final:" + BstMv)
             
             move = BstMv.split(" ")[0]
             num = BstMv.split(" ")[1]
@@ -450,8 +444,9 @@ def manageInput():
                 if num == "value":
                     value = int(value)
                 s.send(GameData.ClientHintData(playerName, player, num, value).serialize())
-            joc.ToString()
+            #joc.ToString()
             joc.currentPlayer = ""
+            print("[" + playerName + " - " + status + "]: ", end="")
         stdout.flush()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -462,7 +457,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     data = GameData.GameData.deserialize(data)
     if type(data) is GameData.ServerPlayerConnectionOk:
         print("Connection accepted by the server. Welcome " + playerName)
-    print("[" + playerName + " - " + status + "]: ", end="")
     Thread(target=manageInput).start()
     while run:
         dataOk = False
@@ -483,27 +477,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         if type(data) is GameData.ServerGameStateData:
             #Aqui es rep el show
             dataOk = True
-            print("Current player: " + data.currentPlayer)
             joc.currentPlayer = data.currentPlayer
-            print("Player hands: ")
             #Aqui actualitzem la nostra variable de players per tenir la seva ma en tot moment
             joc.updateJugador(data.players)
-            for p in data.players:
-                print(p.toClientString())
-            print("Table cards: ")
             joc.PlayedCards = data.tableCards
-            for pos in data.tableCards:
-                print(pos + ": [ ")
-                for c in data.tableCards[pos]:
-                    print(c.toClientString() + " ")
-                print("]")
-            print("Discard pile: ")
+            joc.Storms = data.usedStormTokens
             joc.LoadDiscardPile(data.discardPile)
-            for c in data.discardPile:
-                print("\t" + c.toClientString())           
             joc.UsedTokens=int(data.usedNoteTokens)
-            print("Note tokens used: " + str(data.usedNoteTokens) + "/8")
-            print("Storm tokens used: " + str(data.usedStormTokens) + "/3")
         if type(data) is GameData.ServerActionInvalid:
             dataOk = True
             print("Invalid action performed. Reason:")
@@ -557,5 +537,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("Ready for a new game!")
         if not dataOk:
             print("Unknown or unimplemented data type: " +  str(type(data)))
-        print("[" + playerName + " - " + status + "]: ", end="")
         stdout.flush()
